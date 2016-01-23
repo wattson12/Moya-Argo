@@ -1166,7 +1166,7 @@
 		F954CDC4FBE3652D5EDB17EC72D7A1E8 /* NSEnumerator+RACSequenceAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSEnumerator+RACSequenceAdditions.h"; path = "ReactiveCocoa/Objective-C/NSEnumerator+RACSequenceAdditions.h"; sourceTree = "<group>"; };
 		F9DCF6E9F99F73CEC88C52E6FEEA67E1 /* RACChannel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RACChannel.h; path = "ReactiveCocoa/Objective-C/RACChannel.h"; sourceTree = "<group>"; };
 		FAC7DD1F6B357C9D7EB26A2037837C54 /* DispatchQueueSchedulerQOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DispatchQueueSchedulerQOS.swift; path = RxSwift/Schedulers/DispatchQueueSchedulerQOS.swift; sourceTree = "<group>"; };
-		FAF3811E47739625DD793007B811E72A /* SignalProducer+Argo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "SignalProducer+Argo.swift"; sourceTree = "<group>"; };
+		FAF3811E47739625DD793007B811E72A /* SignalProducer+Argo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SignalProducer+Argo.swift"; path = "ReactiveCocoa/SignalProducer+Argo.swift"; sourceTree = "<group>"; };
 		FB7E6A63A8D55C6E580CCEFBF57E83CB /* RACBlockTrampoline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RACBlockTrampoline.h; path = "ReactiveCocoa/Objective-C/RACBlockTrampoline.h"; sourceTree = "<group>"; };
 		FBF77FA44CB1824DA545E625D065F187 /* UIControl+RACSignalSupportPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIControl+RACSignalSupportPrivate.m"; path = "ReactiveCocoa/Objective-C/UIControl+RACSignalSupportPrivate.m"; sourceTree = "<group>"; };
 		FD04B65FECE17F6E2F62471BDD3989AD /* UIActionSheet+RACSignalSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActionSheet+RACSignalSupport.m"; path = "ReactiveCocoa/Objective-C/UIActionSheet+RACSignalSupport.m"; sourceTree = "<group>"; };
@@ -1338,6 +1338,14 @@
 				529CB522F547D727F2847CB3006F07AC /* Support Files */,
 			);
 			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		224291251C540D6500288E30 /* ReactiveCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3811E47739625DD793007B811E72A /* SignalProducer+Argo.swift */,
+			);
+			name = ReactiveCocoa;
 			sourceTree = "<group>";
 		};
 		27CF17D65E80A4FF30B03D8E583710CA /* Pods */ = {
@@ -1743,9 +1751,9 @@
 		80B8475108FCB509DC832227B4074FF9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				224291251C540D6500288E30 /* ReactiveCocoa */,
 				6307A7CDD6A01167FE52C8D27AFBF534 /* ReplaceMe.swift */,
 				E483D373DEE794BB7F5C04FB081A943F /* Response+Argo.swift */,
-				FAF3811E47739625DD793007B811E72A /* SignalProducer+Argo.swift */,
 				E013FF0A8092D3EB3F27111567822C17 /* RxSwift */,
 			);
 			path = Classes;
