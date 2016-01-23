@@ -29,8 +29,7 @@ class MoyaMappingTableViewController: DemoBaseTableViewController {
             if case let .Success(response) = result {
                 
                 do {
-                    let argoUsers:[ArgoUser] = try response.mapArray("users")
-                    
+                    let argoUsers:[ArgoUser] = try response.mapArrayWithRootKey("users")
                     self.users = argoUsers.map { $0 }
                     
                     dispatch_async(dispatch_get_main_queue()) {
@@ -43,7 +42,28 @@ class MoyaMappingTableViewController: DemoBaseTableViewController {
                 
             }
         }
+    }
+    
+    override func fetchUserDetail(user: UserType, showAlertClosure: (UserType) -> ()) {
         
+        self.provider.request(.User(userID: user.id.description)) { result in
+            
+            if case let .Success(response) = result {
+                
+                do {
+                    
+                    let user:ArgoUser = try response.mapObject()
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        showAlertClosure(user)
+                    }
+                    
+                } catch {
+                    print("error in mapping object: \(error)")
+                }
+                
+            }
+        }
     }
 
 }

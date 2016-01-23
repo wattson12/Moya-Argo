@@ -32,6 +32,11 @@ public extension Response {
         }
     }
     
+    public func mapObjectWithRootKey<T:Decodable where T == T.DecodedType>(rootKey: String) throws -> T {
+        
+        return try mapObject(rootKey)
+    }
+    
     public func mapArray<T:Decodable where T == T.DecodedType>(rootKey: String? = nil) throws -> [T] {
         
         do {
@@ -50,6 +55,11 @@ public extension Response {
             
             throw error
         }
+    }
+    
+    public func mapArrayWithRootKey<T:Decodable where T == T.DecodedType>(rootKey: String) throws -> [T] {
+        
+        return try mapArray(rootKey)
     }
     
     private func decodedValue<T>(decoded: Decoded<T>) throws -> T {
