@@ -1,0 +1,25 @@
+{
+  "total": 5,
+  "users": [
+    {
+      "id": 1,
+      "name": "Liam"
+    },
+    {
+      "id": 1,
+      "name": "Liam"
+    },
+    {
+      "id": 1,
+      "name": "Liam"
+    },
+    {
+      "id": 1,
+      "name": "Liam"
+    },
+    {
+      "id": 1,
+      "name": "Liam"
+    }
+  ]
+}
