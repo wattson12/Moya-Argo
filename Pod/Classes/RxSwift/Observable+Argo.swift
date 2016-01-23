@@ -11,9 +11,9 @@ import Moya
 import RxSwift
 import Argo
 
-extension ObservableType where E == Moya.Response {
+public extension ObservableType where E == Moya.Response {
     
-    func mapObject<T: Decodable where T == T.DecodedType>(type: T.Type, rootKey: String? = nil) -> Observable<T> {
+    public func mapObject<T: Decodable where T == T.DecodedType>(type: T.Type, rootKey: String? = nil) -> Observable<T> {
         
         return flatMap { response in
             
@@ -48,7 +48,7 @@ extension ObservableType where E == Moya.Response {
         }
     }
     
-    func mapArray<T: Decodable where T == T.DecodedType>(type: T.Type, rootKey: String? = nil) -> Observable<[T]> {
+    public func mapArray<T: Decodable where T == T.DecodedType>(type: T.Type, rootKey: String? = nil) -> Observable<[T]> {
         
         return flatMap { response -> Observable<[T]> in
             
