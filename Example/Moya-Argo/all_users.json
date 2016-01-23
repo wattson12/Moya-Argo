@@ -1,25 +1,21 @@
 {
-  "total": 5,
+  "total": 4,
   "users": [
     {
       "id": 1,
       "name": "Liam"
     },
     {
-      "id": 1,
-      "name": "Liam"
+      "id": 2,
+      "name": "Ryan"
     },
     {
-      "id": 1,
-      "name": "Liam"
+      "id": 3,
+      "name": "Margaret"
     },
     {
-      "id": 1,
-      "name": "Liam"
-    },
-    {
-      "id": 1,
-      "name": "Liam"
+      "id": 4,
+      "name": "Doyle"
     }
   ]
 }
