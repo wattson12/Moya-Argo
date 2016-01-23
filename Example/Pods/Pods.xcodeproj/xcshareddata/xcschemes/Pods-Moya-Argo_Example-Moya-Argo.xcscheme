@@ -14,8 +14,8 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BDA7FD625C34AB4A2BD1F01D'
-               BlueprintName = 'Moya-Argo'
+               BlueprintIdentifier = '3ED3239B49FB700A7B3C2E78'
+               BlueprintName = 'Pods-Moya-Argo_Example-Moya-Argo'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Moya_Argo.framework'>
             </BuildableReference>

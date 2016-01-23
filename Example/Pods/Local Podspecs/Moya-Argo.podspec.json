@@ -16,24 +16,44 @@
     "ios": "8.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/**/*",
-  "resource_bundles": {
-    "Moya-Argo": [
-      "Pod/Assets/*.png"
-    ]
-  },
-  "dependencies": {
-    "Moya": [
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "Pod/Classes/*.swift",
+      "dependencies": {
+        "Moya": [
 
-    ],
-    "Moya/RxSwift": [
+        ],
+        "Argo": [
 
-    ],
-    "Moya/ReactiveCocoa": [
+        ]
+      },
+      "frameworks": "Foundation"
+    },
+    {
+      "name": "ReactiveCocoa",
+      "source_files": "Pod/Classes/ReactiveCocoa/*.swift",
+      "dependencies": {
+        "Moya-Argo/Core": [
 
-    ],
-    "Argo": [
+        ],
+        "Moya/ReactiveCocoa": [
 
-    ]
-  }
+        ]
+      }
+    },
+    {
+      "name": "RxSwift",
+      "source_files": "Pod/Classes/RxSwift/*.swift",
+      "dependencies": {
+        "Moya-Argo/Core": [
+
+        ],
+        "Moya/RxSwift": [
+
+        ]
+      }
+    }
+  ]
 }

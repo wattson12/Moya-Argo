@@ -29,16 +29,25 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'Moya-Argo' => ['Pod/Assets/*.png']
-  }
+  s.default_subspec = "Core"
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
-  s.dependency 'Moya'
-  s.dependency 'Moya/RxSwift'
-  s.dependency 'Moya/ReactiveCocoa'
-  s.dependency 'Argo'
+  s.subspec "Core" do |ss|
+    ss.source_files  = "Pod/Classes/*.swift"
+    ss.dependency "Moya"
+    ss.dependency "Argo"
+    ss.framework  = "Foundation"
+  end
+
+  s.subspec "ReactiveCocoa" do |ss|
+    ss.source_files = "Pod/Classes/ReactiveCocoa/*.swift"
+    ss.dependency "Moya-Argo/Core"
+    ss.dependency "Moya/ReactiveCocoa"
+  end
+
+  s.subspec "RxSwift" do |ss|
+    ss.source_files = "Pod/Classes/RxSwift/*.swift"
+    ss.dependency "Moya-Argo/Core"
+    ss.dependency "Moya/RxSwift"
+  end
+
 end

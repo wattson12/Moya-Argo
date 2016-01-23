@@ -1,14 +1,19 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
+def pod_libraries 
+  pod 'Moya-Argo', :path => "../"
+  pod 'Moya-Argo/ReactiveCocoa', :path => "../"
+  pod 'Moya-Argo/RxSwift', :path => "../"
+end
 target 'Moya-Argo_Example', :exclusive => true do
-  pod "Moya-Argo", :path => "../"
+ 
+  pod_libraries
+
   pod "Cartography"
   pod "Curry"
 end
 
 target 'Moya-Argo_Tests', :exclusive => true do
-  pod "Moya-Argo", :path => "../"
-
-  
+  pod_libraries
 end
