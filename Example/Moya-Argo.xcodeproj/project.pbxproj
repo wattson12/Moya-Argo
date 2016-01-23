@@ -12,6 +12,7 @@
 		22856A271C53AB5600A1B0C9 /* DemoBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22856A261C53AB5600A1B0C9 /* DemoBaseTableViewController.swift */; };
 		22856A291C53ADB300A1B0C9 /* DemoTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22856A281C53ADB300A1B0C9 /* DemoTarget.swift */; };
 		22856A2C1C53AEB300A1B0C9 /* PlainMoyaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22856A2B1C53AEB300A1B0C9 /* PlainMoyaTableViewController.swift */; };
+		22856A321C53B4E100A1B0C9 /* ArgoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22856A311C53B4E100A1B0C9 /* ArgoUser.swift */; };
 		3D5632AA7CAC128D662D7DB3 /* Pods_Moya_Argo_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C25AAFBC3E0DDEF00075849 /* Pods_Moya_Argo_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 		22856A261C53AB5600A1B0C9 /* DemoBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoBaseTableViewController.swift; sourceTree = "<group>"; };
 		22856A281C53ADB300A1B0C9 /* DemoTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTarget.swift; sourceTree = "<group>"; };
 		22856A2B1C53AEB300A1B0C9 /* PlainMoyaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainMoyaTableViewController.swift; sourceTree = "<group>"; };
+		22856A311C53B4E100A1B0C9 /* ArgoUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgoUser.swift; sourceTree = "<group>"; };
 		322FEC160051B7CA454C0A2E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		35443435AC9CB50DCA80A9A0 /* Pods-Moya-Argo_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-Argo_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-Argo_Example/Pods-Moya-Argo_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3B28C77796D4EEE87B9613E0 /* Pods-Moya-Argo_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-Argo_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-Argo_Tests/Pods-Moya-Argo_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 			name = "Plain Moya";
 			sourceTree = "<group>";
 		};
+		22856A301C53B4CE00A1B0C9 /* Argo Model */ = {
+			isa = PBXGroup;
+			children = (
+				22856A311C53B4E100A1B0C9 /* ArgoUser.swift */,
+			);
+			name = "Argo Model";
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +132,7 @@
 		607FACD21AFB9204008FA782 /* Example for Moya-Argo */ = {
 			isa = PBXGroup;
 			children = (
+				22856A301C53B4CE00A1B0C9 /* Argo Model */,
 				22856A211C53A94E00A1B0C9 /* Demo View Controller */,
 				22856A2A1C53AE9500A1B0C9 /* Plain Moya */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
@@ -397,6 +408,7 @@
 				22856A271C53AB5600A1B0C9 /* DemoBaseTableViewController.swift in Sources */,
 				22856A2C1C53AEB300A1B0C9 /* PlainMoyaTableViewController.swift in Sources */,
 				22856A291C53ADB300A1B0C9 /* DemoTarget.swift in Sources */,
+				22856A321C53B4E100A1B0C9 /* ArgoUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
