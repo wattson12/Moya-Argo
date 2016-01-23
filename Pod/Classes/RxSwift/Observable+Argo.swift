@@ -29,12 +29,7 @@ public extension ObservableType where E == Moya.Response {
                         decoded = decode(JSON)
                     }
                     
-                    switch decoded {
-                    case .Success(let mappedObject):
-                        observer.on(.Next(mappedObject))
-                    case .Failure(let error):
-                        observer.on(.Error(error))
-                    }
+                    observer.onForDecoded(decoded)
                     
                     observer.on(.Completed)
                     
@@ -46,6 +41,11 @@ public extension ObservableType where E == Moya.Response {
                 return AnonymousDisposable { }
             }
         }
+    }
+    
+    public func mapObjectWithRootKey<T: Decodable where T == T.DecodedType>(type: T.Type, rootKey: String) -> Observable<T> {
+     
+        return mapObject(type, rootKey: rootKey)
     }
     
     public func mapArray<T: Decodable where T == T.DecodedType>(type: T.Type, rootKey: String? = nil) -> Observable<[T]> {
@@ -64,12 +64,7 @@ public extension ObservableType where E == Moya.Response {
                         decoded = decode(JSON)
                     }
                     
-                    switch decoded {
-                    case .Success(let mappedObject):
-                        observer.on(.Next(mappedObject))
-                    case .Failure(let error):
-                        observer.on(.Error(error))
-                    }
+                    observer.onForDecoded(decoded)
                     
                     observer.on(.Completed)
                 } catch {
@@ -82,4 +77,23 @@ public extension ObservableType where E == Moya.Response {
         }
     }
     
+    public func mapArrayWithRootKey<T: Decodable where T == T.DecodedType>(type: T.Type, rootKey: String) -> Observable<[T]> {
+        
+        return mapArray(type, rootKey: rootKey)
+    }
+
+}
+
+extension AnyObserver {
+    
+    private func onForDecoded(decoded: Decoded<Element>) {
+        
+        switch decoded {
+        case .Success(let value):
+            self.on(.Next(value))
+        case .Failure(let error):
+            self.on(.Error(error))
+        }
+    }
+
 }
