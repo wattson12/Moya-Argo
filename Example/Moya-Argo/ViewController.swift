@@ -25,6 +25,8 @@ enum ExampleRow: Int {
         switch self {
         case .PlainMoya:
             return PlainMoyaTableViewController()
+        case .MoyaWithMapping:
+            return MoyaMappingTableViewController()
         default: break
         }
         
@@ -34,7 +36,10 @@ enum ExampleRow: Int {
     var exampleDescription: String {
         
         switch self {
-        case .PlainMoya: return "Plain Moya"
+        case .PlainMoya:
+            return "Plain Moya"
+        case .MoyaWithMapping:
+            return "Moya with mapping"
         default: return "not implemented"
         }
     }
