@@ -21,5 +21,10 @@
     "Moya-Argo": [
       "Pod/Assets/*.png"
     ]
+  },
+  "dependencies": {
+    "Moya": [
+
+    ]
   }
 }

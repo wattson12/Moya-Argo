@@ -1,6 +1,6 @@
 import UIKit
 import XCTest
-import Moya-Argo
+import Moya_Argo
 
 class Tests: XCTestCase {
     
