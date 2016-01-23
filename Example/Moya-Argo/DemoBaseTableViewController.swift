@@ -12,6 +12,7 @@ protocol UserType {
     
     var id: Int { get }
     var name: String { get }
+    var birthdate: String? { get }
 }
 
 class DemoBaseTableViewController: UITableViewController {
@@ -52,25 +53,22 @@ class DemoBaseTableViewController: UITableViewController {
         
         let alertClosure = { (user:UserType) in
             
-            let alertController = UIAlertController(title: "User", message: "ID: \(user.id)\nName: \(user.name)", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "User", message: "ID: \(user.id)\nBirthdate: \(user.birthdate!)", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { _ in alertController.dismissViewControllerAnimated(true, completion: nil) }))
             
             self.presentViewController(alertController, animated: true, completion: nil)
         }
         
-        self.fetchUserDetail(alertClosure)
+        self.fetchUserDetail(users[indexPath.row], showAlertClosure: alertClosure)
     }
 
-}
+    //MARK: methods which subclasses should override
 
-//methods which subclasses should override
-extension DemoBaseTableViewController {
-    
     func fetchUsers() {
         
     }
     
-    func fetchUserDetail(showAlertClosure: (UserType) -> ()) {
+    func fetchUserDetail(user: UserType, showAlertClosure: (UserType) -> ()) {
         
     }
     
