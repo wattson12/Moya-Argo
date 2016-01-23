@@ -39,5 +39,6 @@ Pod::Spec.new do |s|
   # s.dependency 'AFNetworking', '~> 2.3'
   s.dependency 'Moya'
   s.dependency 'Moya/RxSwift'
+  s.dependency 'Moya/ReactiveCocoa'
   s.dependency 'Argo'
 end

@@ -15,7 +15,7 @@ enum DemoTarget: TargetType {
     case User(userID: String)
     
     var baseURL: NSURL {
-        return NSURL(string: "http://localhost:1234")! //point to local host, this example will return sample data for everything
+        return NSURL(string: "https://localhost:1234")! //point to local host, this example will return sample data for everything
     }
     
     var path: String {

@@ -27,12 +27,11 @@ enum ExampleRow: Int {
             return PlainMoyaTableViewController()
         case .MoyaWithMapping:
             return MoyaMappingTableViewController()
+        case .MoyaWithReactiveCocoa:
+            return ReactiveCocoaMappingTableViewController()
         case .MoyaWithRxSwift:
             return RxSwiftMappingTableViewController()
-        default: break
         }
-        
-        return UIViewController()
     }
     
     var exampleDescription: String {
@@ -42,9 +41,10 @@ enum ExampleRow: Int {
             return "Plain Moya"
         case .MoyaWithMapping:
             return "Moya with mapping"
+        case .MoyaWithReactiveCocoa:
+            return "Moya with ReactiveCocoa"
         case .MoyaWithRxSwift:
             return "Moya with RxSwift"
-        default: return "not implemented"
         }
     }
 }
