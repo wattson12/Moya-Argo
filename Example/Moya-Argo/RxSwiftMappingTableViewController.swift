@@ -40,6 +40,16 @@ class RxSwiftMappingTableViewController: DemoBaseTableViewController {
     
     override func fetchUserDetail(user: UserType, showAlertClosure: (UserType) -> ()) {
         
+        provider
+            .request(.User(userID: user.id.description))
+            .mapObject(ArgoUser)
+            .observeOn(MainScheduler.instance)
+            .subscribeNext { user in
+            
+            showAlertClosure(user)
+            
+        }.addDisposableTo(disposeBag)
+        
     }
 
 }
