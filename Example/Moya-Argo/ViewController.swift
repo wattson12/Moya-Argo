@@ -27,6 +27,8 @@ enum ExampleRow: Int {
             return PlainMoyaTableViewController()
         case .MoyaWithMapping:
             return MoyaMappingTableViewController()
+        case .MoyaWithRxSwift:
+            return RxSwiftMappingTableViewController()
         default: break
         }
         
@@ -40,6 +42,8 @@ enum ExampleRow: Int {
             return "Plain Moya"
         case .MoyaWithMapping:
             return "Moya with mapping"
+        case .MoyaWithRxSwift:
+            return "Moya with RxSwift"
         default: return "not implemented"
         }
     }

@@ -91,6 +91,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Moya-Argo_Example/Moya.framework"
   install_framework "Pods-Moya-Argo_Example/Moya_Argo.framework"
   install_framework "Pods-Moya-Argo_Example/Result.framework"
+  install_framework "Pods-Moya-Argo_Example/RxSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Moya-Argo_Example/Alamofire.framework"
@@ -100,4 +101,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Moya-Argo_Example/Moya.framework"
   install_framework "Pods-Moya-Argo_Example/Moya_Argo.framework"
   install_framework "Pods-Moya-Argo_Example/Result.framework"
+  install_framework "Pods-Moya-Argo_Example/RxSwift.framework"
 fi
