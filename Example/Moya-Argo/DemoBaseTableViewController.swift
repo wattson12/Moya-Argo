@@ -8,19 +8,26 @@
 
 import UIKit
 
-protocol UserModelObject {
+protocol UserType {
     
+    var id: Int { get }
     var name: String { get }
 }
 
 class DemoBaseTableViewController: UITableViewController {
     
-    var users:[UserModelObject] = []
+    var users:[UserType] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "DemoUserCellReuseIdentifier")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.fetchUsers()
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,5 +44,32 @@ class DemoBaseTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let alertClosure = { (user:UserType) in
+            
+            let alertController = UIAlertController(title: "User", message: "ID: \(user.id)\nName: \(user.name)", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { _ in alertController.dismissViewControllerAnimated(true, completion: nil) }))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        
+        self.fetchUserDetail(alertClosure)
+    }
 
+}
+
+//methods which subclasses should override
+extension DemoBaseTableViewController {
+    
+    func fetchUsers() {
+        
+    }
+    
+    func fetchUserDetail(showAlertClosure: (UserType) -> ()) {
+        
+    }
+    
 }
