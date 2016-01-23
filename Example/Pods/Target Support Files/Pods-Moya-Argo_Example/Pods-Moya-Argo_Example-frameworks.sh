@@ -84,8 +84,16 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Moya-Argo_Example/Alamofire.framework"
+  install_framework "Pods-Moya-Argo_Example/Cartography.framework"
+  install_framework "Pods-Moya-Argo_Example/Moya.framework"
   install_framework "Pods-Moya-Argo_Example/Moya_Argo.framework"
+  install_framework "Pods-Moya-Argo_Example/Result.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Moya-Argo_Example/Alamofire.framework"
+  install_framework "Pods-Moya-Argo_Example/Cartography.framework"
+  install_framework "Pods-Moya-Argo_Example/Moya.framework"
   install_framework "Pods-Moya-Argo_Example/Moya_Argo.framework"
+  install_framework "Pods-Moya-Argo_Example/Result.framework"
 fi

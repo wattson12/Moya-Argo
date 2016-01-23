@@ -1,7 +1,17 @@
 PODS:
-  - Moya-Argo (0.1.0)
+  - Alamofire (3.1.5)
+  - Cartography (0.6.0)
+  - Moya (6.0.0):
+    - Moya/Core (= 6.0.0)
+  - Moya-Argo (0.1.0):
+    - Moya
+  - Moya/Core (6.0.0):
+    - Alamofire (~> 3.0)
+    - Result (~> 1.0)
+  - Result (1.0.1)
 
 DEPENDENCIES:
+  - Cartography
   - Moya-Argo (from `../`)
 
 EXTERNAL SOURCES:
@@ -9,6 +19,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Moya-Argo: 12ed0acecc5483eaa64f9d1e88c1eed009e52901
+  Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
+  Cartography: 70af183a248547694a8cfaa6b989cb7e04589985
+  Moya: 9bd9f20e6451c820c17ca40e1b3f6489757fa821
+  Moya-Argo: 36a475794a6400c54761259885bc8c010166d9d0
+  Result: caef80340451e1f07492fa1e89117f83613bce24
 
 COCOAPODS: 0.39.0
