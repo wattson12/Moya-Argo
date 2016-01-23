@@ -24,12 +24,7 @@ public extension Response {
                 decodedObject = decode(JSON)
             }
             
-            switch decodedObject {
-            case .Success(let mappedObject):
-                return mappedObject
-            case .Failure(let error):
-                throw error
-            }
+            return try decodedValue(decodedObject)
             
         } catch {
             
@@ -49,15 +44,20 @@ public extension Response {
                 decodedObject = decode(JSON)
             }
             
-            switch decodedObject {
-            case .Success(let mappedArray):
-                return mappedArray
-            case .Failure(let error):
-                throw error
-            }
+            return try decodedValue(decodedObject)
             
         } catch {
             
+            throw error
+        }
+    }
+    
+    private func decodedValue<T>(decoded: Decoded<T>) throws -> T {
+        
+        switch decoded {
+        case .Success(let value):
+            return value
+        case .Failure(let error):
             throw error
         }
     }
