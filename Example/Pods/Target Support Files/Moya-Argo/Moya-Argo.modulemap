@@ -1,0 +1,6 @@
+framework module Moya_Argo {
+  umbrella header "Moya-Argo-umbrella.h"
+
+  export *
+  module * { export * }
+}

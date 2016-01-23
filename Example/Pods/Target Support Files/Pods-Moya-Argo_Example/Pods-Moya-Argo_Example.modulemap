@@ -1,0 +1,6 @@
+framework module Pods_Moya_Argo_Example {
+  umbrella header "Pods-Moya-Argo_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

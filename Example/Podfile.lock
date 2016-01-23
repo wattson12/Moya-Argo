@@ -1,0 +1,14 @@
+PODS:
+  - Moya-Argo (0.1.0)
+
+DEPENDENCIES:
+  - Moya-Argo (from `../`)
+
+EXTERNAL SOURCES:
+  Moya-Argo:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Moya-Argo: 12ed0acecc5483eaa64f9d1e88c1eed009e52901
+
+COCOAPODS: 0.39.0

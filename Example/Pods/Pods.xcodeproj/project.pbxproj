@@ -1,0 +1,780 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		163AE5A1CC081F2DAF77BD375A14E884 /* Pods-Moya-Argo_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EC07AF254F4C6D926E951CC85C36BF4 /* Pods-Moya-Argo_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		165FACEFA1E1B8EB41BED261B3E6F229 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C78787D784135ADC7B4A72B6D9BCF4F /* ReplaceMe.swift */; };
+		35FDB8281A0C4ED5383B514F93F932C2 /* Moya-Argo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4F0ED92C72C3F318F4D6F116E49C3255 /* Moya-Argo.bundle */; };
+		512B5F3D37802EB97BB1FFB58E482E11 /* Pods-Moya-Argo_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F1737A38786C4546E32D9D8EA6F62 /* Pods-Moya-Argo_Tests-dummy.m */; };
+		529110ED42396761925B0778F86872C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		5BCAB96CE4819D1C9C040EDF64F92A88 /* Moya-Argo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 419B9DEDA683B64A4B9884FC07BEAE69 /* Moya-Argo-dummy.m */; };
+		5E20D55DD07C467B3E40330750B07D72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		6F664F14D8D3ADD1CB045DCAFBAF1120 /* Moya-Argo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B768AC54D5C078ACBB617A6C6FB1E049 /* Moya-Argo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72DEBECD27D847BC647CBD0B77167F19 /* Pods-Moya-Argo_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D74F9ED55830CED5FBB5F9D88F896D98 /* Pods-Moya-Argo_Example-dummy.m */; };
+		8F0BD2AC3C94DEAC44BD38DE84B70065 /* Pods-Moya-Argo_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 64EB468571DC9AD0650D209DD38E232D /* Pods-Moya-Argo_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C657E68BE71BDBCCD65752CC688D1C32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69615E2A9F4D63A6C02307BF741B979F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82541C74584B5880E44A4F9EF20009BC;
+			remoteInfo = "Moya-Argo";
+		};
+		B863A5D623C3FE7E05ACA2CA040969C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 220CA452FCBE0AD4662B615BBC782B72;
+			remoteInfo = "Moya-Argo-Moya-Argo";
+		};
+		EBAA6217E9AF12BB726DCCC09BACB17B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82541C74584B5880E44A4F9EF20009BC;
+			remoteInfo = "Moya-Argo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02F536DAF3026C9BF9D0AAC687B62691 /* Pods-Moya-Argo_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Moya-Argo_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		0369D02479069D2CB97E3D196EAF582A /* Pods-Moya-Argo_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Moya-Argo_Example.release.xcconfig"; sourceTree = "<group>"; };
+		11F5D63019E12866782210730E5EF4F3 /* Pods-Moya-Argo_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Moya-Argo_Example.modulemap"; sourceTree = "<group>"; };
+		13A33A4B0C2208DC97DA0DCA30011FF2 /* Pods-Moya-Argo_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Moya-Argo_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		15A63B65C652685B86BDB01660BDB99A /* Pods-Moya-Argo_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Moya-Argo_Tests.modulemap"; sourceTree = "<group>"; };
+		2147DAD8BCA2D697ACC2FAE0C731EBBA /* Moya-Argo-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Moya-Argo-prefix.pch"; sourceTree = "<group>"; };
+		23654978A929A0E8E3A318F91D671C55 /* Pods-Moya-Argo_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Moya-Argo_Example-frameworks.sh"; sourceTree = "<group>"; };
+		28206817F68E644B2F2626BEEAABBEB7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		297B2C14F6A6F50C8A143EB00516820A /* Moya_Argo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moya_Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		419B9DEDA683B64A4B9884FC07BEAE69 /* Moya-Argo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Moya-Argo-dummy.m"; sourceTree = "<group>"; };
+		4F0ED92C72C3F318F4D6F116E49C3255 /* Moya-Argo.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moya-Argo.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F3F1737A38786C4546E32D9D8EA6F62 /* Pods-Moya-Argo_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Moya-Argo_Tests-dummy.m"; sourceTree = "<group>"; };
+		54BABF68D2E443D60C715F4C8C155DAE /* Pods-Moya-Argo_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Moya-Argo_Example-resources.sh"; sourceTree = "<group>"; };
+		5C988B35CFE61ADAB2E2774D0904C2A8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64EB468571DC9AD0650D209DD38E232D /* Pods-Moya-Argo_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Moya-Argo_Example-umbrella.h"; sourceTree = "<group>"; };
+		6692B8753045D4FC3D09EB1DEF1B5853 /* Moya-Argo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Moya-Argo.modulemap"; sourceTree = "<group>"; };
+		6C78787D784135ADC7B4A72B6D9BCF4F /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
+		7146C522E047F0C06965F82FEAED2B15 /* Pods-Moya-Argo_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Moya-Argo_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		73196EF71548ABA5B9D0CF1248205622 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8689DB95F86DDDBD67ECE235513131CD /* Pods-Moya-Argo_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Moya-Argo_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		8B86DD4633B640EBB5E91467A3A6C253 /* Pods-Moya-Argo_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Moya-Argo_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		9EC07AF254F4C6D926E951CC85C36BF4 /* Pods-Moya-Argo_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Moya-Argo_Tests-umbrella.h"; sourceTree = "<group>"; };
+		B0FA77865663FE3CF5C771E889FDA060 /* Pods-Moya-Argo_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Moya-Argo_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B2546D8F85E0C6E1A2312FC6D23FDEF3 /* Pods_Moya_Argo_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_Argo_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B768AC54D5C078ACBB617A6C6FB1E049 /* Moya-Argo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Moya-Argo-umbrella.h"; sourceTree = "<group>"; };
+		B7EDFC489E915E69F35D4D598619F398 /* Moya-Argo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Moya-Argo.xcconfig"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BD13EED1407063CEB6AEBF0512436100 /* Pods-Moya-Argo_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Moya-Argo_Tests-resources.sh"; sourceTree = "<group>"; };
+		D74F9ED55830CED5FBB5F9D88F896D98 /* Pods-Moya-Argo_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Moya-Argo_Example-dummy.m"; sourceTree = "<group>"; };
+		D897D546CF48303C85D0F576BC4FB8A3 /* Pods_Moya_Argo_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_Argo_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E92D5A3BDDBD1D077C227EA17C8AFB77 /* Pods-Moya-Argo_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Moya-Argo_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		EF6F16567C31C2FDC87E80CC3E2F54CB /* Pods-Moya-Argo_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Moya-Argo_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F7028B3FD6EB6D7F399D7F5034051CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E20D55DD07C467B3E40330750B07D72 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB1DDB4F55066FE9B43C49A1F1C5B8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C657E68BE71BDBCCD65752CC688D1C32 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		833350DDCB2084ADFE7E8F69B4A602E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				529110ED42396761925B0778F86872C5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC80CE66FC786629F298E920222CB15D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06D6E0CAF5D2518EF764F67AF1C91D14 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				69FF8E6F2E9FFC612213A9BA7C6F234C /* Moya-Argo */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		2A5D2DC26B7A010E08C970A97F789DF6 /* Pods-Moya-Argo_Example */ = {
+			isa = PBXGroup;
+			children = (
+				5C988B35CFE61ADAB2E2774D0904C2A8 /* Info.plist */,
+				11F5D63019E12866782210730E5EF4F3 /* Pods-Moya-Argo_Example.modulemap */,
+				13A33A4B0C2208DC97DA0DCA30011FF2 /* Pods-Moya-Argo_Example-acknowledgements.markdown */,
+				8689DB95F86DDDBD67ECE235513131CD /* Pods-Moya-Argo_Example-acknowledgements.plist */,
+				D74F9ED55830CED5FBB5F9D88F896D98 /* Pods-Moya-Argo_Example-dummy.m */,
+				23654978A929A0E8E3A318F91D671C55 /* Pods-Moya-Argo_Example-frameworks.sh */,
+				54BABF68D2E443D60C715F4C8C155DAE /* Pods-Moya-Argo_Example-resources.sh */,
+				64EB468571DC9AD0650D209DD38E232D /* Pods-Moya-Argo_Example-umbrella.h */,
+				8B86DD4633B640EBB5E91467A3A6C253 /* Pods-Moya-Argo_Example.debug.xcconfig */,
+				0369D02479069D2CB97E3D196EAF582A /* Pods-Moya-Argo_Example.release.xcconfig */,
+			);
+			name = "Pods-Moya-Argo_Example";
+			path = "Target Support Files/Pods-Moya-Argo_Example";
+			sourceTree = "<group>";
+		};
+		4E7D7DEB19885E77332816975BF03EE8 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2A5D2DC26B7A010E08C970A97F789DF6 /* Pods-Moya-Argo_Example */,
+				E9B57D52134B87E993B0C9177E1456DF /* Pods-Moya-Argo_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		69FF8E6F2E9FFC612213A9BA7C6F234C /* Moya-Argo */ = {
+			isa = PBXGroup;
+			children = (
+				9FE8FA7FDC1D8513192A8D85B96B7411 /* Pod */,
+				72DF2581DFCCB428BBD534B999CA3B33 /* Support Files */,
+			);
+			name = "Moya-Argo";
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		72DF2581DFCCB428BBD534B999CA3B33 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				28206817F68E644B2F2626BEEAABBEB7 /* Info.plist */,
+				6692B8753045D4FC3D09EB1DEF1B5853 /* Moya-Argo.modulemap */,
+				B7EDFC489E915E69F35D4D598619F398 /* Moya-Argo.xcconfig */,
+				419B9DEDA683B64A4B9884FC07BEAE69 /* Moya-Argo-dummy.m */,
+				2147DAD8BCA2D697ACC2FAE0C731EBBA /* Moya-Argo-prefix.pch */,
+				B768AC54D5C078ACBB617A6C6FB1E049 /* Moya-Argo-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Moya-Argo";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				06D6E0CAF5D2518EF764F67AF1C91D14 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				90BCD1BA4485D92802EAC85EF57CCDAE /* Products */,
+				4E7D7DEB19885E77332816975BF03EE8 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		90BCD1BA4485D92802EAC85EF57CCDAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F0ED92C72C3F318F4D6F116E49C3255 /* Moya-Argo.bundle */,
+				297B2C14F6A6F50C8A143EB00516820A /* Moya_Argo.framework */,
+				B2546D8F85E0C6E1A2312FC6D23FDEF3 /* Pods_Moya_Argo_Example.framework */,
+				D897D546CF48303C85D0F576BC4FB8A3 /* Pods_Moya_Argo_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9FE8FA7FDC1D8513192A8D85B96B7411 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				D57ED3A5E1ECEC353F67540AFE0066C6 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D57ED3A5E1ECEC353F67540AFE0066C6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6C78787D784135ADC7B4A72B6D9BCF4F /* ReplaceMe.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E9B57D52134B87E993B0C9177E1456DF /* Pods-Moya-Argo_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				73196EF71548ABA5B9D0CF1248205622 /* Info.plist */,
+				15A63B65C652685B86BDB01660BDB99A /* Pods-Moya-Argo_Tests.modulemap */,
+				EF6F16567C31C2FDC87E80CC3E2F54CB /* Pods-Moya-Argo_Tests-acknowledgements.markdown */,
+				7146C522E047F0C06965F82FEAED2B15 /* Pods-Moya-Argo_Tests-acknowledgements.plist */,
+				4F3F1737A38786C4546E32D9D8EA6F62 /* Pods-Moya-Argo_Tests-dummy.m */,
+				E92D5A3BDDBD1D077C227EA17C8AFB77 /* Pods-Moya-Argo_Tests-frameworks.sh */,
+				BD13EED1407063CEB6AEBF0512436100 /* Pods-Moya-Argo_Tests-resources.sh */,
+				9EC07AF254F4C6D926E951CC85C36BF4 /* Pods-Moya-Argo_Tests-umbrella.h */,
+				02F536DAF3026C9BF9D0AAC687B62691 /* Pods-Moya-Argo_Tests.debug.xcconfig */,
+				B0FA77865663FE3CF5C771E889FDA060 /* Pods-Moya-Argo_Tests.release.xcconfig */,
+			);
+			name = "Pods-Moya-Argo_Tests";
+			path = "Target Support Files/Pods-Moya-Argo_Tests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8A18341DDA7620DD9F17D1E7016B9F1F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				163AE5A1CC081F2DAF77BD375A14E884 /* Pods-Moya-Argo_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC68ECF2E0370E69A79912A91A9186F5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F664F14D8D3ADD1CB045DCAFBAF1120 /* Moya-Argo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F00AACF5EB029051A3258462FD7D77CE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F0BD2AC3C94DEAC44BD38DE84B70065 /* Pods-Moya-Argo_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		220CA452FCBE0AD4662B615BBC782B72 /* Moya-Argo-Moya-Argo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCD75DD8F056BA478AF285B0165F6828 /* Build configuration list for PBXNativeTarget "Moya-Argo-Moya-Argo" */;
+			buildPhases = (
+				28F400DEEF637772FA29A3CA3197AFC5 /* Sources */,
+				EC80CE66FC786629F298E920222CB15D /* Frameworks */,
+				F5425D29631412D07704569EC247524D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Moya-Argo-Moya-Argo";
+			productName = "Moya-Argo-Moya-Argo";
+			productReference = 4F0ED92C72C3F318F4D6F116E49C3255 /* Moya-Argo.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		7DDA1386772437F475B29C7D17FE6754 /* Pods-Moya-Argo_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04EE375CE937DCD966FF9089F16D9C70 /* Build configuration list for PBXNativeTarget "Pods-Moya-Argo_Example" */;
+			buildPhases = (
+				AB1C26FFBFF24EAB7F8798F84489B13D /* Sources */,
+				833350DDCB2084ADFE7E8F69B4A602E7 /* Frameworks */,
+				F00AACF5EB029051A3258462FD7D77CE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6DB3844A5AC2EE273E7D7C531BA3534 /* PBXTargetDependency */,
+			);
+			name = "Pods-Moya-Argo_Example";
+			productName = "Pods-Moya-Argo_Example";
+			productReference = B2546D8F85E0C6E1A2312FC6D23FDEF3 /* Pods_Moya_Argo_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		82541C74584B5880E44A4F9EF20009BC /* Moya-Argo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C42F275174CC65A71307EBD35233D9B /* Build configuration list for PBXNativeTarget "Moya-Argo" */;
+			buildPhases = (
+				AA18C2A5BC421DE4E686B6E272DCA6D3 /* Sources */,
+				4F7028B3FD6EB6D7F399D7F5034051CE /* Frameworks */,
+				D41825F1667BC7CD5C8F33ECAAAFFCDF /* Resources */,
+				AC68ECF2E0370E69A79912A91A9186F5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17769896E7782798B2BC7571514DD248 /* PBXTargetDependency */,
+			);
+			name = "Moya-Argo";
+			productName = "Moya-Argo";
+			productReference = 297B2C14F6A6F50C8A143EB00516820A /* Moya_Argo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D1475E45251559976990579283AFA212 /* Pods-Moya-Argo_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38C699F6B826FAA8F5258BE43E5FAB92 /* Build configuration list for PBXNativeTarget "Pods-Moya-Argo_Tests" */;
+			buildPhases = (
+				D651854125F8E6FE8C8C2E1D4C71E1C8 /* Sources */,
+				5BB1DDB4F55066FE9B43C49A1F1C5B8C /* Frameworks */,
+				8A18341DDA7620DD9F17D1E7016B9F1F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5E6F339343F2F225717989D1A04FD61 /* PBXTargetDependency */,
+			);
+			name = "Pods-Moya-Argo_Tests";
+			productName = "Pods-Moya-Argo_Tests";
+			productReference = D897D546CF48303C85D0F576BC4FB8A3 /* Pods_Moya_Argo_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 90BCD1BA4485D92802EAC85EF57CCDAE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				82541C74584B5880E44A4F9EF20009BC /* Moya-Argo */,
+				220CA452FCBE0AD4662B615BBC782B72 /* Moya-Argo-Moya-Argo */,
+				7DDA1386772437F475B29C7D17FE6754 /* Pods-Moya-Argo_Example */,
+				D1475E45251559976990579283AFA212 /* Pods-Moya-Argo_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D41825F1667BC7CD5C8F33ECAAAFFCDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35FDB8281A0C4ED5383B514F93F932C2 /* Moya-Argo.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5425D29631412D07704569EC247524D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28F400DEEF637772FA29A3CA3197AFC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA18C2A5BC421DE4E686B6E272DCA6D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCAB96CE4819D1C9C040EDF64F92A88 /* Moya-Argo-dummy.m in Sources */,
+				165FACEFA1E1B8EB41BED261B3E6F229 /* ReplaceMe.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB1C26FFBFF24EAB7F8798F84489B13D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72DEBECD27D847BC647CBD0B77167F19 /* Pods-Moya-Argo_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D651854125F8E6FE8C8C2E1D4C71E1C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				512B5F3D37802EB97BB1FFB58E482E11 /* Pods-Moya-Argo_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		17769896E7782798B2BC7571514DD248 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Moya-Argo-Moya-Argo";
+			target = 220CA452FCBE0AD4662B615BBC782B72 /* Moya-Argo-Moya-Argo */;
+			targetProxy = B863A5D623C3FE7E05ACA2CA040969C4 /* PBXContainerItemProxy */;
+		};
+		B5E6F339343F2F225717989D1A04FD61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Moya-Argo";
+			target = 82541C74584B5880E44A4F9EF20009BC /* Moya-Argo */;
+			targetProxy = 69615E2A9F4D63A6C02307BF741B979F /* PBXContainerItemProxy */;
+		};
+		C6DB3844A5AC2EE273E7D7C531BA3534 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Moya-Argo";
+			target = 82541C74584B5880E44A4F9EF20009BC /* Moya-Argo */;
+			targetProxy = EBAA6217E9AF12BB726DCCC09BACB17B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00A1516CCB083FD8D55E61CC925F5359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0FA77865663FE3CF5C771E889FDA060 /* Pods-Moya-Argo_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Moya-Argo_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Moya-Argo_Tests/Pods-Moya-Argo_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Moya_Argo_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		09C99D1F9D84E565F439D6D7F11F0E68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7EDFC489E915E69F35D4D598619F398 /* Moya-Argo.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Moya-Argo/Moya-Argo-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Moya-Argo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Moya-Argo/Moya-Argo.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Moya_Argo;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0BF309FDC04E32F19FA61B65E3F6E380 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02F536DAF3026C9BF9D0AAC687B62691 /* Pods-Moya-Argo_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Moya-Argo_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Moya-Argo_Tests/Pods-Moya-Argo_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Moya_Argo_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18EBE08B88E23630D35D4CE9183AA313 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7EDFC489E915E69F35D4D598619F398 /* Moya-Argo.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = "Moya-Argo";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		552D02D5BA751AC2E8790D2811D496CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		63BECE722389B259AEE64585B5036E91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7EDFC489E915E69F35D4D598619F398 /* Moya-Argo.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = "Moya-Argo";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		AA4B073747CC8D6DF095DA4850B71509 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7EDFC489E915E69F35D4D598619F398 /* Moya-Argo.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Moya-Argo/Moya-Argo-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Moya-Argo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Moya-Argo/Moya-Argo.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Moya_Argo;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B33F93E5E2452A2D5EBAA89433358B0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0369D02479069D2CB97E3D196EAF582A /* Pods-Moya-Argo_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Moya-Argo_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Moya-Argo_Example/Pods-Moya-Argo_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Moya_Argo_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D2226C04606BF6A8B2673A1A1099F43C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B86DD4633B640EBB5E91467A3A6C253 /* Pods-Moya-Argo_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Moya-Argo_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Moya-Argo_Example/Pods-Moya-Argo_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Moya_Argo_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04EE375CE937DCD966FF9089F16D9C70 /* Build configuration list for PBXNativeTarget "Pods-Moya-Argo_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2226C04606BF6A8B2673A1A1099F43C /* Debug */,
+				B33F93E5E2452A2D5EBAA89433358B0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C42F275174CC65A71307EBD35233D9B /* Build configuration list for PBXNativeTarget "Moya-Argo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09C99D1F9D84E565F439D6D7F11F0E68 /* Debug */,
+				AA4B073747CC8D6DF095DA4850B71509 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				552D02D5BA751AC2E8790D2811D496CA /* Debug */,
+				10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38C699F6B826FAA8F5258BE43E5FAB92 /* Build configuration list for PBXNativeTarget "Pods-Moya-Argo_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BF309FDC04E32F19FA61B65E3F6E380 /* Debug */,
+				00A1516CCB083FD8D55E61CC925F5359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCD75DD8F056BA478AF285B0165F6828 /* Build configuration list for PBXNativeTarget "Moya-Argo-Moya-Argo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63BECE722389B259AEE64585B5036E91 /* Debug */,
+				18EBE08B88E23630D35D4CE9183AA313 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
