@@ -19,6 +19,7 @@
 		11E3D83A02022E1C5E5A350FE4538E8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121C9A021ED823C14328DE5F16898CB9 /* Foundation.framework */; };
 		15E3DA90C2B6749AF11D3E19ADEF3453 /* Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2D8E8B8BFF0F365AECA672F159062 /* Moya.swift */; };
 		2057FF930EF0F28E7AD548BF23BE78EE /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DF7A420A000BA710980E6A2F7D2DE /* Edge.swift */; };
+		224291161C53FC6600288E30 /* Observable+Argo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224291151C53FC6600288E30 /* Observable+Argo.swift */; };
 		2394EF3E010D188A1C89B95CA20A399A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C78FC39D2FD8FCF9F62D37275968630 /* Error.swift */; };
 		249CD3B4DDC7738617F406CC87F2587E /* FailureCoalescing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7290950E7435FE4FCF9A65C4EF8B3DC /* FailureCoalescing.swift */; };
 		28515F6FFAA0E2F9591A862D532F33AC /* Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6887D14FDB3CFF67D6B92DD4FBE18 /* Compound.swift */; };
@@ -268,6 +269,7 @@
 		1F809BE83DF21EC507FB5E35DFCE13B9 /* Moya.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Moya.xcconfig; sourceTree = "<group>"; };
 		2101C3B8B0C82320487AFFD0139AF71D /* Curry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Curry-umbrella.h"; sourceTree = "<group>"; };
 		2147DAD8BCA2D697ACC2FAE0C731EBBA /* Moya-Argo-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Moya-Argo-prefix.pch"; sourceTree = "<group>"; };
+		224291151C53FC6600288E30 /* Observable+Argo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Observable+Argo.swift"; path = "RxSwift/Observable+Argo.swift"; sourceTree = "<group>"; };
 		23654978A929A0E8E3A318F91D671C55 /* Pods-Moya-Argo_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Moya-Argo_Example-frameworks.sh"; sourceTree = "<group>"; };
 		241D49E0AD4457E1A72DCB60DE3685FE /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		251F177704E39578D214ABACFEE62630 /* Alternative.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alternative.swift; path = Argo/Types/Decoded/Alternative.swift; sourceTree = "<group>"; };
@@ -495,6 +497,14 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Cartography";
+			sourceTree = "<group>";
+		};
+		224291141C53FC3C00288E30 /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				224291151C53FC6600288E30 /* Observable+Argo.swift */,
+			);
+			name = RxSwift;
 			sourceTree = "<group>";
 		};
 		2A5D2DC26B7A010E08C970A97F789DF6 /* Pods-Moya-Argo_Example */ = {
@@ -780,6 +790,7 @@
 		CBC0B30E974CAA9BF5475B8AD53D686B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				224291141C53FC3C00288E30 /* RxSwift */,
 				B26DBD412DA1D46F31B706E3CA50F9C9 /* ReplaceMe.swift */,
 				07FF41CEE260D7DCC721E3B759A16990 /* Response+Argo.swift */,
 			);
@@ -1267,6 +1278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C802A63B79F53DEDA1885771CD086C15 /* Moya-Argo-dummy.m in Sources */,
+				224291161C53FC6600288E30 /* Observable+Argo.swift in Sources */,
 				2E06DB5454D370DF7DFD8F675183226A /* ReplaceMe.swift in Sources */,
 				60BA50D46AB71584A89D4E7E37468151 /* Response+Argo.swift in Sources */,
 			);
