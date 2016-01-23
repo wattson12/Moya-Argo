@@ -21,6 +21,8 @@ class DemoBaseTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor.whiteColor()
+        
         self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "DemoUserCellReuseIdentifier")
     }
     

@@ -21,6 +21,13 @@ enum ExampleRow: Int {
     }
     
     var viewControllerForExample: UIViewController {
+        
+        switch self {
+        case .PlainMoya:
+            return PlainMoyaTableViewController()
+        default: break
+        }
+        
         return UIViewController()
     }
     
