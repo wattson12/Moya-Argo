@@ -27,7 +27,8 @@ class RxSwiftMappingTableViewController: DemoBaseTableViewController {
     
         provider
             .request(.AllUsers)
-            .mapArray(ArgoUser.self, rootKey: "users")
+//            .mapArray(ArgoUser.self, rootKey: "users")
+            .mapUsers()
             .observeOn(MainScheduler.instance)
             .subscribeNext { users in
             
@@ -42,7 +43,8 @@ class RxSwiftMappingTableViewController: DemoBaseTableViewController {
         
         provider
             .request(.User(userID: user.id.description))
-            .mapObject(ArgoUser)
+//            .mapObject(ArgoUser)
+            .mapUser()
             .observeOn(MainScheduler.instance)
             .subscribeNext { user in
             
