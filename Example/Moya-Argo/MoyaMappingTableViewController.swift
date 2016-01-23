@@ -29,7 +29,7 @@ class MoyaMappingTableViewController: DemoBaseTableViewController {
             if case let .Success(response) = result {
                 
                 do {
-                    let argoUsers:[ArgoUser] = try response.mapArray()
+                    let argoUsers:[ArgoUser] = try response.mapArray("users")
                     
                     self.users = argoUsers.map { $0 }
                     
