@@ -24,7 +24,12 @@ class ReactiveCocoaMappingTableViewController: DemoBaseTableViewController {
     //MARK: Overrides
     override func fetchUsers() {
         
-        provider.request(.AllUsers).mapArray(ArgoUser.self, rootKey: "users").observeOn(UIScheduler()).start { event in
+        provider
+            .request(.AllUsers)
+//            .mapArray(ArgoUser.self, rootKey: "users")
+            .mapUsers()
+            .observeOn(UIScheduler())
+            .start { event in
 
             switch event {
             case .Next(let users):
@@ -39,7 +44,12 @@ class ReactiveCocoaMappingTableViewController: DemoBaseTableViewController {
     
     override func fetchUserDetail(user: UserType, showAlertClosure: (UserType) -> ()) {
         
-        provider.request(.User(userID: user.id.description)).mapObject(ArgoUser).observeOn(UIScheduler()).start { event in
+        provider
+            .request(.User(userID: user.id.description))
+//            .mapObject(ArgoUser)
+            .mapUser()
+            .observeOn(UIScheduler())
+            .start { event in
             
             switch event {
             case .Next(let user):
