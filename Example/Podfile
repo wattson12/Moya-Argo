@@ -4,6 +4,7 @@ use_frameworks!
 target 'Moya-Argo_Example', :exclusive => true do
   pod "Moya-Argo", :path => "../"
   pod "Cartography"
+  pod "Curry"
 end
 
 target 'Moya-Argo_Tests', :exclusive => true do
