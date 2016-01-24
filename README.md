@@ -107,7 +107,7 @@ The example project shows some example methods which can be used to improve the 
 Issues / Pull Requests / Feedback welcome 
 
 ## Disclaimer
-I'm using this in development of an upcoming app so I'm confident of its quality, but I am using the RxSwift extensions, so that is where most of my real world testing is based. There are unit tests for all extensions though. 
+I'm using this in development of an upcoming app so I'm confident of its quality, but I am using the RxSwift extensions, so that is where most of my real world testing is based. Tests for all extensions are coming soon. 
 
 
 ## Author
