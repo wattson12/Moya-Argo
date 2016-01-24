@@ -469,7 +469,6 @@
 		F99360EC2ECD78F20414ECA0F1AB7414 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD5705F802C424A12704AED6766A1E /* Event.swift */; };
 		FA556CCD9D8F4FCAF7BD6A5E35BE37A6 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0BA0C1161AA98B0FCCAD4077DB5A34 /* Empty.swift */; };
 		FA6421555DF5351FCC13D19D4AAAE255 /* MainScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27BE5388CBC45BDD8F8972EEB2CB10 /* MainScheduler.swift */; };
-		FB3A118CB83C515C345102698E101D41 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0E495194356E30A6B3E03FBA46A91B /* ReplaceMe.swift */; };
 		FB7CF57ED49D6012794304BE0CF273D1 /* RACScheduler+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = 8783A630479CBD105833F3B3BCD5C310 /* RACScheduler+Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC14480CECE872865A9C6E584F886DA3 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09C1F1A0E422784ABEFF85133D33341 /* Request.swift */; };
 		FEF0D7653948988B804226129471C1EC /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20967CA572158F5ADE12B06BE9110873 /* Stream.swift */; };
@@ -856,7 +855,6 @@
 		6B60C9E4F3FD31C295C34B8C39F169F0 /* RACSubscriptingAssignmentTrampoline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RACSubscriptingAssignmentTrampoline.h; path = "ReactiveCocoa/Objective-C/RACSubscriptingAssignmentTrampoline.h"; sourceTree = "<group>"; };
 		6BA3CE6151AC062A3CF7F0B010A94437 /* Moya-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Moya-umbrella.h"; sourceTree = "<group>"; };
 		6BEA42D54394D6ED11C55EBEAC77D39A /* TailRecursiveSink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TailRecursiveSink.swift; path = RxSwift/Observers/TailRecursiveSink.swift; sourceTree = "<group>"; };
-		6C0E495194356E30A6B3E03FBA46A91B /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		6C8920B5880AC39B63FEC92B8CE2215F /* Signal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Signal.swift; path = ReactiveCocoa/Swift/Signal.swift; sourceTree = "<group>"; };
 		6D8D9712194F2927A5812E5C283F0616 /* RACGroupedSignal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RACGroupedSignal.h; path = "ReactiveCocoa/Objective-C/RACGroupedSignal.h"; sourceTree = "<group>"; };
 		6DB23900D0C150B054069067A4A5797E /* Cartography-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cartography-prefix.pch"; sourceTree = "<group>"; };
@@ -1360,7 +1358,6 @@
 		2B1FDE9F6D1F5431436182EC886A5B14 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6C0E495194356E30A6B3E03FBA46A91B /* ReplaceMe.swift */,
 				1190C9CC6797211DBDF1F16594F2656D /* Response+Argo.swift */,
 			);
 			path = Classes;
@@ -2644,7 +2641,6 @@
 			files = (
 				4C29C209281BE1EA37B24A43AD7C7ED0 /* Moya-Argo-dummy.m in Sources */,
 				AFBDB2A030630700452D3939E551BFF0 /* Observable+Argo.swift in Sources */,
-				FB3A118CB83C515C345102698E101D41 /* ReplaceMe.swift in Sources */,
 				3118BF4294A8847407669E22807B18BE /* Response+Argo.swift in Sources */,
 				3825C1563F58CA614C83AE2025B00D0B /* SignalProducer+Argo.swift in Sources */,
 			);
