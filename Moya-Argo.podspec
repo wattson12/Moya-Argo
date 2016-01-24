@@ -20,10 +20,10 @@ Pod::Spec.new do |s|
   s.default_subspec = "Core"
 
   s.subspec "Core" do |ss|
-    ss.source_files  = "Pod/Classes/*.swift"
+    ss.source_files = "Pod/Classes/*.swift"
     ss.dependency "Moya"
     ss.dependency "Argo"
-    ss.framework  = "Foundation"
+    ss.framework = "Foundation"
   end
 
   s.subspec "ReactiveCocoa" do |ss|
