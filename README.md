@@ -51,54 +51,53 @@ If you have a request setup with Moya already, you can use the `mapObject` and `
 
 ```swift
 provider
-            .request(.AllUsers) { result in
+    .request(.AllUsers) { result in
             
-            if case let .Success(response) = result {
-                
-                do {
-                    
-                    let argoUsers:[ArgoUser] = try response.mapArrayWithRootKey("users")
-                    print("mapped to users: \(argoUsers)")
-                } catch {
-                    print("Error mapping useres: \(error)")
-                }
+        if case let .Success(response) = result {
+        
+            do {
+                let argoUsers:[ArgoUser] = try response.mapArrayWithRootKey("users")
+                print("mapped to users: \(argoUsers)")
+            } catch {
+                print("Error mapping useres: \(error)")
             }
         }
+    }
 ```
 
 ### RxSwift
 If you are using the Moya RxSwift extensions, there is an extension on Observable which will simplify the mapping:
 ```swift
 provider
-            .request(.AllUsers)
-            .mapArray(ArgoUser.self, rootKey: "users")
-            .observeOn(MainScheduler.instance)
-            .subscribeNext { users in
+    .request(.AllUsers)
+    .mapArray(ArgoUser.self, rootKey: "users")
+    .observeOn(MainScheduler.instance)
+    .subscribeNext { users in
             
-            self.users = users
-            self.tableView.reloadData()
+        self.users = users
+        self.tableView.reloadData()
             
-        }.addDisposableTo(disposeBag)
+    }.addDisposableTo(disposeBag)
 ```
 
 ### ReactiveCocoa
 Or if ReactiveCocoa is more your style, there are similar extensions on SignalProducer:
 ```swift
 provider
-            .request(.AllUsers)
-            .mapArray(ArgoUser.self, rootKey: "users")
-            .observeOn(UIScheduler())
-            .start { event in
+    .request(.AllUsers)
+    .mapArray(ArgoUser.self, rootKey: "users")
+    .observeOn(UIScheduler())
+    .start { event in
 
-            switch event {
-            case .Next(let users):
-                self.users = users
-                self.tableView.reloadData()
-            case .Failed(let error):
-                print("error: \(error)")
-            default: break
-            }
+        switch event {
+        case .Next(let users):
+            self.users = users
+            self.tableView.reloadData()
+        case .Failed(let error):
+            print("error: \(error)")
+        default: break
         }
+    }
 ```
 
 ### Helpers
