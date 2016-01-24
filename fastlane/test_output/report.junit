@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites tests='2' failures='0'>
+  <testsuite name='Moya_Argo_Tests.Tests' tests='2' failures='0'>
+    <testcase classname='Moya_Argo_Tests.Tests' name='testExample' time='0.003'/>
+    <testcase classname='Moya_Argo_Tests.Tests' name='testPerformanceExample' time='0.351'/>
+  </testsuite>
+</testsuites>
