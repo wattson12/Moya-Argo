@@ -3,7 +3,7 @@
 //  Moya-Argo
 //
 //  Created by Sam Watts on 23/01/2016.
-//  Copyright © 2016 CocoaPods. All rights reserved.
+//  Copyright © 2016 Sam Watts. All rights reserved.
 //
 
 import UIKit
