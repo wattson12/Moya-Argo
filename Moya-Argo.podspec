@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
   Extensions to simplify mapping Moya responses using Argo
-                       DESC
+  DESC
 
   s.homepage         = "https://github.com/wattson12/Moya-Argo"
   s.license          = 'MIT'
@@ -14,16 +14,20 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/wattson12/Moya-Argo.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/wattson12'
 
-  s.platform     = :ios, '8.0'
+  s.ios.deployment_target = '8.0'
+  s.osx.deployment_target = '10.9'
+  s.watchos.deployment_target = '2.0'
+  s.tvos.deployment_target = '9.0'
+
   s.requires_arc = true
 
   s.default_subspec = "Core"
 
   s.subspec "Core" do |ss|
-    ss.source_files  = "Pod/Classes/*.swift"
+    ss.source_files = "Pod/Classes/*.swift"
     ss.dependency "Moya"
     ss.dependency "Argo"
-    ss.framework  = "Foundation"
+    ss.framework = "Foundation"
   end
 
   s.subspec "ReactiveCocoa" do |ss|
