@@ -6,9 +6,15 @@ PODS:
   - Moya (6.0.0):
     - Moya/Core (= 6.0.0)
   - Moya-Argo (0.1.0):
+    - Moya-Argo/Core (= 0.1.0)
+  - Moya-Argo/Core (0.1.0):
     - Argo
     - Moya
+  - Moya-Argo/ReactiveCocoa (0.1.0):
+    - Moya-Argo/Core
     - Moya/ReactiveCocoa
+  - Moya-Argo/RxSwift (0.1.0):
+    - Moya-Argo/Core
     - Moya/RxSwift
   - Moya/Core (6.0.0):
     - Alamofire (~> 3.0)
@@ -37,6 +43,8 @@ DEPENDENCIES:
   - Cartography
   - Curry
   - Moya-Argo (from `../`)
+  - Moya-Argo/ReactiveCocoa (from `../`)
+  - Moya-Argo/RxSwift (from `../`)
 
 EXTERNAL SOURCES:
   Moya-Argo:
@@ -48,7 +56,7 @@ SPEC CHECKSUMS:
   Cartography: 70af183a248547694a8cfaa6b989cb7e04589985
   Curry: 294533187eedbf52db60a1e70c29b4f5c9f621c0
   Moya: 9bd9f20e6451c820c17ca40e1b3f6489757fa821
-  Moya-Argo: 6123b135c7832c4286f94d01ef67f5f4ffea1bec
+  Moya-Argo: 06480ef8f21eb636f852cd26e1840a2e9c3c1a2e
   ReactiveCocoa: 2b0f654beb7642b82cfd3fdb845205ae9889422c
   Result: caef80340451e1f07492fa1e89117f83613bce24
   RxSwift: d83246efa6f16c50c143bec134649d045498f601
