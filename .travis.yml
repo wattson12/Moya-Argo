@@ -4,11 +4,11 @@
 
 rvm: 2.2.2
 language: objective-c
-# cache: cocoapods
+cache: cocoapods
 podfile: Example/Podfile
 before_install:
 - gem install cocoapods -v '0.39.0'
-# - pod install --project-directory=Example
+- pod install --project-directory=Example
 script:
 - scan
 - pod lib lint
