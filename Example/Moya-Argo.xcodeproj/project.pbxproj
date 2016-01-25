@@ -19,13 +19,13 @@
 		22856A321C53B4E100A1B0C9 /* ArgoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22856A311C53B4E100A1B0C9 /* ArgoUser.swift */; };
 		22856A351C53B61B00A1B0C9 /* MoyaMappingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22856A341C53B61B00A1B0C9 /* MoyaMappingTableViewController.swift */; };
 		22856A391C53C07700A1B0C9 /* ExampleMappingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22856A381C53C07700A1B0C9 /* ExampleMappingHelper.swift */; };
+		22A39CF21C56AAA7009F8001 /* MoyaMappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A39CF11C56AAA7009F8001 /* MoyaMappingTests.swift */; };
 		3D5632AA7CAC128D662D7DB3 /* Pods_Moya_Argo_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C25AAFBC3E0DDEF00075849 /* Pods_Moya_Argo_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		B9CA29B3904EE62A1612BA17 /* Pods_Moya_Argo_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBD0FF6A00A12C36932E995 /* Pods_Moya_Argo_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +52,7 @@
 		22856A311C53B4E100A1B0C9 /* ArgoUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgoUser.swift; sourceTree = "<group>"; };
 		22856A341C53B61B00A1B0C9 /* MoyaMappingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaMappingTableViewController.swift; sourceTree = "<group>"; };
 		22856A381C53C07700A1B0C9 /* ExampleMappingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleMappingHelper.swift; sourceTree = "<group>"; };
+		22A39CF11C56AAA7009F8001 /* MoyaMappingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaMappingTests.swift; sourceTree = "<group>"; };
 		322FEC160051B7CA454C0A2E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		35443435AC9CB50DCA80A9A0 /* Pods-Moya-Argo_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-Argo_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-Argo_Example/Pods-Moya-Argo_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3B28C77796D4EEE87B9613E0 /* Pods-Moya-Argo_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-Argo_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-Argo_Tests/Pods-Moya-Argo_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Moya-Argo_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moya-Argo_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		7C25AAFBC3E0DDEF00075849 /* Pods_Moya_Argo_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_Argo_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08434DB914101B2BD984ABB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DBBD0FF6A00A12C36932E995 /* Pods_Moya_Argo_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_Argo_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,8 +199,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				22A39CF11C56AAA7009F8001 /* MoyaMappingTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -464,7 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				22A39CF21C56AAA7009F8001 /* MoyaMappingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
