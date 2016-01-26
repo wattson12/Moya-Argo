@@ -216,31 +216,181 @@ class MoyaMappingTests: XCTestCase {
     
     //.ValidArrayWithRootKey
     func testSuccessfulDecodingOfArrayWithRootKey() {
-        XCTFail("stubbed")
+        
+        let expectation = expectationWithDescription("provider callback run")
+        self.provider.request(.ValidArrayWithRootKey) { response in
+            
+            switch response {
+            case .Failure:
+                XCTFail("should not get a failure here")
+            case .Success(let response):
+                
+                defer {
+                    expectation.fulfill()
+                }
+                
+                do {
+                    let mappedArray:[TestModelClass] = try response.mapArray("root_key")
+                    XCTAssertEqual(mappedArray.count, 1)
+                } catch {
+                    XCTFail("wrong error: \(error)")
+                }
+            }
+        }
+        
+        waitForExpectationsWithTimeout(0.1) { error in
+            XCTAssertNil(error)
+        }
     }
     
     //.ArrayWithInvalidObjectWithRootKey
     func testFailedDecodingOfArrayWithRootKeyThrowsError() {
-        XCTFail("stubbed")
+        
+        let expectation = expectationWithDescription("provider callback run")
+        self.provider.request(.ArrayWithInvalidObjectWithRootKey) { response in
+            
+            switch response {
+            case .Failure:
+                XCTFail("should not get a failure here")
+            case .Success(let response):
+                
+                defer {
+                    expectation.fulfill()
+                }
+                
+                do {
+                    let _:[TestModelClass] = try response.mapArray("root_key")
+                    XCTFail("exception should be thrown")
+                } catch DecodeError.MissingKey {
+                    XCTAssertTrue(true)
+                } catch {
+                    XCTFail("wrong error: \(error)")
+                }
+            }
+        }
+        
+        waitForExpectationsWithTimeout(0.1) { error in
+            XCTAssertNil(error)
+        }
     }
     
     //.ValidObjectWithoutRootKey
     func testSuccessfulMappingWithoutRootKey() {
-        XCTFail("stubbed")
+        
+        let expectation = expectationWithDescription("provider callback run")
+        self.provider.request(.ValidObjectWithoutRootKey) { response in
+            
+            switch response {
+            case .Failure:
+                XCTFail("should not get a failure here")
+            case .Success(let response):
+                
+                defer {
+                    expectation.fulfill()
+                }
+                
+                do {
+                    let mapped:TestModelClass = try response.mapObject()
+                    XCTAssertEqual(mapped.id, "test_id")
+                } catch {
+                    XCTFail("should not get a failure here")
+                }
+            }
+        }
+        
+        waitForExpectationsWithTimeout(0.1) { error in
+            XCTAssertNil(error)
+        }
     }
     
     //.MissingIDWithoutRootKey
     func testFailedDecodingOfObjectWithoutRootKey() {
-        XCTFail("stubbed")
+        
+        let expectation = expectationWithDescription("provider callback run")
+        self.provider.request(.MissingIDWithoutRootKey) { response in
+            
+            switch response {
+            case .Failure:
+                XCTFail("should not get a failure here")
+            case .Success(let response):
+                
+                defer {
+                    expectation.fulfill()
+                }
+                
+                do {
+                    let _:TestModelClass = try response.mapObject()
+                    XCTFail("exception should be thrown")
+                } catch DecodeError.MissingKey(let missingKey) {
+                    XCTAssertEqual(missingKey, "id")
+                } catch {
+                    XCTFail("wrong error: \(error)")
+                }
+            }
+        }
+        
+        waitForExpectationsWithTimeout(0.1) { error in
+            XCTAssertNil(error)
+        }
     }
     
     //.ValidArrayWithoutRootKey
     func testSuccessfulMappingOfArrayWithoutRootKey() {
-        XCTFail("stubbed")
+        
+        let expectation = expectationWithDescription("provider callback run")
+        self.provider.request(.ValidArrayWithoutRootKey) { response in
+            
+            switch response {
+            case .Failure:
+                XCTFail("should not get a failure here")
+            case .Success(let response):
+                
+                defer {
+                    expectation.fulfill()
+                }
+                
+                do {
+                    let mappedArray:[TestModelClass] = try response.mapArray()
+                    XCTAssertEqual(mappedArray.count, 1)
+                } catch {
+                    XCTFail("wrong error: \(error)")
+                }
+            }
+        }
+        
+        waitForExpectationsWithTimeout(0.1) { error in
+            XCTAssertNil(error)
+        }
     }
     
     //.ArrayWithInvalidObjectWithoutRootKey
     func testFailedDecodingOfArrayWithoutRootKey() {
-        XCTFail("stubbed")
+        
+        let expectation = expectationWithDescription("provider callback run")
+        self.provider.request(.ArrayWithInvalidObjectWithRootKey) { response in
+            
+            switch response {
+            case .Failure:
+                XCTFail("should not get a failure here")
+            case .Success(let response):
+                
+                defer {
+                    expectation.fulfill()
+                }
+                
+                do {
+                    let _:[TestModelClass] = try response.mapArray()
+                    XCTFail("exception should be thrown")
+                } catch DecodeError.TypeMismatch {
+                    XCTAssertTrue(true)
+                } catch {
+                    XCTFail("wrong error: \(error)")
+                }
+            }
+        }
+        
+        waitForExpectationsWithTimeout(0.1) { error in
+            XCTAssertNil(error)
+        }
     }
 }
