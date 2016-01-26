@@ -10,21 +10,6 @@ import XCTest
 import Moya_Argo
 import Moya
 import Argo
-import Curry
-
-class TestModelClass: Decodable {
-    
-    let id: String
-    
-    required init(id: String) {
-        self.id = id
-    }
-    
-    static func decode(json: JSON) -> Decoded<TestModelClass> {
-        return curry(self.init)
-            <^> json <| "id"
-    }
-}
 
 enum MappingTestTarget: TargetType {
     

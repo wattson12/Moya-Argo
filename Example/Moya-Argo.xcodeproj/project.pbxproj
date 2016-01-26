@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220A72FF1C5805B70038AE9F /* TestModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A72FE1C5805B70038AE9F /* TestModelClass.swift */; };
 		224291191C53FDDE00288E30 /* RxSwiftMappingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224291181C53FDDE00288E30 /* RxSwiftMappingTableViewController.swift */; };
 		2242911B1C5401D500288E30 /* ExampleRxSwiftMappingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2242911A1C5401D500288E30 /* ExampleRxSwiftMappingHelper.swift */; };
 		224291211C54089100288E30 /* ReactiveCocoaMappingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224291201C54089000288E30 /* ReactiveCocoaMappingTableViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		220A72FE1C5805B70038AE9F /* TestModelClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModelClass.swift; sourceTree = "<group>"; };
 		224291181C53FDDE00288E30 /* RxSwiftMappingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftMappingTableViewController.swift; sourceTree = "<group>"; };
 		2242911A1C5401D500288E30 /* ExampleRxSwiftMappingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleRxSwiftMappingHelper.swift; sourceTree = "<group>"; };
 		224291201C54089000288E30 /* ReactiveCocoaMappingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaMappingTableViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				22A39CF11C56AAA7009F8001 /* MoyaMappingTests.swift */,
+				220A72FE1C5805B70038AE9F /* TestModelClass.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220A72FF1C5805B70038AE9F /* TestModelClass.swift in Sources */,
 				22A39CF21C56AAA7009F8001 /* MoyaMappingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
