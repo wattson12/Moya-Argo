@@ -25,6 +25,7 @@ class RxSwiftMappingTableViewController: DemoBaseTableViewController {
     //MARK: Overrides
     override func fetchUsers() {
     
+        //example using convenience method (original commented out)
         provider
             .request(.AllUsers)
 //            .mapArray(ArgoUser.self, rootKey: "users")
@@ -37,6 +38,19 @@ class RxSwiftMappingTableViewController: DemoBaseTableViewController {
             self.tableView.reloadData()
             
         }.addDisposableTo(disposeBag)
+        
+        // example showing map with type inference (type of users in subscribe next closure required)
+//        provider
+//            .request(.AllUsers)
+//            .mapArray("users")
+//            .observeOn(MainScheduler.instance)
+//            .subscribeNext { (users:[ArgoUser]) in
+//                
+//                self.users = users.map { $0 }
+//                
+//                self.tableView.reloadData()
+//                
+//            }.addDisposableTo(disposeBag)
     }
     
     override func fetchUserDetail(user: UserType, showAlertClosure: (UserType) -> ()) {
