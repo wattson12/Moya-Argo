@@ -35,7 +35,7 @@ public extension SignalProducerType where Value == Moya.Response, Error == Moya.
         }
     }
     
-    // convenience for mapping object without passing in decodable type as argument
+    /// convenience for mapping object without passing in decodable type as argument
     public func mapObject<T:Decodable where T == T.DecodedType>(rootKey: String? = nil) -> SignalProducer<T, Error> {
         return mapObject(T.self, rootKey: rootKey)
     }
@@ -62,7 +62,7 @@ public extension SignalProducerType where Value == Moya.Response, Error == Moya.
         }
     }
     
-    // Convenience method for mapping array without passing in decodable type as argument
+    /// Convenience method for mapping array without passing in decodable type as argument
     public func mapArray<T:Decodable where T == T.DecodedType>(rootKey: String? = nil) -> SignalProducer<[T], Error> {
         return mapArray(T.self, rootKey: rootKey)
     }
