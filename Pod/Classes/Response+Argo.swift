@@ -17,14 +17,7 @@ public extension Response {
         do {
             let JSON = try self.mapJSON()
             
-            let decodedObject:Decoded<T>
-            if let rootKey = rootKey {
-                decodedObject = decodeWithRootKey(rootKey, JSON)
-            } else {
-                decodedObject = decode(JSON)
-            }
-            
-            return try decodedValue(decodedObject)
+            return try decodedValue(decodedObject(rootKey, JSON: JSON))
             
         } catch {
             
@@ -42,14 +35,7 @@ public extension Response {
         do {
             let JSON = try self.mapJSON()
             
-            let decodedObject:Decoded<[T]>
-            if let rootKey = rootKey {
-                decodedObject = decodeWithRootKey(rootKey, JSON)
-            } else {
-                decodedObject = decode(JSON)
-            }
-            
-            return try decodedValue(decodedObject)
+            return try decodedValue(decodedArray(rootKey, JSON: JSON))
             
         } catch {
             
@@ -69,6 +55,22 @@ public extension Response {
             return value
         case .Failure(let error):
             throw error
+        }
+    }
+    
+    private func decodedObject<T:Decodable where T == T.DecodedType>(rootKey: String?, JSON: AnyObject) -> Decoded<T> {
+        if let rootKey = rootKey {
+            return decodeWithRootKey(rootKey, JSON)
+        } else {
+            return decode(JSON)
+        }
+    }
+    
+    private func decodedArray<T:Decodable where T == T.DecodedType>(rootKey: String?, JSON: AnyObject) -> Decoded<[T]> {
+        if let rootKey = rootKey {
+            return decodeWithRootKey(rootKey, JSON)
+        } else {
+            return decode(JSON)
         }
     }
 }
