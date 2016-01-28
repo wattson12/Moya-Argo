@@ -21,12 +21,7 @@ public extension ObservableType where E == Moya.Response {
                 
                 switch event {
                 case .Next(let response):
-                    do {
-                        let mappedObject:T = try response.mapObject(rootKey)
-                        observer.onNext(mappedObject)
-                    } catch {
-                        observer.onError(error)
-                    }
+                    observer.onNextOrError { try response.mapObject(rootKey) }
                 case .Error(let error):
                     observer.onError(error)
                 case .Completed:
@@ -48,12 +43,7 @@ public extension ObservableType where E == Moya.Response {
                 
                 switch event {
                 case .Next(let response):
-                    do {
-                        let mappedObject:[T] = try response.mapArray(rootKey)
-                        observer.onNext(mappedObject)
-                    } catch {
-                        observer.onError(error)
-                    }
+                    observer.onNextOrError { try response.mapArray(rootKey) }
                 case .Error(let error):
                     observer.onError(error)
                 case .Completed:
@@ -67,4 +57,16 @@ public extension ObservableType where E == Moya.Response {
         return mapArray(type, rootKey: rootKey)
     }
 
+}
+
+private extension AnyObserver {
+    
+    private func onNextOrError(function: () throws -> Element) {
+        do {
+            let value = try function()
+            self.onNext(value)
+        } catch {
+            self.onError(error)
+        }
+    }
 }
