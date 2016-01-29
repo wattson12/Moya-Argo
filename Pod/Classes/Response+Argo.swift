@@ -28,8 +28,16 @@ public extension Response {
             //map to JSON
             let JSON = try self.mapJSON()
             
+            //decode with Argo
+            let decodedObject:Decoded<T>
+            if let rootKey = rootKey {
+                decodedObject = decodeWithRootKey(rootKey, JSON)
+            } else {
+                decodedObject = decode(JSON)
+            }
+            
             //return decoded value, or throw decoding error
-            return try decodedValue(decodedObject(rootKey, JSON: JSON))
+            return try decodedValue(decodedObject)
             
         } catch {
             
@@ -58,8 +66,16 @@ public extension Response {
             //map to JSON
             let JSON = try self.mapJSON()
             
+            //decode with Argo
+            let decodedArray:Decoded<[T]>
+            if let rootKey = rootKey {
+                decodedArray = decodeWithRootKey(rootKey, JSON)
+            } else {
+                decodedArray = decode(JSON)
+            }
+            
             //return array of decoded objects, or throw decoding error
-            return try decodedValue(decodedArray(rootKey, JSON: JSON))
+            return try decodedValue(decodedArray)
             
         } catch {
             
@@ -89,24 +105,6 @@ public extension Response {
             return value
         case .Failure(let error):
             throw error
-        }
-    }
-    
-    /// These two methods are just to clean up the map methods, this is where the Argo mapping occurs
-    /// Return value is Decoded<T> (the Argo decoding result)
-    private func decodedObject<T:Decodable where T == T.DecodedType>(rootKey: String?, JSON: AnyObject) -> Decoded<T> {
-        if let rootKey = rootKey {
-            return decodeWithRootKey(rootKey, JSON)
-        } else {
-            return decode(JSON)
-        }
-    }
-    
-    private func decodedArray<T:Decodable where T == T.DecodedType>(rootKey: String?, JSON: AnyObject) -> Decoded<[T]> {
-        if let rootKey = rootKey {
-            return decodeWithRootKey(rootKey, JSON)
-        } else {
-            return decode(JSON)
         }
     }
 }
