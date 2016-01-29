@@ -107,7 +107,7 @@ The example project shows some example methods which can be used to improve the 
 Issues / Pull Requests / Feedback welcome 
 
 ## Thanks
-I took a lot of guidance from the [Moya-ObjectMapper](https://github.com/ivanbruel/Moya-ObjectMapper) project
+I took a lot of guidance from the [Moya-ObjectMapper](https://github.com/ivanbruel/Moya-ObjectMapper) project. If you are using ObjectMapper for your serialisation you should definitely check them out. 
 
 
 ## Author
