@@ -59,7 +59,7 @@ provider
                 let argoUsers:[ArgoUser] = try response.mapArrayWithRootKey("users")
                 print("mapped to users: \(argoUsers)")
             } catch {
-                print("Error mapping useres: \(error)")
+                print("Error mapping users: \(error)")
             }
         }
     }
@@ -81,7 +81,7 @@ provider
 ```
 
 ### ReactiveCocoa
-Or if ReactiveCocoa is more your style, there are similar extensions on SignalProducer:
+Or for ReactiveCocoa, there are similar extensions on SignalProducer:
 ```swift
 provider
     .request(.AllUsers)
@@ -106,8 +106,8 @@ The example project shows some example methods which can be used to improve the 
 ## Contributing 
 Issues / Pull Requests / Feedback welcome 
 
-## Disclaimer
-I'm using this in development of an upcoming app so I'm confident of its quality, but I am using the RxSwift extensions, so that is where most of my real world testing is based. Tests for all extensions are coming soon. 
+## Thanks
+I took a lot of guidance from the [Moya-ObjectMapper](https://github.com/ivanbruel/Moya-ObjectMapper) project. If you are using ObjectMapper for your serialisation you should definitely check them out. 
 
 
 ## Author

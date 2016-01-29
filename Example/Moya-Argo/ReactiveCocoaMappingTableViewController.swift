@@ -40,6 +40,23 @@ class ReactiveCocoaMappingTableViewController: DemoBaseTableViewController {
             default: break
             }
         }
+        
+//        //example of using map method without passing in type as argument
+//        provider
+//            .request(.AllUsers)
+//            .mapArray("users")
+//            .observeOn(UIScheduler())
+//            .start { (event:Event<[ArgoUser], Moya.Error>) in //type needs to be specified here
+//                
+//                switch event {
+//                case .Next(let users):
+//                    self.users = users.map { $0 }
+//                    self.tableView.reloadData()
+//                case .Failed(let error):
+//                    print("error: \(error)")
+//                default: break
+//                }
+//        }
     }
     
     override func fetchUserDetail(user: UserType, showAlertClosure: (UserType) -> ()) {
