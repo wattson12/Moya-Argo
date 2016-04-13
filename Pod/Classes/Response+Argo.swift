@@ -25,13 +25,13 @@ public extension Response {
     public func mapObject<T:Decodable where T == T.DecodedType>(rootKey: String? = nil) throws -> T {
         
         do {
-            //map to JSON
-            let JSON = try self.mapJSON()
+            //map to JSON (even if it's wrapped it's still a dict)
+            let JSON = try self.mapJSON() as? [String: AnyObject] ?? [:]
             
             //decode with Argo
             let decodedObject:Decoded<T>
             if let rootKey = rootKey {
-                decodedObject = decodeWithRootKey(rootKey, JSON)
+                decodedObject = decode(JSON, rootKey: rootKey)
             } else {
                 decodedObject = decode(JSON)
             }
@@ -69,9 +69,15 @@ public extension Response {
             //decode with Argo
             let decodedArray:Decoded<[T]>
             if let rootKey = rootKey {
-                decodedArray = decodeWithRootKey(rootKey, JSON)
+                //we have a root key, so we're dealing with a dict
+                let dict = JSON as? [String: AnyObject] ?? [:]
+                decodedArray = decode(dict, rootKey: rootKey)
             } else {
-                decodedArray = decode(JSON)
+                //no root key, it's an array
+                guard let array = try JSON as? [AnyObject] else {
+                    throw DecodeError.TypeMismatch(expected: "\(T.DecodedType.self)", actual: "\(JSON.dynamicType)")
+                }
+                decodedArray = decode(array)
             }
             
             //return array of decoded objects, or throw decoding error
