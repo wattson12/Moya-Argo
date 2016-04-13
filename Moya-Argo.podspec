@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   s.subspec "Core" do |ss|
     ss.source_files = "Pod/Classes/*.swift"
     ss.dependency "Moya"
-    ss.dependency "Argo"
+    ss.dependency "Argo", "~> 3.0.0"
     ss.framework = "Foundation"
   end
 
