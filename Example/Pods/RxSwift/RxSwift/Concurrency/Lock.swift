@@ -37,23 +37,17 @@ protocol Lock {
       }
 
       func performLocked(@noescape action: () -> Void) {
-          pthread_spin_lock(&_lock)
+          lock(); defer { unlock() }
           action()
-          pthread_spin_unlock(&_lock)
       }
 
       func calculateLocked<T>(@noescape action: () -> T) -> T {
-          pthread_spin_lock(&_lock)
-          let result = action()
-          pthread_spin_unlock(&_lock)
-          return result
+          lock(); defer { unlock() }
+          return action()
       }
 
       func calculateLockedOrFail<T>(@noescape action: () throws -> T) throws -> T {
-          pthread_spin_lock(&_lock)
-          defer {
-              pthread_spin_unlock(&_lock)
-          }
+          lock(); defer { unlock() }
           let result = try action()
           return result
       }
@@ -63,67 +57,24 @@ protocol Lock {
       }
   }
 #else
-  /**
-  Simple wrapper for spin lock.
-  */
-  struct SpinLock {
-      private var _lock = OS_SPINLOCK_INIT
 
-      init() {
-
-      }
-
-      mutating func lock() {
-          OSSpinLockLock(&_lock)
-      }
-
-      mutating func unlock() {
-          OSSpinLockUnlock(&_lock)
-      }
-
-      mutating func performLocked(@noescape action: () -> Void) {
-          OSSpinLockLock(&_lock)
-          action()
-          OSSpinLockUnlock(&_lock)
-      }
-
-      mutating func calculateLocked<T>(@noescape action: () -> T) -> T {
-          OSSpinLockLock(&_lock)
-          let result = action()
-          OSSpinLockUnlock(&_lock)
-          return result
-      }
-
-      mutating func calculateLockedOrFail<T>(@noescape action: () throws -> T) throws -> T {
-          OSSpinLockLock(&_lock)
-          defer {
-              OSSpinLockUnlock(&_lock)
-          }
-          let result = try action()
-          return result
-      }
-  }
+    // https://lists.swift.org/pipermail/swift-dev/Week-of-Mon-20151214/000321.html
+    typealias SpinLock = NSRecursiveLock
 #endif
 
 extension NSRecursiveLock : Lock {
     func performLocked(@noescape action: () -> Void) {
-        self.lock()
+        lock(); defer { unlock() }
         action()
-        self.unlock()
     }
 
     func calculateLocked<T>(@noescape action: () -> T) -> T {
-        self.lock()
-        let result = action()
-        self.unlock()
-        return result
+        lock(); defer { unlock() }
+        return action()
     }
 
     func calculateLockedOrFail<T>(@noescape action: () throws -> T) throws -> T {
-        self.lock()
-        defer {
-            self.unlock()
-        }
+        lock(); defer { unlock() }
         let result = try action()
         return result
     }

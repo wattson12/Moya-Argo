@@ -35,11 +35,17 @@ public final class MainScheduler : SerialDispatchQueueScheduler {
     public static let instance = MainScheduler()
 
     /**
+    Singleton instance of `MainScheduler` that always schedules work asynchronously
+    and doesn't perform optimizations for calls scheduled from main thread.
+    */
+    public static let asyncInstance = SerialDispatchQueueScheduler(serialQueue: dispatch_get_main_queue())
+
+    /**
     In case this method is called on a background thread it will throw an exception.
     */
-    public class func ensureExecutingOnScheduler() {
+    public class func ensureExecutingOnScheduler(errorMessage: String? = nil) {
         if !NSThread.currentThread().isMainThread {
-            rxFatalError("Executing on backgound thread. Please use `MainScheduler.instance.schedule` to schedule work on main thread.")
+            rxFatalError(errorMessage ?? "Executing on backgound thread. Please use `MainScheduler.instance.schedule` to schedule work on main thread.")
         }
     }
 

@@ -1,43 +1,34 @@
 PODS:
-  - Alamofire (3.1.5)
-  - Argo (2.2.0)
+  - Alamofire (3.4.2)
+  - Argo (3.1.0)
   - Cartography (0.6.0)
-  - Curry (1.4.0)
-  - Moya (6.0.0):
-    - Moya/Core (= 6.0.0)
-  - Moya-Argo (0.1.0):
-    - Moya-Argo/Core (= 0.1.0)
-  - Moya-Argo/Core (0.1.0):
-    - Argo
-    - Moya
-  - Moya-Argo/ReactiveCocoa (0.1.0):
+  - Curry (2.3.3)
+  - Moya (7.0.0):
+    - Moya/Core (= 7.0.0)
+  - Moya-Argo (1.1.1):
+    - Moya-Argo/Core (= 1.1.1)
+  - Moya-Argo/Core (1.1.1):
+    - Argo (~> 3.1.0)
+    - Moya (~> 7.0.0)
+  - Moya-Argo/ReactiveCocoa (1.1.1):
     - Moya-Argo/Core
     - Moya/ReactiveCocoa
-  - Moya-Argo/RxSwift (0.1.0):
+  - Moya-Argo/RxSwift (1.1.1):
     - Moya-Argo/Core
     - Moya/RxSwift
-  - Moya/Core (6.0.0):
+  - Moya/Core (7.0.0):
     - Alamofire (~> 3.0)
-    - Result (~> 1.0)
-  - Moya/ReactiveCocoa (6.0.0):
+    - Result (~> 2.0)
+  - Moya/ReactiveCocoa (7.0.0):
     - Moya/Core
-    - ReactiveCocoa (= 4.0.0-RC.1)
-  - Moya/RxSwift (6.0.0):
+    - ReactiveCocoa (~> 4.0)
+  - Moya/RxSwift (7.0.0):
     - Moya/Core
-    - RxSwift (= 2.0.0)
-  - ReactiveCocoa (4.0.0-RC.1):
-    - ReactiveCocoa/UI (= 4.0.0-RC.1)
-    - Result (~> 1.0)
-  - ReactiveCocoa/Core (4.0.0-RC.1):
-    - ReactiveCocoa/no-arc
-    - Result (~> 1.0)
-  - ReactiveCocoa/no-arc (4.0.0-RC.1):
-    - Result (~> 1.0)
-  - ReactiveCocoa/UI (4.0.0-RC.1):
-    - ReactiveCocoa/Core
-    - Result (~> 1.0)
-  - Result (1.0.1)
-  - RxSwift (2.0.0)
+    - RxSwift (~> 2.0)
+  - ReactiveCocoa (4.2.2):
+    - Result (~> 2.0)
+  - Result (2.1.3)
+  - RxSwift (2.6.0)
 
 DEPENDENCIES:
   - Cartography
@@ -51,14 +42,16 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
-  Argo: 4f52a32b4cd913c204e5a45f420b3fccad3e3f24
+  Alamofire: 6aa33201d20d069e1598891cf928883ff1888c7a
+  Argo: bb0e94e309d6ceb8fa58910205c8968be101e429
   Cartography: 70af183a248547694a8cfaa6b989cb7e04589985
-  Curry: 294533187eedbf52db60a1e70c29b4f5c9f621c0
-  Moya: 9bd9f20e6451c820c17ca40e1b3f6489757fa821
-  Moya-Argo: bc539fa608b43d743096d23bc6ab3fc61955962a
-  ReactiveCocoa: 2b0f654beb7642b82cfd3fdb845205ae9889422c
-  Result: caef80340451e1f07492fa1e89117f83613bce24
-  RxSwift: d83246efa6f16c50c143bec134649d045498f601
+  Curry: 37223f4467e4802a08b6a414b526dcd919a4a777
+  Moya: f004b82418fb8165ee1fc9f86190db4b3611fda9
+  Moya-Argo: bf6b65740b4e4fb744c02a65145aaf5156ee3501
+  ReactiveCocoa: 72263e7ac0770c274617ccd345e01049d0ca38ae
+  Result: 18e1a7597fbcca5923c565b40a25a98afafdee02
+  RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 2b97a543bcca82c291dc5763ce134f973381122a
+
+COCOAPODS: 1.0.1

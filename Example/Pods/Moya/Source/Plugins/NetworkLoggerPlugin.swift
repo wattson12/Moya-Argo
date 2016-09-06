@@ -8,25 +8,42 @@ public final class NetworkLoggerPlugin: PluginType {
     private let dateFormatter = NSDateFormatter()
     private let separator = ", "
     private let terminator = "\n"
+    private let cURLTerminator = "\\\n"
     private let output: (items: Any..., separator: String, terminator: String) -> Void
-    
+    private let responseDataFormatter: ((NSData) -> (NSData))?
+
     /// If true, also logs response body data.
     public let verbose: Bool
+    public let cURL: Bool
 
-    public init(verbose: Bool = false, output: (items: Any..., separator: String, terminator: String) -> Void = print) {
+    public init(verbose: Bool = false, cURL: Bool = false, output: (items: Any..., separator: String, terminator: String) -> Void = print, responseDataFormatter: ((NSData) -> (NSData))? = nil) {
+        self.cURL = cURL
         self.verbose = verbose
         self.output = output
+        self.responseDataFormatter = responseDataFormatter
     }
 
     public func willSendRequest(request: RequestType, target: TargetType) {
-        output(items: logNetworkRequest(request.request), separator: separator, terminator: terminator)
+        if let request = request as? CustomDebugStringConvertible where cURL {
+            output(items: request.debugDescription, separator: separator, terminator: terminator)
+            return
+        }
+        outputItems(logNetworkRequest(request.request))
     }
 
     public func didReceiveResponse(result: Result<Moya.Response, Moya.Error>, target: TargetType) {
         if case .Success(let response) = result {
-            output(items: logNetworkResponse(response.response, data: response.data, target: target), separator: separator, terminator: terminator)
+            outputItems(logNetworkResponse(response.response, data: response.data, target: target))
         } else {
-            output(items: logNetworkResponse(nil, data: nil, target: target), separator: separator, terminator: terminator)
+            outputItems(logNetworkResponse(nil, data: nil, target: target))
+        }
+    }
+
+    private func outputItems(items: [String]) {
+        if verbose {
+            items.forEach { output(items: $0, separator: separator, terminator: terminator) }
+        } else {
+            output(items: items, separator: separator, terminator: terminator)
         }
     }
 }
@@ -42,7 +59,7 @@ private extension NetworkLoggerPlugin {
     private func format(loggerId: String, date: String, identifier: String, message: String) -> String {
         return "\(loggerId): [\(date)] \(identifier): \(message)"
     }
-    
+
     func logNetworkRequest(request: NSURLRequest?) -> [String] {
 
         var output = [String]()
@@ -79,8 +96,10 @@ private extension NetworkLoggerPlugin {
 
         output += [format(loggerId, date: date, identifier: "Response", message: response.description)]
 
-        if let data = data, let stringData = NSString(data: data, encoding: NSUTF8StringEncoding) as? String where verbose == true {
-            output += [stringData]
+        if let data = data where verbose == true {
+            if let stringData = String(data: responseDataFormatter?(data) ?? data, encoding: NSUTF8StringEncoding) {
+                output += [stringData]
+            }
         }
 
         return output

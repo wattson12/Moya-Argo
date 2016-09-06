@@ -15,12 +15,12 @@ public protocol VirtualTimeConverterType {
     /**
      Virtual time unit used that represents ticks of virtual clock.
     */
-    typealias VirtualTimeUnit
+    associatedtype VirtualTimeUnit
 
     /**
      Virtual time unit used to represent differences of virtual times.
     */
-    typealias VirtualTimeIntervalUnit
+    associatedtype VirtualTimeIntervalUnit
 
     /**
      Converts virtual time to real time.
@@ -96,32 +96,20 @@ extension VirtualTimeComparison {
      lhs < rhs.
     */
     var lessThen: Bool {
-        if case .LessThan = self {
-            return true
-        }
-
-        return false
+        return self == .LessThan
     }
 
     /**
     lhs > rhs
     */
     var greaterThan: Bool {
-        if case .GreaterThan = self {
-            return true
-        }
-
-        return false
+        return self == .GreaterThan
     }
 
     /**
      lhs == rhs
     */
     var equal: Bool {
-        if case .Equal = self {
-            return true
-        }
-
-        return false
+        return self == .Equal
     }
 }

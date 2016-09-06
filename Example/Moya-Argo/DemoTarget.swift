@@ -51,4 +51,7 @@ enum DemoTarget: TargetType {
         
         return NSData(contentsOfFile: sampleResponsePath)!
     }
+
+    var multipartBody: [MultipartFormData]? { return nil }
+
 }
