@@ -106,4 +106,7 @@ enum MappingTestTarget: TargetType {
             
         }
     }
+
+    var multipartBody: [MultipartFormData]? { return nil }
+
 }

@@ -35,13 +35,11 @@ public struct BagKey : Hashable {
     let key: Int
 
     public var hashValue: Int {
-        get {
-            if let uniqueIdentity = uniqueIdentity {
-                return hash(key) ^ (unsafeAddressOf(uniqueIdentity).hashValue)
-            }
-            else {
-                return hash(key)
-            }
+        if let uniqueIdentity = uniqueIdentity {
+            return hash(key) ^ (unsafeAddressOf(uniqueIdentity).hashValue)
+        }
+        else {
+            return hash(key)
         }
     }
 }
@@ -154,7 +152,8 @@ public struct Bag<T> : CustomDebugStringConvertible {
     - returns: Number of elements in bag.
     */
     public var count: Int {
-        return _pairs.count + (_value0 != nil ? 1 : 0) + (_value1 != nil ? 1 : 0) + (_dictionary?.count ?? 0)
+        let dictionaryCount: Int = _dictionary?.count ?? 0
+        return _pairs.count + (_value0 != nil ? 1 : 0) + (_value1 != nil ? 1 : 0) + dictionaryCount
     }
     
     /**
@@ -212,9 +211,7 @@ extension Bag {
     A textual representation of `self`, suitable for debugging.
     */
     public var debugDescription : String {
-        get {
-            return "\(self.count) elements in Bag"
-        }
+        return "\(self.count) elements in Bag"
     }
 }
 

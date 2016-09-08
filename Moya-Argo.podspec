@@ -1,7 +1,6 @@
-
 Pod::Spec.new do |s|
   s.name             = "Moya-Argo"
-  s.version          = "1.1.0"
+  s.version          = "1.1.1"
   s.summary          = "Argo mappings for Moya network requests"
 
   s.description      = <<-DESC
@@ -19,14 +18,12 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = '2.0'
   s.tvos.deployment_target = '9.0'
 
-  s.requires_arc = true
-
   s.default_subspec = "Core"
 
   s.subspec "Core" do |ss|
     ss.source_files = "Pod/Classes/*.swift"
-    ss.dependency "Moya"
-    ss.dependency "Argo", "~> 3.0.0"
+    ss.dependency "Moya", "~> 7.0.0"
+    ss.dependency "Argo", "~> 3.1.0"
     ss.framework = "Foundation"
   end
 
