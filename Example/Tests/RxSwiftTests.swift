@@ -30,108 +30,108 @@ class RxSwiftTests: XCTestCase {
     //.InvalidJSON
     func testErrorThrownByMapJSONIsThrown() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.InvalidJSON).mapObject(TestModelClass).subscribeError { error in
             XCTAssertNotNil(error)
             expectation.fulfill()
         }.addDisposableTo(disposeBag)
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     //.ValidObjectWithRootKey
     func testSuccessfulDecodingOfObjectWithRootKey() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.ValidObjectWithRootKey).mapObject(TestModelClass.self, rootKey: "root_key").subscribeNext { testModel in
             XCTAssertEqual(testModel.id, "test_id")
             expectation.fulfill()
         }.addDisposableTo(disposeBag)
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     //.MissingIDWithRootKey
     func testFailedDecodingOfObjectWithRootKeyThrowsError() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.MissingIDWithRootKey).mapObject(TestModelClass.self, rootKey: "root_key").subscribeError { error in
             XCTAssertTrue(error is DecodeError)
             expectation.fulfill()
             }.addDisposableTo(disposeBag)
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     //.ValidArrayWithRootKey
     func testSuccessfulDecodingOfArrayWithRootKey() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.ValidArrayWithRootKey).mapArray(TestModelClass.self, rootKey: "root_key").subscribeNext { testModelArray in
             XCTAssertEqual(testModelArray.count, 1)
             expectation.fulfill()
             }.addDisposableTo(disposeBag)
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     //.ArrayWithInvalidObjectWithRootKey
     func testFailedDecodingOfArrayWithRootKeyThrowsError() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.ArrayWithInvalidObjectWithRootKey).mapArray(TestModelClass.self, rootKey: "root_key").subscribeError { error in
             XCTAssertTrue(error is DecodeError)
             expectation.fulfill()
             }.addDisposableTo(disposeBag)
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     //.ValidObjectWithoutRootKey
     func testSuccessfulMappingWithoutRootKey() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.ValidObjectWithoutRootKey).mapObject(TestModelClass).subscribeNext { testModel in
             XCTAssertEqual(testModel.id, "test_id")
             expectation.fulfill()
             }.addDisposableTo(disposeBag)
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     //.MissingIDWithoutRootKey
     func testFailedDecodingOfObjectWithoutRootKey() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.MissingIDWithoutRootKey).mapObject(TestModelClass).subscribeError { error in
             XCTAssertTrue(error is DecodeError)
             expectation.fulfill()
             }.addDisposableTo(disposeBag)
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     //.ValidArrayWithoutRootKey
     func testSuccessfulMappingOfArrayWithoutRootKey() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.ValidArrayWithoutRootKey).mapArray(TestModelClass).subscribeNext { modelArray in
             XCTAssertEqual(modelArray.count, 1)
             expectation.fulfill()
             }.addDisposableTo(disposeBag)
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     //.ArrayWithInvalidObjectWithoutRootKey
     func testFailedDecodingOfArrayWithoutRootKey() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.ArrayWithInvalidObjectWithoutRootKey).mapArray(TestModelClass).subscribeError { error in
             XCTAssertTrue(error is DecodeError)
             expectation.fulfill()
             }.addDisposableTo(disposeBag)
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
 }

@@ -22,24 +22,24 @@ class DemoBaseTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
         
-        self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "DemoUserCellReuseIdentifier")
+        self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "DemoUserCellReuseIdentifier")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.fetchUsers()
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("DemoUserCellReuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DemoUserCellReuseIdentifier", for: indexPath)
         
         let user = users[indexPath.row]
         
@@ -48,15 +48,15 @@ class DemoBaseTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
         let alertClosure = { (user:UserType) in
             
-            let alertController = UIAlertController(title: "User", message: "ID: \(user.id)\nBirthdate: \(user.birthdate!)", preferredStyle: .Alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { _ in alertController.dismissViewControllerAnimated(true, completion: nil) }))
+            let alertController = UIAlertController(title: "User", message: "ID: \(user.id)\nBirthdate: \(user.birthdate!)", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in alertController.dismiss(animated: true, completion: nil) }))
             
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         }
         
         self.fetchUserDetail(users[indexPath.row], showAlertClosure: alertClosure)
@@ -68,7 +68,7 @@ class DemoBaseTableViewController: UITableViewController {
         
     }
     
-    func fetchUserDetail(user: UserType, showAlertClosure: (UserType) -> ()) {
+    func fetchUserDetail(_ user: UserType, showAlertClosure: (UserType) -> ()) {
         
     }
     

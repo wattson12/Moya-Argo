@@ -43,9 +43,9 @@ class PlainMoyaTableViewController: DemoBaseTableViewController {
         }
     }
     
-    private func processResponse(response: Response) {
+    fileprivate func processResponse(_ response: Response) {
         
-        let JSON = try! NSJSONSerialization.JSONObjectWithData(response.data, options: [])
+        let JSON = try! JSONSerialization.JSONObjectWithData(response.data, options: [])
         
         if let users = JSON["users"] as? [[String:AnyObject]] {
             
@@ -58,13 +58,13 @@ class PlainMoyaTableViewController: DemoBaseTableViewController {
                 }
             }.flatMap { $0 }
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
     
-    override func fetchUserDetail(user: UserType, showAlertClosure: (UserType) -> ()) {
+    override func fetchUserDetail(_ user: UserType, showAlertClosure: @escaping (UserType) -> ()) {
         
         self.provider.request(.User(userID: user.id.description)) { result in
             
@@ -77,15 +77,15 @@ class PlainMoyaTableViewController: DemoBaseTableViewController {
         }
     }
     
-    private func processUserDetailResponse(response: Response, showAlertClosure: (UserType) -> ()) {
+    fileprivate func processUserDetailResponse(_ response: Response, showAlertClosure: @escaping (UserType) -> ()) {
         
-        let JSON = try! NSJSONSerialization.JSONObjectWithData(response.data, options: []) as! [String:AnyObject]
+        let JSON = try! JSONSerialization.JSONObjectWithData(response.data, options: []) as! [String:AnyObject]
         
         if let userID = JSON["id"] as? Int,
            let userName = JSON["name"] as? String,
             let userBirthdate = JSON["birthdate"] as? String {
                 
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     showAlertClosure(PlainMoyaUser(id: userID, name: userName, birthdate: userBirthdate))
                 }
         }

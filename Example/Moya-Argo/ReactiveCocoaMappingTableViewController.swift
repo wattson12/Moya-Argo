@@ -59,7 +59,7 @@ class ReactiveCocoaMappingTableViewController: DemoBaseTableViewController {
 //        }
     }
     
-    override func fetchUserDetail(user: UserType, showAlertClosure: (UserType) -> ()) {
+    override func fetchUserDetail(_ user: UserType, showAlertClosure: @escaping (UserType) -> ()) {
         
         provider
             .request(.User(userID: user.id.description))

@@ -28,7 +28,7 @@ class MoyaMappingTests: XCTestCase {
     //.InvalidJSON
     func testErrorThrownByMapJSONIsThrown() {
         
-        let expectation = expectationWithDescription("provider callback run")
+        let expectation = self.expectation(description: "provider callback run")
         self.provider.request(.InvalidJSON) { response in
             
             switch response {
@@ -50,7 +50,7 @@ class MoyaMappingTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.1) { error in
+        waitForExpectations(timeout: 0.1) { error in
             XCTAssertNil(error)
         }
     }
@@ -58,7 +58,7 @@ class MoyaMappingTests: XCTestCase {
     //.ValidObjectWithRootKey
     func testSuccessfulDecodingOfObjectWithRootKey() {
         
-        let expectation = expectationWithDescription("provider callback run")
+        let expectation = self.expectation(description: "provider callback run")
         self.provider.request(.ValidObjectWithRootKey) { response in
             
             switch response {
@@ -79,7 +79,7 @@ class MoyaMappingTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.1) { error in
+        waitForExpectations(timeout: 0.1) { error in
             XCTAssertNil(error)
         }
     }
@@ -87,7 +87,7 @@ class MoyaMappingTests: XCTestCase {
     //.MissingIDWithRootKey
     func testFailedDecodingOfObjectWithRootKeyThrowsError() {
         
-        let expectation = expectationWithDescription("provider callback run")
+        let expectation = self.expectation(description: "provider callback run")
         self.provider.request(.MissingIDWithRootKey) { response in
             
             switch response {
@@ -110,7 +110,7 @@ class MoyaMappingTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.1) { error in
+        waitForExpectations(timeout: 0.1) { error in
             XCTAssertNil(error)
         }
     }
@@ -118,7 +118,7 @@ class MoyaMappingTests: XCTestCase {
     //.ValidArrayWithRootKey
     func testSuccessfulDecodingOfArrayWithRootKey() {
         
-        let expectation = expectationWithDescription("provider callback run")
+        let expectation = self.expectation(description: "provider callback run")
         self.provider.request(.ValidArrayWithRootKey) { response in
             
             switch response {
@@ -139,7 +139,7 @@ class MoyaMappingTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.1) { error in
+        waitForExpectations(timeout: 0.1) { error in
             XCTAssertNil(error)
         }
     }
@@ -147,7 +147,7 @@ class MoyaMappingTests: XCTestCase {
     //.ArrayWithInvalidObjectWithRootKey
     func testFailedDecodingOfArrayWithRootKeyThrowsError() {
         
-        let expectation = expectationWithDescription("provider callback run")
+        let expectation = self.expectation(description: "provider callback run")
         self.provider.request(.ArrayWithInvalidObjectWithRootKey) { response in
             
             switch response {
@@ -170,7 +170,7 @@ class MoyaMappingTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.1) { error in
+        waitForExpectations(timeout: 0.1) { error in
             XCTAssertNil(error)
         }
     }
@@ -178,7 +178,7 @@ class MoyaMappingTests: XCTestCase {
     //.ValidObjectWithoutRootKey
     func testSuccessfulMappingWithoutRootKey() {
         
-        let expectation = expectationWithDescription("provider callback run")
+        let expectation = self.expectation(description: "provider callback run")
         self.provider.request(.ValidObjectWithoutRootKey) { response in
             
             switch response {
@@ -199,7 +199,7 @@ class MoyaMappingTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.1) { error in
+        waitForExpectations(timeout: 0.1) { error in
             XCTAssertNil(error)
         }
     }
@@ -207,7 +207,7 @@ class MoyaMappingTests: XCTestCase {
     //.MissingIDWithoutRootKey
     func testFailedDecodingOfObjectWithoutRootKey() {
         
-        let expectation = expectationWithDescription("provider callback run")
+        let expectation = self.expectation(description: "provider callback run")
         self.provider.request(.MissingIDWithoutRootKey) { response in
             
             switch response {
@@ -230,7 +230,7 @@ class MoyaMappingTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.1) { error in
+        waitForExpectations(timeout: 0.1) { error in
             XCTAssertNil(error)
         }
     }
@@ -238,7 +238,7 @@ class MoyaMappingTests: XCTestCase {
     //.ValidArrayWithoutRootKey
     func testSuccessfulMappingOfArrayWithoutRootKey() {
         
-        let expectation = expectationWithDescription("provider callback run")
+        let expectation = self.expectation(description: "provider callback run")
         self.provider.request(.ValidArrayWithoutRootKey) { response in
             
             switch response {
@@ -259,7 +259,7 @@ class MoyaMappingTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.1) { error in
+        waitForExpectations(timeout: 0.1) { error in
             XCTAssertNil(error)
         }
     }
@@ -267,7 +267,7 @@ class MoyaMappingTests: XCTestCase {
     //.ArrayWithInvalidObjectWithoutRootKey
     func testFailedDecodingOfArrayWithoutRootKey() {
         
-        let expectation = expectationWithDescription("provider callback run")
+        let expectation = self.expectation(description: "provider callback run")
         self.provider.request(.ArrayWithInvalidObjectWithRootKey) { response in
             
             switch response {
@@ -290,7 +290,7 @@ class MoyaMappingTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.1) { error in
+        waitForExpectations(timeout: 0.1) { error in
             XCTAssertNil(error)
         }
     }

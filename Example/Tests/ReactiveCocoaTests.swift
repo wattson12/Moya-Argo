@@ -29,7 +29,7 @@ class ReactiveCocoaTests: XCTestCase {
     //.InvalidJSON
     func testErrorThrownByMapJSONIsThrown() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.InvalidJSON)
             .mapObject(TestModelClass)
             .startWithFailed { error in
@@ -37,14 +37,14 @@ class ReactiveCocoaTests: XCTestCase {
                 expectation.fulfill()
             }
             .dispose()
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
 
     }
     
     //.ValidObjectWithRootKey
     func testSuccessfulDecodingOfObjectWithRootKey() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.ValidObjectWithRootKey)
             .mapObject(TestModelClass.self, rootKey: "root_key")
             .startWithResult { testModelResult in
@@ -56,13 +56,13 @@ class ReactiveCocoaTests: XCTestCase {
             }
             .dispose()
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
 
     //.MissingIDWithRootKey
     func testFailedDecodingOfObjectWithRootKeyThrowsError() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.MissingIDWithRootKey)
             .mapObject(TestModelClass.self, rootKey: "root_key")
             .startWithFailed { error in
@@ -70,13 +70,13 @@ class ReactiveCocoaTests: XCTestCase {
             }
             .dispose()
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
 
     //.ValidArrayWithRootKey
     func testSuccessfulDecodingOfArrayWithRootKey() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.ValidArrayWithRootKey)
             .mapArray(TestModelClass.self, rootKey: "root_key")
             .startWithResult { testModelArrayResult in
@@ -88,13 +88,13 @@ class ReactiveCocoaTests: XCTestCase {
             }
             .dispose()
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
 
     //.ArrayWithInvalidObjectWithRootKey
     func testFailedDecodingOfArrayWithRootKeyThrowsError() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.ArrayWithInvalidObjectWithRootKey)
             .mapArray(TestModelClass.self, rootKey: "root_key")
             .startWithFailed { error in
@@ -102,13 +102,13 @@ class ReactiveCocoaTests: XCTestCase {
             }
             .dispose()
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
 
     //.ValidObjectWithoutRootKey
     func testSuccessfulMappingWithoutRootKey() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.ValidObjectWithoutRootKey)
             .mapObject(TestModelClass)
             .startWithResult { testModelResult in
@@ -120,13 +120,13 @@ class ReactiveCocoaTests: XCTestCase {
             }
             .dispose()
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
 
     //.MissingIDWithoutRootKey
     func testFailedDecodingOfObjectWithoutRootKey() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.MissingIDWithoutRootKey)
             .mapObject(TestModelClass)
             .startWithFailed { error in
@@ -134,13 +134,13 @@ class ReactiveCocoaTests: XCTestCase {
             }
             .dispose()
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     //.ValidArrayWithoutRootKey
     func testSuccessfulMappingOfArrayWithoutRootKey() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.ValidArrayWithoutRootKey)
             .mapArray(TestModelClass)
             .startWithResult { modelArrayResult in
@@ -152,20 +152,20 @@ class ReactiveCocoaTests: XCTestCase {
             }
             .dispose()
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     //.ArrayWithInvalidObjectWithoutRootKey
     func testFailedDecodingOfArrayWithoutRootKey() {
         
-        let expectation = expectationWithDescription("subscribe callback called")
+        let expectation = self.expectation(description: "subscribe callback called")
         provider.request(.ArrayWithInvalidObjectWithoutRootKey)
             .mapArray(TestModelClass).startWithFailed { error in
                 expectation.fulfill()
             }
             .dispose()
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
 
 }

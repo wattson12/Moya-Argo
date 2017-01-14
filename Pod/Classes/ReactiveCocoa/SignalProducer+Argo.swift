@@ -7,11 +7,11 @@
 //
 
 import Foundation
-import ReactiveCocoa
+import ReactiveSwift
 import Moya
 import Argo
 
-public extension SignalProducerType where Value == Moya.Response, Error == Moya.Error {
+public extension SignalProducer where Value == Moya.Response, Error == Moya.Error {
     
     /**
      Map stream of responses into stream of objects decoded via Argo
