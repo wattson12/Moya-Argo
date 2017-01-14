@@ -20,7 +20,7 @@ extension PlainMoyaUser: UserType { }
 
 class PlainMoyaTableViewController: DemoBaseTableViewController {
     
-    let provider:MoyaProvider<DemoTarget> = MoyaProvider(stubClosure: { _ in .Immediate })
+    let provider:MoyaProvider<DemoTarget> = MoyaProvider(stubClosure: { _ in .immediate })
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,20 +32,20 @@ class PlainMoyaTableViewController: DemoBaseTableViewController {
     //MARK: Overrides
     override func fetchUsers() {
         
-        self.provider.request(.AllUsers) { result in
+        self.provider.request(.allUsers) { result in
             
             switch result {
-            case .Success(let response):
+            case .success(let response):
                 self.processResponse(response)
-            case .Failure(let error):
+            case .failure(let error):
                 print("failed: \(error)")
             }
         }
     }
     
-    private func processResponse(response: Response) {
+    fileprivate func processResponse(_ response: Response) {
         
-        let JSON = try! NSJSONSerialization.JSONObjectWithData(response.data, options: [])
+        let JSON = try! JSONSerialization.jsonObject(with: response.data, options: []) as! [String: Any]
         
         if let users = JSON["users"] as? [[String:AnyObject]] {
             
@@ -58,34 +58,34 @@ class PlainMoyaTableViewController: DemoBaseTableViewController {
                 }
             }.flatMap { $0 }
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
     
-    override func fetchUserDetail(user: UserType, showAlertClosure: (UserType) -> ()) {
+    override func fetchUserDetail(_ user: UserType, showAlertClosure: @escaping (UserType) -> ()) {
         
-        self.provider.request(.User(userID: user.id.description)) { result in
+        self.provider.request(.user(userID: user.id.description)) { result in
             
             switch result {
-            case .Success(let response):
+            case .success(let response):
                 self.processUserDetailResponse(response, showAlertClosure: showAlertClosure)
-            case .Failure(let error):
+            case .failure(let error):
                 print("error: \(error)")
             }
         }
     }
     
-    private func processUserDetailResponse(response: Response, showAlertClosure: (UserType) -> ()) {
+    fileprivate func processUserDetailResponse(_ response: Response, showAlertClosure: @escaping (UserType) -> ()) {
         
-        let JSON = try! NSJSONSerialization.JSONObjectWithData(response.data, options: []) as! [String:AnyObject]
+        let JSON = try! JSONSerialization.jsonObject(with: response.data, options: []) as! [String: Any]
         
         if let userID = JSON["id"] as? Int,
            let userName = JSON["name"] as? String,
             let userBirthdate = JSON["birthdate"] as? String {
                 
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     showAlertClosure(PlainMoyaUser(id: userID, name: userName, birthdate: userBirthdate))
                 }
         }

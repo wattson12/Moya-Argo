@@ -20,10 +20,11 @@ extension ArgoUser: UserType { }
 
 import Argo
 import Curry
+import Runes
 
 extension ArgoUser: Decodable {
     
-    static func decode(json: JSON) -> Decoded<ArgoUser> {
+    static func decode(_ json: JSON) -> Decoded<ArgoUser> {
         return curry(ArgoUser.init)
             <^> json <| "id"
             <*> json <| "name"

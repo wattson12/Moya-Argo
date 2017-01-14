@@ -31,11 +31,11 @@ public extension ObservableType where E == Moya.Response {
             self.subscribe { event in
                 
                 switch event {
-                case .Next(let response):
-                    observer.onNextOrError { try response.mapObject(rootKey) }
-                case .Error(let error):
+                case .next(let response):
+                    observer.onNextOrError { try response.mapObject(rootKey: rootKey) }
+                case .error(let error):
                     observer.onError(error)
-                case .Completed:
+                case .completed:
                     observer.onCompleted()
                 }
             }
@@ -45,12 +45,12 @@ public extension ObservableType where E == Moya.Response {
     /// Alternative for mapping object without specifying type as argument
     /// This means type needs to be specified at use
     public func mapObject<T: Decodable where T == T.DecodedType>(rootKey: String? = nil) -> Observable<T> {
-        return mapObject(T.self, rootKey: rootKey)
+        return mapObject(type: T.self, rootKey: rootKey)
     }
     
     /// Convenience method for mapping object with root key, accepts non optional root key for some type checking
     public func mapObjectWithRootKey<T: Decodable where T == T.DecodedType>(type: T.Type, rootKey: String) -> Observable<T> {
-        return mapObject(type, rootKey: rootKey)
+        return mapObject(type: type, rootKey: rootKey)
     }
     
     /**
@@ -69,11 +69,11 @@ public extension ObservableType where E == Moya.Response {
             self.subscribe { event in
                 
                 switch event {
-                case .Next(let response):
-                    observer.onNextOrError { try response.mapArray(rootKey) }
-                case .Error(let error):
+                case .next(let response):
+                    observer.onNextOrError { try response.mapArray(rootKey: rootKey) }
+                case .error(let error):
                     observer.onError(error)
-                case .Completed:
+                case .completed:
                     observer.onCompleted()
                 }
             }
@@ -83,20 +83,20 @@ public extension ObservableType where E == Moya.Response {
     /// Alternative for mapping object array without specifying type as argument
     /// This means type needs to be specified at use
     public func mapArray<T: Decodable where T == T.DecodedType>(rootKey: String? = nil) -> Observable<[T]> {
-        return mapArray(T.self, rootKey: rootKey)
+        return mapArray(type: T.self, rootKey: rootKey)
     }
     
     /// Convenience method for mapping object array with root key, accepts non optional root key for some type checking
     public func mapArrayWithRootKey<T: Decodable where T == T.DecodedType>(type: T.Type, rootKey: String) -> Observable<[T]> {
-        return mapArray(type, rootKey: rootKey)
+        return mapArray(type: type, rootKey: rootKey)
     }
 
 }
 
-private extension AnyObserver {
+fileprivate extension AnyObserver {
     
     /// convenience method calling either on(.Next) or on(.Error) depending if a function throws an error or returns a value
-    private func onNextOrError(function: () throws -> Element) {
+    fileprivate func onNextOrError(function: () throws -> Element) {
         do {
             let value = try function()
             self.onNext(value)

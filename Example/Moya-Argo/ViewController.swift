@@ -11,10 +11,10 @@ import Cartography
 
 enum ExampleRow: Int {
     
-    case PlainMoya
-    case MoyaWithMapping
-    case MoyaWithReactiveCocoa
-    case MoyaWithRxSwift
+    case plainMoya
+    case moyaWithMapping
+    case moyaWithReactiveCocoa
+    case moyaWithRxSwift
     
     var reuseIdentifier: String {
         return "ExampleRowReuseIdentifier"
@@ -23,13 +23,13 @@ enum ExampleRow: Int {
     var viewControllerForExample: UIViewController {
         
         switch self {
-        case .PlainMoya:
+        case .plainMoya:
             return PlainMoyaTableViewController()
-        case .MoyaWithMapping:
+        case .moyaWithMapping:
             return MoyaMappingTableViewController()
-        case .MoyaWithReactiveCocoa:
+        case .moyaWithReactiveCocoa:
             return ReactiveCocoaMappingTableViewController()
-        case .MoyaWithRxSwift:
+        case .moyaWithRxSwift:
             return RxSwiftMappingTableViewController()
         }
     }
@@ -37,13 +37,13 @@ enum ExampleRow: Int {
     var exampleDescription: String {
         
         switch self {
-        case .PlainMoya:
+        case .plainMoya:
             return "Plain Moya"
-        case .MoyaWithMapping:
+        case .moyaWithMapping:
             return "Moya with mapping"
-        case .MoyaWithReactiveCocoa:
+        case .moyaWithReactiveCocoa:
             return "Moya with ReactiveCocoa"
-        case .MoyaWithRxSwift:
+        case .moyaWithRxSwift:
             return "Moya with RxSwift"
         }
     }
@@ -56,11 +56,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView = UITableView(frame: CGRectZero, style: .Plain)
+        self.tableView = UITableView(frame: CGRect.zero, style: .plain)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier:  ExampleRow.PlainMoya.reuseIdentifier)
+        self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier:  ExampleRow.plainMoya.reuseIdentifier)
         
         self.view.addSubview(self.tableView)
         
@@ -74,19 +74,19 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let row = ExampleRow(rawValue: indexPath.row) else { fatalError("something bad has happened") }
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(row.reuseIdentifier, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: row.reuseIdentifier, for: indexPath)
         
         cell.textLabel?.text = row.exampleDescription
         
-        cell.accessoryType = .DisclosureIndicator
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     }
@@ -94,9 +94,9 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
         
         guard let row = ExampleRow(rawValue: indexPath.row) else { fatalError("something bad has happened") }
 

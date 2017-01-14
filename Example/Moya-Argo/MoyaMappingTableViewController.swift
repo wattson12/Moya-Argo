@@ -12,7 +12,7 @@ import Moya_Argo
 
 class MoyaMappingTableViewController: DemoBaseTableViewController {
 
-    let provider:MoyaProvider<DemoTarget> = MoyaProvider(stubClosure: { _ in .Immediate })
+    let provider:MoyaProvider<DemoTarget> = MoyaProvider(stubClosure: { _ in .immediate })
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +24,9 @@ class MoyaMappingTableViewController: DemoBaseTableViewController {
     //MARK: Overrides
     override func fetchUsers() {
         
-        self.provider.request(.AllUsers) { result in
+        self.provider.request(.allUsers) { result in
             
-            if case let .Success(response) = result {
+            if case let .success(response) = result {
                 
                 do {
                     
@@ -35,7 +35,7 @@ class MoyaMappingTableViewController: DemoBaseTableViewController {
                     
                     self.users = argoUsers.map { $0 }
                     
-                    dispatch_async(dispatch_get_main_queue()) {
+                    DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
                     
@@ -47,18 +47,18 @@ class MoyaMappingTableViewController: DemoBaseTableViewController {
         }
     }
     
-    override func fetchUserDetail(user: UserType, showAlertClosure: (UserType) -> ()) {
+    override func fetchUserDetail(_ user: UserType, showAlertClosure: @escaping (UserType) -> ()) {
         
-        self.provider.request(.User(userID: user.id.description)) { result in
+        self.provider.request(.user(userID: user.id.description)) { result in
             
-            if case let .Success(response) = result {
+            if case let .success(response) = result {
                 
                 do {
                     
 //                    let user:ArgoUser = try response.mapObject()
                     let user = try response.mapUser()
                     
-                    dispatch_async(dispatch_get_main_queue()) {
+                    DispatchQueue.main.async {
                         showAlertClosure(user)
                     }
                     

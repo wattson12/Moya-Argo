@@ -15,11 +15,11 @@ extension ObservableType where E == Moya.Response {
     
     func mapUsers() -> Observable<[ArgoUser]> {
         
-        return mapArray(ArgoUser.self, rootKey: "users")
+        return mapArray(type: ArgoUser.self, rootKey: "users")
     }
     
     func mapUser() -> Observable<ArgoUser> {
         
-        return mapObject(ArgoUser)
+        return mapObject(type: ArgoUser.self)
     }
 }

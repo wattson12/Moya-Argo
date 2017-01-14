@@ -10,48 +10,55 @@ import Foundation
 import Moya
 
 enum DemoTarget: TargetType {
+
     
-    case AllUsers
-    case User(userID: String)
+    case allUsers
+    case user(userID: String)
     
-    var baseURL: NSURL {
-        return NSURL(string: "https://localhost:1234")! //point to local host, this example will return sample data for everything
+    var baseURL: URL {
+        return URL(string: "https://localhost:1234")! //point to local host, this example will return sample data for everything
     }
     
     var path: String {
         
         switch self {
-        case .AllUsers:
+        case .allUsers:
             return "/users"
-        case .User(let userID):
+        case .user(let userID):
             return "/users/\(userID)"
         }
     }
     
     var method: Moya.Method {
-        return .GET
+        return .get
     }
     
-    var parameters: [String: AnyObject]? {
+    var parameters: [String: Any]? {
         return nil
     }
     
-    var sampleData: NSData {
+    var parameterEncoding: ParameterEncoding {
+        return URLEncoding.default
+    }
+    
+    var task: Task {
+        return .request
+    }
+    
+    var sampleData: Data {
         
         let sampleResponseName:String
         
         switch self {
-        case .AllUsers:
+        case .allUsers:
             sampleResponseName = "all_users.json"
-        case .User:
+        case .user:
             sampleResponseName = "user.json"
         }
         
-        let sampleResponsePath = NSBundle.mainBundle().pathForResource(sampleResponseName, ofType: nil)!
+        let sampleResponsePath = Bundle.main.path(forResource: sampleResponseName, ofType: nil)!
         
-        return NSData(contentsOfFile: sampleResponsePath)!
+        return (try! Data(contentsOf: URL(fileURLWithPath: sampleResponsePath)))
     }
-
-    var multipartBody: [MultipartFormData]? { return nil }
 
 }

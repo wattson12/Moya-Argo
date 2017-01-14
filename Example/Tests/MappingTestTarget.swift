@@ -11,22 +11,22 @@ import Moya
 
 enum MappingTestTarget: TargetType {
     
-    case InvalidJSON
+    case invalidJSON
     
-    case ValidObjectWithRootKey
-    case MissingIDWithRootKey
+    case validObjectWithRootKey
+    case missingIDWithRootKey
     
-    case ValidArrayWithRootKey
-    case ArrayWithInvalidObjectWithRootKey
+    case validArrayWithRootKey
+    case arrayWithInvalidObjectWithRootKey
     
-    case ValidObjectWithoutRootKey
-    case MissingIDWithoutRootKey
+    case validObjectWithoutRootKey
+    case missingIDWithoutRootKey
     
-    case ValidArrayWithoutRootKey
-    case ArrayWithInvalidObjectWithoutRootKey
+    case validArrayWithoutRootKey
+    case arrayWithInvalidObjectWithoutRootKey
     
-    var baseURL: NSURL {
-        return NSURL(string: "http://localhost:1234/")!
+    var baseURL: URL {
+        return URL(string: "http://localhost:1234/")!
     }
     
     var path: String {
@@ -34,34 +34,42 @@ enum MappingTestTarget: TargetType {
     }
     
     var method: Moya.Method {
-        return .GET
+        return .get
     }
     
-    var parameters: [String: AnyObject]? {
+    var parameters: [String: Any]? {
         return nil
     }
     
-    var sampleData: NSData {
+    var parameterEncoding: ParameterEncoding {
+        return URLEncoding.default
+    }
+    
+    var task: Task {
+        return .request
+    }
+    
+    var sampleData: Data {
         
         switch self {
-        case .InvalidJSON:
+        case .invalidJSON:
             let invalidJSONString = "{/sdf:}"
-            return invalidJSONString.dataUsingEncoding(NSUTF8StringEncoding)!
-        case .ValidObjectWithRootKey:
+            return invalidJSONString.data(using: String.Encoding.utf8)!
+        case .validObjectWithRootKey:
             let response = [
                 "root_key": [
                     "id": "test_id"
                 ]
             ]
-            return try! NSJSONSerialization.dataWithJSONObject(response, options: [])
-        case .MissingIDWithRootKey:
+            return try! JSONSerialization.data(withJSONObject: response, options: [])
+        case .missingIDWithRootKey:
             let response = [
                 "root_key": [
                     "id2": "test_id"
                 ]
             ]
-            return try! NSJSONSerialization.dataWithJSONObject(response, options: [])
-        case .ValidArrayWithRootKey:
+            return try! JSONSerialization.data(withJSONObject: response, options: [])
+        case .validArrayWithRootKey:
             let response = [
                 "root_key": [
                     [
@@ -69,8 +77,8 @@ enum MappingTestTarget: TargetType {
                     ]
                 ]
             ]
-            return try! NSJSONSerialization.dataWithJSONObject(response, options: [])
-        case .ArrayWithInvalidObjectWithRootKey:
+            return try! JSONSerialization.data(withJSONObject: response, options: [])
+        case .arrayWithInvalidObjectWithRootKey:
             let response = [
                 "root_key": [
                     [
@@ -78,31 +86,31 @@ enum MappingTestTarget: TargetType {
                     ]
                 ]
             ]
-            return try! NSJSONSerialization.dataWithJSONObject(response, options: [])
-        case .ValidObjectWithoutRootKey:
+            return try! JSONSerialization.data(withJSONObject: response, options: [])
+        case .validObjectWithoutRootKey:
             let response = [
                 "id": "test_id"
             ]
-            return try! NSJSONSerialization.dataWithJSONObject(response, options: [])
-        case .MissingIDWithoutRootKey:
+            return try! JSONSerialization.data(withJSONObject: response, options: [])
+        case .missingIDWithoutRootKey:
             let response = [
                 "id2": "test_id"
             ]
-            return try! NSJSONSerialization.dataWithJSONObject(response, options: [])
-        case .ValidArrayWithoutRootKey:
+            return try! JSONSerialization.data(withJSONObject: response, options: [])
+        case .validArrayWithoutRootKey:
             let response = [
                 [
                     "id": "test_id"
                 ]
             ]
-            return try! NSJSONSerialization.dataWithJSONObject(response, options: [])
-        case .ArrayWithInvalidObjectWithoutRootKey:
+            return try! JSONSerialization.data(withJSONObject: response, options: [])
+        case .arrayWithInvalidObjectWithoutRootKey:
             let response = [
                 [
                     "id2": "test_id"
                 ]
             ]
-            return try! NSJSONSerialization.dataWithJSONObject(response, options: [])
+            return try! JSONSerialization.data(withJSONObject: response, options: [])
             
         }
     }

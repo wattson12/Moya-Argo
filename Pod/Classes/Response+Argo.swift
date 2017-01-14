@@ -37,7 +37,7 @@ public extension Response {
             }
             
             //return decoded value, or throw decoding error
-            return try decodedValue(decodedObject)
+            return try decodedValue(decoded: decodedObject)
             
         } catch {
             
@@ -48,7 +48,7 @@ public extension Response {
     /// Convenience method for mapping an object with a root key
     public func mapObjectWithRootKey<T:Decodable where T == T.DecodedType>(rootKey: String) throws -> T {
         
-        return try mapObject(rootKey)
+        return try mapObject(rootKey: rootKey)
     }
     
     /**
@@ -75,13 +75,13 @@ public extension Response {
             } else {
                 //no root key, it's an array
                 guard let array = try JSON as? [AnyObject] else {
-                    throw DecodeError.TypeMismatch(expected: "\(T.DecodedType.self)", actual: "\(JSON.dynamicType)")
+                    throw DecodeError.typeMismatch(expected: "\(T.DecodedType.self)", actual: "\(type(of: JSON))")
                 }
                 decodedArray = decode(array)
             }
             
             //return array of decoded objects, or throw decoding error
-            return try decodedValue(decodedArray)
+            return try decodedValue(decoded: decodedArray)
             
         } catch {
             
@@ -92,7 +92,7 @@ public extension Response {
     /// Convenience method for mapping an array with a root key
     public func mapArrayWithRootKey<T:Decodable where T == T.DecodedType>(rootKey: String) throws -> [T] {
         
-        return try mapArray(rootKey)
+        return try mapArray(rootKey: rootKey)
     }
     
     /**
@@ -107,9 +107,9 @@ public extension Response {
     private func decodedValue<T>(decoded: Decoded<T>) throws -> T {
         
         switch decoded {
-        case .Success(let value):
+        case .success(let value):
             return value
-        case .Failure(let error):
+        case .failure(let error):
             throw error
         }
     }
