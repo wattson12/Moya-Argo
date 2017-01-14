@@ -13,7 +13,7 @@ import Moya_Argo
 
 class RxSwiftMappingTableViewController: DemoBaseTableViewController {
 
-    let provider:RxMoyaProvider<DemoTarget> = RxMoyaProvider(stubClosure: { _ in return .Immediate })
+    let provider:RxMoyaProvider<DemoTarget> = RxMoyaProvider(stubClosure: { _ in return .immediate })
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -27,17 +27,17 @@ class RxSwiftMappingTableViewController: DemoBaseTableViewController {
     
         //example using convenience method (original commented out)
         provider
-            .request(.AllUsers)
+            .request(.allUsers)
 //            .mapArray(ArgoUser.self, rootKey: "users")
             .mapUsers()
             .observeOn(MainScheduler.instance)
-            .subscribeNext { users in
+            .subscribe(onNext:  { users in
             
-            self.users = users.map { $0 }
+                self.users = users.map { $0 }
+                
+                self.tableView.reloadData()
             
-            self.tableView.reloadData()
-            
-        }.addDisposableTo(disposeBag)
+            }).addDisposableTo(disposeBag)
         
         // example showing map with type inference (type of users in subscribe next closure required)
 //        provider
@@ -56,15 +56,14 @@ class RxSwiftMappingTableViewController: DemoBaseTableViewController {
     override func fetchUserDetail(_ user: UserType, showAlertClosure: @escaping (UserType) -> ()) {
         
         provider
-            .request(.User(userID: user.id.description))
+            .request(.user(userID: user.id.description))
 //            .mapObject(ArgoUser)
             .mapUser()
             .observeOn(MainScheduler.instance)
-            .subscribeNext { user in
-            
-            showAlertClosure(user)
-            
-        }.addDisposableTo(disposeBag)
+            .subscribe(onNext: { user in
+                showAlertClosure(user)
+            })
+            .addDisposableTo(disposeBag)
         
     }
 

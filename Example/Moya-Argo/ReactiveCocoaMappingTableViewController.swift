@@ -8,12 +8,12 @@
 
 import UIKit
 import Moya
-import ReactiveCocoa
+import ReactiveSwift
 import Moya_Argo
 
 class ReactiveCocoaMappingTableViewController: DemoBaseTableViewController {
 
-    let provider:ReactiveCocoaMoyaProvider<DemoTarget> = ReactiveCocoaMoyaProvider(stubClosure: { _ in return .Immediate })
+    let provider:ReactiveSwiftMoyaProvider<DemoTarget> = ReactiveSwiftMoyaProvider(stubClosure: { _ in return .immediate })
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,17 +25,17 @@ class ReactiveCocoaMappingTableViewController: DemoBaseTableViewController {
     override func fetchUsers() {
         
         provider
-            .request(.AllUsers)
+            .request(.allUsers)
 //            .mapArray(ArgoUser.self, rootKey: "users")
             .mapUsers()
-            .observeOn(UIScheduler())
+            .observe(on: UIScheduler())
             .start { event in
 
             switch event {
-            case .Next(let users):
+            case .value(let users):
                 self.users = users.map { $0 }
                 self.tableView.reloadData()
-            case .Failed(let error):
+            case .failed(let error):
                 print("error: \(error)")
             default: break
             }
@@ -62,16 +62,16 @@ class ReactiveCocoaMappingTableViewController: DemoBaseTableViewController {
     override func fetchUserDetail(_ user: UserType, showAlertClosure: @escaping (UserType) -> ()) {
         
         provider
-            .request(.User(userID: user.id.description))
+            .request(.user(userID: user.id.description))
 //            .mapObject(ArgoUser)
             .mapUser()
-            .observeOn(UIScheduler())
+            .observe(on: UIScheduler())
             .start { event in
             
             switch event {
-            case .Next(let user):
+            case .value(let user):
                 showAlertClosure(user)
-            case .Failed(let error):
+            case .failed(let error):
                 print("error: \(error)")
             default:
                 break

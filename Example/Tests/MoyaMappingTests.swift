@@ -13,7 +13,7 @@ import Argo
 
 class MoyaMappingTests: XCTestCase {
     
-    let provider:MoyaProvider<MappingTestTarget> = MoyaProvider(stubClosure: { _ in return .Immediate })
+    let provider:MoyaProvider<MappingTestTarget> = MoyaProvider(stubClosure: { _ in return .immediate })
     
     override func setUp() {
         super.setUp()
@@ -29,12 +29,12 @@ class MoyaMappingTests: XCTestCase {
     func testErrorThrownByMapJSONIsThrown() {
         
         let expectation = self.expectation(description: "provider callback run")
-        self.provider.request(.InvalidJSON) { response in
+        self.provider.request(.invalidJSON) { response in
             
             switch response {
-            case .Failure:
+            case .failure:
                 XCTFail("should not get a failure here")
-            case .Success(let response):
+            case .success(let response):
                 
                 defer {
                     expectation.fulfill()
@@ -59,19 +59,19 @@ class MoyaMappingTests: XCTestCase {
     func testSuccessfulDecodingOfObjectWithRootKey() {
         
         let expectation = self.expectation(description: "provider callback run")
-        self.provider.request(.ValidObjectWithRootKey) { response in
+        self.provider.request(.validObjectWithRootKey) { response in
             
             switch response {
-            case .Failure:
+            case .failure:
                 XCTFail("should not get a failure here")
-            case .Success(let response):
+            case .success(let response):
                 
                 defer {
                     expectation.fulfill()
                 }
                 
                 do {
-                    let mapped:TestModelClass = try response.mapObject("root_key")
+                    let mapped:TestModelClass = try response.mapObject(rootKey: "root_key")
                     XCTAssertEqual(mapped.id, "test_id")
                 } catch {
                     XCTFail("should not get a failure here")
@@ -88,21 +88,21 @@ class MoyaMappingTests: XCTestCase {
     func testFailedDecodingOfObjectWithRootKeyThrowsError() {
         
         let expectation = self.expectation(description: "provider callback run")
-        self.provider.request(.MissingIDWithRootKey) { response in
+        self.provider.request(.missingIDWithRootKey) { response in
             
             switch response {
-            case .Failure:
+            case .failure:
                 XCTFail("should not get a failure here")
-            case .Success(let response):
+            case .success(let response):
                 
                 defer {
                     expectation.fulfill()
                 }
                 
                 do {
-                    let _:TestModelClass = try response.mapObject("root_key")
+                    let _:TestModelClass = try response.mapObject(rootKey: "root_key")
                     XCTFail("exception should be thrown")
-                } catch DecodeError.MissingKey(let missingKey) {
+                } catch DecodeError.missingKey(let missingKey) {
                     XCTAssertEqual(missingKey, "id")
                 } catch {
                     XCTFail("wrong error: \(error)")
@@ -119,19 +119,19 @@ class MoyaMappingTests: XCTestCase {
     func testSuccessfulDecodingOfArrayWithRootKey() {
         
         let expectation = self.expectation(description: "provider callback run")
-        self.provider.request(.ValidArrayWithRootKey) { response in
+        self.provider.request(.validArrayWithRootKey) { response in
             
             switch response {
-            case .Failure:
+            case .failure:
                 XCTFail("should not get a failure here")
-            case .Success(let response):
+            case .success(let response):
                 
                 defer {
                     expectation.fulfill()
                 }
                 
                 do {
-                    let mappedArray:[TestModelClass] = try response.mapArray("root_key")
+                    let mappedArray:[TestModelClass] = try response.mapArray(rootKey: "root_key")
                     XCTAssertEqual(mappedArray.count, 1)
                 } catch {
                     XCTFail("wrong error: \(error)")
@@ -148,21 +148,21 @@ class MoyaMappingTests: XCTestCase {
     func testFailedDecodingOfArrayWithRootKeyThrowsError() {
         
         let expectation = self.expectation(description: "provider callback run")
-        self.provider.request(.ArrayWithInvalidObjectWithRootKey) { response in
+        self.provider.request(.arrayWithInvalidObjectWithRootKey) { response in
             
             switch response {
-            case .Failure:
+            case .failure:
                 XCTFail("should not get a failure here")
-            case .Success(let response):
+            case .success(let response):
                 
                 defer {
                     expectation.fulfill()
                 }
                 
                 do {
-                    let _:[TestModelClass] = try response.mapArray("root_key")
+                    let _:[TestModelClass] = try response.mapArray(rootKey: "root_key")
                     XCTFail("exception should be thrown")
-                } catch DecodeError.MissingKey {
+                } catch DecodeError.missingKey {
                     XCTAssertTrue(true)
                 } catch {
                     XCTFail("wrong error: \(error)")
@@ -179,12 +179,12 @@ class MoyaMappingTests: XCTestCase {
     func testSuccessfulMappingWithoutRootKey() {
         
         let expectation = self.expectation(description: "provider callback run")
-        self.provider.request(.ValidObjectWithoutRootKey) { response in
+        self.provider.request(.validObjectWithoutRootKey) { response in
             
             switch response {
-            case .Failure:
+            case .failure:
                 XCTFail("should not get a failure here")
-            case .Success(let response):
+            case .success(let response):
                 
                 defer {
                     expectation.fulfill()
@@ -208,12 +208,12 @@ class MoyaMappingTests: XCTestCase {
     func testFailedDecodingOfObjectWithoutRootKey() {
         
         let expectation = self.expectation(description: "provider callback run")
-        self.provider.request(.MissingIDWithoutRootKey) { response in
+        self.provider.request(.missingIDWithoutRootKey) { response in
             
             switch response {
-            case .Failure:
+            case .failure:
                 XCTFail("should not get a failure here")
-            case .Success(let response):
+            case .success(let response):
                 
                 defer {
                     expectation.fulfill()
@@ -222,7 +222,7 @@ class MoyaMappingTests: XCTestCase {
                 do {
                     let _:TestModelClass = try response.mapObject()
                     XCTFail("exception should be thrown")
-                } catch DecodeError.MissingKey(let missingKey) {
+                } catch DecodeError.missingKey(let missingKey) {
                     XCTAssertEqual(missingKey, "id")
                 } catch {
                     XCTFail("wrong error: \(error)")
@@ -239,12 +239,12 @@ class MoyaMappingTests: XCTestCase {
     func testSuccessfulMappingOfArrayWithoutRootKey() {
         
         let expectation = self.expectation(description: "provider callback run")
-        self.provider.request(.ValidArrayWithoutRootKey) { response in
+        self.provider.request(.validArrayWithoutRootKey) { response in
             
             switch response {
-            case .Failure:
+            case .failure:
                 XCTFail("should not get a failure here")
-            case .Success(let response):
+            case .success(let response):
                 
                 defer {
                     expectation.fulfill()
@@ -268,12 +268,12 @@ class MoyaMappingTests: XCTestCase {
     func testFailedDecodingOfArrayWithoutRootKey() {
         
         let expectation = self.expectation(description: "provider callback run")
-        self.provider.request(.ArrayWithInvalidObjectWithRootKey) { response in
+        self.provider.request(.arrayWithInvalidObjectWithRootKey) { response in
             
             switch response {
-            case .Failure:
+            case .failure:
                 XCTFail("should not get a failure here")
-            case .Success(let response):
+            case .success(let response):
                 
                 defer {
                     expectation.fulfill()
@@ -282,7 +282,7 @@ class MoyaMappingTests: XCTestCase {
                 do {
                     let _:[TestModelClass] = try response.mapArray()
                     XCTFail("exception should be thrown")
-                } catch DecodeError.TypeMismatch {
+                } catch DecodeError.typeMismatch {
                     XCTAssertTrue(true)
                 } catch {
                     XCTFail("wrong error: \(error)")

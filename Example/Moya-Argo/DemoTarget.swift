@@ -10,6 +10,7 @@ import Foundation
 import Moya
 
 enum DemoTarget: TargetType {
+
     
     case allUsers
     case user(userID: String)
@@ -29,11 +30,19 @@ enum DemoTarget: TargetType {
     }
     
     var method: Moya.Method {
-        return .GET
+        return .get
     }
     
-    var parameters: [String: AnyObject]? {
+    var parameters: [String: Any]? {
         return nil
+    }
+    
+    var parameterEncoding: ParameterEncoding {
+        return URLEncoding.default
+    }
+    
+    var task: Task {
+        return .request
     }
     
     var sampleData: Data {
@@ -51,7 +60,5 @@ enum DemoTarget: TargetType {
         
         return (try! Data(contentsOf: URL(fileURLWithPath: sampleResponsePath)))
     }
-
-    var multipartBody: [MultipartFormData]? { return nil }
 
 }

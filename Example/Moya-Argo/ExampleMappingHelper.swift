@@ -14,7 +14,7 @@ extension Response {
     
     func mapUsers() throws -> [ArgoUser] {
         
-        return try mapArrayWithRootKey("users")
+        return try mapArrayWithRootKey(rootKey: "users")
     }
     
     func mapUser() throws -> ArgoUser {

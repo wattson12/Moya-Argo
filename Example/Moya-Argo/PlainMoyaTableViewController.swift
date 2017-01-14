@@ -20,7 +20,7 @@ extension PlainMoyaUser: UserType { }
 
 class PlainMoyaTableViewController: DemoBaseTableViewController {
     
-    let provider:MoyaProvider<DemoTarget> = MoyaProvider(stubClosure: { _ in .Immediate })
+    let provider:MoyaProvider<DemoTarget> = MoyaProvider(stubClosure: { _ in .immediate })
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +32,12 @@ class PlainMoyaTableViewController: DemoBaseTableViewController {
     //MARK: Overrides
     override func fetchUsers() {
         
-        self.provider.request(.AllUsers) { result in
+        self.provider.request(.allUsers) { result in
             
             switch result {
-            case .Success(let response):
+            case .success(let response):
                 self.processResponse(response)
-            case .Failure(let error):
+            case .failure(let error):
                 print("failed: \(error)")
             }
         }
@@ -45,7 +45,7 @@ class PlainMoyaTableViewController: DemoBaseTableViewController {
     
     fileprivate func processResponse(_ response: Response) {
         
-        let JSON = try! JSONSerialization.JSONObjectWithData(response.data, options: [])
+        let JSON = try! JSONSerialization.jsonObject(with: response.data, options: []) as! [String: Any]
         
         if let users = JSON["users"] as? [[String:AnyObject]] {
             
@@ -66,12 +66,12 @@ class PlainMoyaTableViewController: DemoBaseTableViewController {
     
     override func fetchUserDetail(_ user: UserType, showAlertClosure: @escaping (UserType) -> ()) {
         
-        self.provider.request(.User(userID: user.id.description)) { result in
+        self.provider.request(.user(userID: user.id.description)) { result in
             
             switch result {
-            case .Success(let response):
+            case .success(let response):
                 self.processUserDetailResponse(response, showAlertClosure: showAlertClosure)
-            case .Failure(let error):
+            case .failure(let error):
                 print("error: \(error)")
             }
         }
@@ -79,7 +79,7 @@ class PlainMoyaTableViewController: DemoBaseTableViewController {
     
     fileprivate func processUserDetailResponse(_ response: Response, showAlertClosure: @escaping (UserType) -> ()) {
         
-        let JSON = try! JSONSerialization.JSONObjectWithData(response.data, options: []) as! [String:AnyObject]
+        let JSON = try! JSONSerialization.jsonObject(with: response.data, options: []) as! [String: Any]
         
         if let userID = JSON["id"] as? Int,
            let userName = JSON["name"] as? String,

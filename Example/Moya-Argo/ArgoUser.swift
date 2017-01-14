@@ -20,6 +20,7 @@ extension ArgoUser: UserType { }
 
 import Argo
 import Curry
+import Runes
 
 extension ArgoUser: Decodable {
     

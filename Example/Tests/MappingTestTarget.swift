@@ -34,11 +34,19 @@ enum MappingTestTarget: TargetType {
     }
     
     var method: Moya.Method {
-        return .GET
+        return .get
     }
     
-    var parameters: [String: AnyObject]? {
+    var parameters: [String: Any]? {
         return nil
+    }
+    
+    var parameterEncoding: ParameterEncoding {
+        return URLEncoding.default
+    }
+    
+    var task: Task {
+        return .request
     }
     
     var sampleData: Data {

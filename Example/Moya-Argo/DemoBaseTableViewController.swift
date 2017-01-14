@@ -68,7 +68,7 @@ class DemoBaseTableViewController: UITableViewController {
         
     }
     
-    func fetchUserDetail(_ user: UserType, showAlertClosure: (UserType) -> ()) {
+    func fetchUserDetail(_ user: UserType, showAlertClosure:  @escaping (UserType) -> ()) {
         
     }
     
