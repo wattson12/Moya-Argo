@@ -6,12 +6,11 @@
 //
 //
 
-import Foundation
 import ReactiveSwift
 import Moya
 import Argo
 
-public extension SignalProducer where Value == Moya.Response, Error == Moya.Error {
+public extension SignalProducerProtocol where Value == Moya.Response, Error == MoyaError {
     
     /**
      Map stream of responses into stream of objects decoded via Argo
@@ -23,21 +22,21 @@ public extension SignalProducer where Value == Moya.Response, Error == Moya.Erro
      */
     public func mapObject<T:Decodable where T == T.DecodedType>(type: T.Type, rootKey: String? = nil) -> SignalProducer<T, Error> {
         
-        return producer.flatMap(.Latest) { response -> SignalProducer<T, Error> in
+        return producer.flatMap(.latest) { response -> SignalProducer<T, Error> in
             
             do {
-                return SignalProducer(value: try response.mapObject(rootKey))
+                return SignalProducer(value: try response.mapObject(rootKey: rootKey))
             } catch let error as Moya.Error {
                 return SignalProducer(error: error)
             } catch let error as NSError {
-                return SignalProducer(error: Error.Underlying(error))
+                return SignalProducer(error: Error.underlying(error))
             }
         }
     }
     
     /// convenience for mapping object without passing in decodable type as argument
     public func mapObject<T:Decodable where T == T.DecodedType>(rootKey: String? = nil) -> SignalProducer<T, Error> {
-        return mapObject(T.self, rootKey: rootKey)
+        return mapObject(type: T.self, rootKey: rootKey)
     }
     
     /**
@@ -50,20 +49,20 @@ public extension SignalProducer where Value == Moya.Response, Error == Moya.Erro
      */
     public func mapArray<T:Decodable where T == T.DecodedType>(type: T.Type, rootKey: String? = nil) -> SignalProducer<[T], Error> {
         
-        return producer.flatMap(.Latest) { response -> SignalProducer<[T], Error> in
+        return producer.flatMap(.latest) { response -> SignalProducer<[T], Error> in
             
             do {
-                return SignalProducer(value: try response.mapArray(rootKey))
+                return SignalProducer(value: try response.mapArray(rootKey: rootKey))
             } catch let error as Moya.Error {
                 return SignalProducer(error: error)
             } catch let error as NSError {
-                return SignalProducer(error: Error.Underlying(error))
+                return SignalProducer(error: Error.underlying(error))
             }
         }
     }
     
     /// Convenience method for mapping array without passing in decodable type as argument
     public func mapArray<T:Decodable where T == T.DecodedType>(rootKey: String? = nil) -> SignalProducer<[T], Error> {
-        return mapArray(T.self, rootKey: rootKey)
+        return mapArray(type: T.self, rootKey: rootKey)
     }
 }
