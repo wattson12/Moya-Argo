@@ -1,6 +1,6 @@
 # Moya-Argo
 
-[![CI Status](http://img.shields.io/travis/wattson12/Moya-Argo.svg?style=flat)](https://travis-ci.org/Sam Watts/Moya-Argo)
+[![CI Status](http://img.shields.io/travis/wattson12/Moya-Argo.svg?style=flat)](https://travis-ci.org/wattson12/Moya-Argo)
 [![Version](https://img.shields.io/cocoapods/v/Moya-Argo.svg?style=flat)](http://cocoapods.org/pods/Moya-Argo)
 [![License](https://img.shields.io/cocoapods/l/Moya-Argo.svg?style=flat)](http://cocoapods.org/pods/Moya-Argo)
 [![Platform](https://img.shields.io/cocoapods/p/Moya-Argo.svg?style=flat)](http://cocoapods.org/pods/Moya-Argo)
