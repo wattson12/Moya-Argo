@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Moya-Argo"
-  s.version          = "2.0.0"
+  s.version          = "3.0.0"
   s.summary          = "Argo mappings for Moya network requests"
 
   s.description      = <<-DESC
@@ -22,8 +22,8 @@ Pod::Spec.new do |s|
 
   s.subspec "Core" do |ss|
     ss.source_files = "Pod/Classes/*.swift"
-    ss.dependency "Moya", "~> 8.0"
-    ss.dependency "Argo", "~> 4.1"
+    ss.dependency "Moya", "~> 8.0.3"
+    ss.dependency "Argo", "~> 4.1.2"
     ss.framework = "Foundation"
   end
 
