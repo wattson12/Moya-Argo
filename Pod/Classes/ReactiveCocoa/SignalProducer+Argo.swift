@@ -26,7 +26,7 @@ public extension SignalProducerProtocol where Value == Moya.Response, Error == M
             
             do {
                 return SignalProducer(value: try response.mapObject(rootKey: rootKey))
-            } catch let error as Moya.MoyaError {
+            } catch let error as MoyaError {
                 return SignalProducer(error: error)
             } catch let error as NSError {
                 return SignalProducer(error: Error.underlying(error))
@@ -53,7 +53,7 @@ public extension SignalProducerProtocol where Value == Moya.Response, Error == M
             
             do {
                 return SignalProducer(value: try response.mapArray(rootKey: rootKey))
-            } catch let error as Moya.MoyaError {
+            } catch let error as MoyaError {
                 return SignalProducer(error: error)
             } catch let error as NSError {
                 return SignalProducer(error: Error.underlying(error))
