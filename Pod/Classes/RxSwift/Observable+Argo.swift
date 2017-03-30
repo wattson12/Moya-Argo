@@ -23,7 +23,7 @@ public extension ObservableType where E == Moya.Response {
      
      - returns: returns Observable of mapped objects
      */
-    public func mapObject<T: Decodable where T == T.DecodedType>(type: T.Type, rootKey: String? = nil) -> Observable<T> {
+    public func mapObject<T: Decodable>(type: T.Type, rootKey: String? = nil) -> Observable<T> where T == T.DecodedType {
         
         return Observable.create { observer in
             
@@ -44,12 +44,12 @@ public extension ObservableType where E == Moya.Response {
     
     /// Alternative for mapping object without specifying type as argument
     /// This means type needs to be specified at use
-    public func mapObject<T: Decodable where T == T.DecodedType>(rootKey: String? = nil) -> Observable<T> {
+    public func mapObject<T: Decodable>(rootKey: String? = nil) -> Observable<T> where T == T.DecodedType {
         return mapObject(type: T.self, rootKey: rootKey)
     }
     
     /// Convenience method for mapping object with root key, accepts non optional root key for some type checking
-    public func mapObjectWithRootKey<T: Decodable where T == T.DecodedType>(type: T.Type, rootKey: String) -> Observable<T> {
+    public func mapObjectWithRootKey<T: Decodable>(type: T.Type, rootKey: String) -> Observable<T> where T == T.DecodedType {
         return mapObject(type: type, rootKey: rootKey)
     }
     
@@ -61,7 +61,7 @@ public extension ObservableType where E == Moya.Response {
      
      - returns: returns Observable of mapped object array
      */
-    public func mapArray<T: Decodable where T == T.DecodedType>(type: T.Type, rootKey: String? = nil) -> Observable<[T]> {
+    public func mapArray<T: Decodable>(type: T.Type, rootKey: String? = nil) -> Observable<[T]> where T == T.DecodedType {
         
         return Observable.create { observer in
             
@@ -82,12 +82,12 @@ public extension ObservableType where E == Moya.Response {
     
     /// Alternative for mapping object array without specifying type as argument
     /// This means type needs to be specified at use
-    public func mapArray<T: Decodable where T == T.DecodedType>(rootKey: String? = nil) -> Observable<[T]> {
+    public func mapArray<T: Decodable>(rootKey: String? = nil) -> Observable<[T]> where T == T.DecodedType {
         return mapArray(type: T.self, rootKey: rootKey)
     }
     
     /// Convenience method for mapping object array with root key, accepts non optional root key for some type checking
-    public func mapArrayWithRootKey<T: Decodable where T == T.DecodedType>(type: T.Type, rootKey: String) -> Observable<[T]> {
+    public func mapArrayWithRootKey<T: Decodable>(type: T.Type, rootKey: String) -> Observable<[T]> where T == T.DecodedType {
         return mapArray(type: type, rootKey: rootKey)
     }
 
