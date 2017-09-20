@@ -22,7 +22,7 @@ public extension Response {
      
      - returns: returns a decoded object
      */
-    public func mapObject<T:Decodable>(rootKey: String? = nil) throws -> T where T == T.DecodedType {
+    public func mapObject<T: Argo.Decodable>(rootKey: String? = nil) throws -> T where T == T.DecodedType {
         
         do {
             //map to JSON (even if it's wrapped it's still a dict)
@@ -46,7 +46,7 @@ public extension Response {
     }
     
     /// Convenience method for mapping an object with a root key
-    public func mapObjectWithRootKey<T:Decodable>(rootKey: String) throws -> T where T == T.DecodedType {
+    public func mapObjectWithRootKey<T: Argo.Decodable>(rootKey: String) throws -> T where T == T.DecodedType {
         
         return try mapObject(rootKey: rootKey)
     }
@@ -60,7 +60,7 @@ public extension Response {
      
      - returns: returns an array of decoded object
      */
-    public func mapArray<T:Decodable>(rootKey: String? = nil) throws -> [T] where T == T.DecodedType {
+    public func mapArray<T: Argo.Decodable>(rootKey: String? = nil) throws -> [T] where T == T.DecodedType {
         
         do {
             //map to JSON
@@ -90,7 +90,7 @@ public extension Response {
     }
     
     /// Convenience method for mapping an array with a root key
-    public func mapArrayWithRootKey<T:Decodable>(rootKey: String) throws -> [T] where T == T.DecodedType {
+    public func mapArrayWithRootKey<T: Argo.Decodable>(rootKey: String) throws -> [T] where T == T.DecodedType {
         
         return try mapArray(rootKey: rootKey)
     }
