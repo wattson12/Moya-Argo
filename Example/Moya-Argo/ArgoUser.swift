@@ -22,7 +22,7 @@ import Argo
 import Curry
 import Runes
 
-extension ArgoUser: Decodable {
+extension ArgoUser: Argo.Decodable {
     
     static func decode(_ json: JSON) -> Decoded<ArgoUser> {
         return curry(ArgoUser.init)

@@ -11,7 +11,7 @@ import Argo
 import Curry
 import Runes
 
-class TestModelClass: Decodable {
+class TestModelClass: Argo.Decodable {
     
     let id: String
     
