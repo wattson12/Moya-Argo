@@ -13,7 +13,7 @@ import Argo
 
 /// Extension on ObservableTypes containing Moya responses
 /// used to map to stream of objects decoded with Argo
-public extension ObservableType where E == Moya.Response {
+public extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Response {
     
     /**
      Map stream of responses into stream of objects decoded via Argo
@@ -24,22 +24,9 @@ public extension ObservableType where E == Moya.Response {
      - returns: returns Observable of mapped objects
      */
     public func mapObject<T: Argo.Decodable>(type: T.Type, rootKey: String? = nil) -> Observable<T> where T == T.DecodedType {
-        
-        return Observable.create { observer in
-            
-            // subscribe to self and map each event to an object with Argo
-            self.subscribe { event in
-                
-                switch event {
-                case .next(let response):
-                    observer.onNextOrError { try response.mapObject(rootKey: rootKey) }
-                case .error(let error):
-                    observer.onError(error)
-                case .completed:
-                    observer.onCompleted()
-                }
-            }
-        }
+        return flatMap { response -> Single<T> in
+            return Single.just(try response.mapObject(rootKey: rootKey))
+        }.asObservable()
     }
     
     /// Alternative for mapping object without specifying type as argument
@@ -62,22 +49,9 @@ public extension ObservableType where E == Moya.Response {
      - returns: returns Observable of mapped object array
      */
     public func mapArray<T: Argo.Decodable>(type: T.Type, rootKey: String? = nil) -> Observable<[T]> where T == T.DecodedType {
-        
-        return Observable.create { observer in
-            
-            // subscribe to self and map each event to an array of objects with Argo
-            self.subscribe { event in
-                
-                switch event {
-                case .next(let response):
-                    observer.onNextOrError { try response.mapArray(rootKey: rootKey) }
-                case .error(let error):
-                    observer.onError(error)
-                case .completed:
-                    observer.onCompleted()
-                }
-            }
-        }
+        return flatMap { response -> Single<[T]> in
+            return Single.just(try response.mapArray(rootKey: rootKey))
+        }.asObservable()
     }
     
     /// Alternative for mapping object array without specifying type as argument
@@ -91,17 +65,4 @@ public extension ObservableType where E == Moya.Response {
         return mapArray(type: type, rootKey: rootKey)
     }
 
-}
-
-fileprivate extension AnyObserver {
-    
-    /// convenience method calling either on(.Next) or on(.Error) depending if a function throws an error or returns a value
-    fileprivate func onNextOrError(function: () throws -> Element) {
-        do {
-            let value = try function()
-            self.onNext(value)
-        } catch {
-            self.onError(error)
-        }
-    }
 }

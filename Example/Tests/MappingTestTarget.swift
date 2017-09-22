@@ -37,16 +37,16 @@ enum MappingTestTarget: TargetType {
         return .get
     }
     
+    var headers: [String : String]? {
+        return nil
+    }
+    
     var parameters: [String: Any]? {
         return nil
     }
     
-    var parameterEncoding: ParameterEncoding {
-        return URLEncoding.default
-    }
-    
     var task: Task {
-        return .request
+        return .requestParameters(parameters: [:], encoding: URLEncoding.default)
     }
     
     var sampleData: Data {

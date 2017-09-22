@@ -13,7 +13,8 @@ import Moya_Argo
 
 class RxSwiftMappingTableViewController: DemoBaseTableViewController {
 
-    let provider:RxMoyaProvider<DemoTarget> = RxMoyaProvider(stubClosure: { _ in return .immediate })
+//    let provider:RxMoyaProvider<DemoTarget> = RxMoyaProvider(stubClosure: { _ in return .immediate })
+    let provider: MoyaProvider<DemoTarget> = MoyaProvider(stubClosure: { _ in return .immediate })
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -26,7 +27,10 @@ class RxSwiftMappingTableViewController: DemoBaseTableViewController {
     override func fetchUsers() {
     
         //example using convenience method (original commented out)
+
+        
         provider
+            .rx
             .request(.allUsers)
 //            .mapArray(ArgoUser.self, rootKey: "users")
             .mapUsers()
@@ -56,6 +60,7 @@ class RxSwiftMappingTableViewController: DemoBaseTableViewController {
     override func fetchUserDetail(_ user: UserType, showAlertClosure: @escaping (UserType) -> ()) {
         
         provider
+            .rx
             .request(.user(userID: user.id.description))
 //            .mapObject(ArgoUser)
             .mapUser()

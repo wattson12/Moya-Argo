@@ -11,7 +11,7 @@ import Moya
 import RxSwift
 import Argo
 
-extension ObservableType where E == Moya.Response {
+extension PrimitiveSequence where TraitType == SingleTrait, ElementType == Response {
     
     func mapUsers() -> Observable<[ArgoUser]> {
         
