@@ -8,6 +8,10 @@ env:
     - LANG=en_US.UTF-8
     - COCOAPODS_DISABLE_DETERMINISTIC_UUIDS=true
 
+before_install:
+  - rvm use system
+  - sudo gem install cocoapods
+
 cache:
   - bundler
 
