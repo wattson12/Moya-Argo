@@ -10,13 +10,16 @@ import Foundation
 import Moya
 
 enum DemoTarget: TargetType {
-
     
     case allUsers
     case user(userID: String)
     
     var baseURL: URL {
         return URL(string: "https://localhost:1234")! //point to local host, this example will return sample data for everything
+    }
+    
+    var headers: [String : String]? {
+        return nil
     }
     
     var path: String {
@@ -33,16 +36,8 @@ enum DemoTarget: TargetType {
         return .get
     }
     
-    var parameters: [String: Any]? {
-        return nil
-    }
-    
-    var parameterEncoding: ParameterEncoding {
-        return URLEncoding.default
-    }
-    
     var task: Task {
-        return .request
+        return .requestParameters(parameters: [:], encoding: URLEncoding.default)
     }
     
     var sampleData: Data {

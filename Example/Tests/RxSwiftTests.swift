@@ -14,7 +14,7 @@ import RxSwift
 
 class RxSwiftTests: XCTestCase {
     
-    let provider:RxMoyaProvider<MappingTestTarget> = RxMoyaProvider(stubClosure: { _ in return .immediate })
+    let provider: MoyaProvider<MappingTestTarget> = MoyaProvider(stubClosure: { _ in return .immediate })
     let disposeBag = DisposeBag()
     
     override func setUp() {
@@ -31,7 +31,7 @@ class RxSwiftTests: XCTestCase {
     func testErrorThrownByMapJSONIsThrown() {
         
         let expectation = self.expectation(description: "subscribe callback called")
-        provider.request(.invalidJSON).mapObject(type: TestModelClass.self).subscribe(onError: { error in
+        provider.rx.request(.invalidJSON).mapObject(type: TestModelClass.self).subscribe(onError: { error in
             XCTAssertNotNil(error)
             expectation.fulfill()
         }).addDisposableTo(disposeBag)
@@ -43,7 +43,7 @@ class RxSwiftTests: XCTestCase {
     func testSuccessfulDecodingOfObjectWithRootKey() {
         
         let expectation = self.expectation(description: "subscribe callback called")
-        provider.request(.validObjectWithRootKey).mapObject(type: TestModelClass.self, rootKey: "root_key").subscribe(onNext: { testModel in
+        provider.rx.request(.validObjectWithRootKey).mapObject(type: TestModelClass.self, rootKey: "root_key").subscribe(onNext: { testModel in
             XCTAssertEqual(testModel.id, "test_id")
             expectation.fulfill()
         }).addDisposableTo(disposeBag)
@@ -55,7 +55,7 @@ class RxSwiftTests: XCTestCase {
     func testFailedDecodingOfObjectWithRootKeyThrowsError() {
         
         let expectation = self.expectation(description: "subscribe callback called")
-        provider.request(.missingIDWithRootKey).mapObject(type: TestModelClass.self, rootKey: "root_key").subscribe(onError: { error in
+        provider.rx.request(.missingIDWithRootKey).mapObject(type: TestModelClass.self, rootKey: "root_key").subscribe(onError: { error in
             XCTAssertTrue(error is DecodeError)
             expectation.fulfill()
         }).addDisposableTo(disposeBag)
@@ -67,7 +67,7 @@ class RxSwiftTests: XCTestCase {
     func testSuccessfulDecodingOfArrayWithRootKey() {
         
         let expectation = self.expectation(description: "subscribe callback called")
-        provider.request(.validArrayWithRootKey).mapArray(type: TestModelClass.self, rootKey: "root_key").subscribe(onNext: { testModelArray in
+        provider.rx.request(.validArrayWithRootKey).mapArray(type: TestModelClass.self, rootKey: "root_key").subscribe(onNext: { testModelArray in
             XCTAssertEqual(testModelArray.count, 1)
             expectation.fulfill()
         }).addDisposableTo(disposeBag)
@@ -79,7 +79,7 @@ class RxSwiftTests: XCTestCase {
     func testFailedDecodingOfArrayWithRootKeyThrowsError() {
         
         let expectation = self.expectation(description: "subscribe callback called")
-        provider.request(.arrayWithInvalidObjectWithRootKey).mapArray(type: TestModelClass.self, rootKey: "root_key").subscribe(onError: { error in
+        provider.rx.request(.arrayWithInvalidObjectWithRootKey).mapArray(type: TestModelClass.self, rootKey: "root_key").subscribe(onError: { error in
             XCTAssertTrue(error is DecodeError)
             expectation.fulfill()
         }).addDisposableTo(disposeBag)
@@ -91,7 +91,7 @@ class RxSwiftTests: XCTestCase {
     func testSuccessfulMappingWithoutRootKey() {
         
         let expectation = self.expectation(description: "subscribe callback called")
-        provider.request(.validObjectWithoutRootKey).mapObject(type: TestModelClass.self).subscribe(onNext: { testModel in
+        provider.rx.request(.validObjectWithoutRootKey).mapObject(type: TestModelClass.self).subscribe(onNext: { testModel in
             XCTAssertEqual(testModel.id, "test_id")
             expectation.fulfill()
         }).addDisposableTo(disposeBag)
@@ -103,7 +103,7 @@ class RxSwiftTests: XCTestCase {
     func testFailedDecodingOfObjectWithoutRootKey() {
         
         let expectation = self.expectation(description: "subscribe callback called")
-        provider.request(.missingIDWithoutRootKey).mapObject(type: TestModelClass.self).subscribe(onError: { error in
+        provider.rx.request(.missingIDWithoutRootKey).mapObject(type: TestModelClass.self).subscribe(onError: { error in
             XCTAssertTrue(error is DecodeError)
             expectation.fulfill()
         }).addDisposableTo(disposeBag)
@@ -115,7 +115,7 @@ class RxSwiftTests: XCTestCase {
     func testSuccessfulMappingOfArrayWithoutRootKey() {
         
         let expectation = self.expectation(description: "subscribe callback called")
-        provider.request(.validArrayWithoutRootKey).mapArray(type: TestModelClass.self).subscribe(onNext: { modelArray in
+        provider.rx.request(.validArrayWithoutRootKey).mapArray(type: TestModelClass.self).subscribe(onNext: { modelArray in
             XCTAssertEqual(modelArray.count, 1)
             expectation.fulfill()
         }).addDisposableTo(disposeBag)
@@ -127,7 +127,7 @@ class RxSwiftTests: XCTestCase {
     func testFailedDecodingOfArrayWithoutRootKey() {
         
         let expectation = self.expectation(description: "subscribe callback called")
-        provider.request(.arrayWithInvalidObjectWithoutRootKey).mapArray(type: TestModelClass.self).subscribe(onError: { error in
+        provider.rx.request(.arrayWithInvalidObjectWithoutRootKey).mapArray(type: TestModelClass.self).subscribe(onError: { error in
             XCTAssertTrue(error is DecodeError)
             expectation.fulfill()
         }).addDisposableTo(disposeBag)

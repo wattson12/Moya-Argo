@@ -30,7 +30,7 @@ There are subspecs available for RxSwift and Reactive cocoa if you are using Moy
 The first step is having a class / struct which can be mapped by [Argo](https://github.com/thoughtbot/Argo)
 
 ```swift
-struct ArgoUser: Decodable {
+struct ArgoUser: Argo.Decodable {
     
     let id: Int
     let name: String
@@ -69,6 +69,7 @@ provider
 If you are using the Moya RxSwift extensions, there is an extension on Observable which will simplify the mapping:
 ```swift
 provider
+    .rx
     .request(.AllUsers)
     .mapArray(ArgoUser.self, rootKey: "users")
     .observeOn(MainScheduler.instance)
