@@ -13,7 +13,7 @@ enum ExampleRow: Int {
     
     case plainMoya
     case moyaWithMapping
-    case moyaWithReactiveCocoa
+    case moyaWithReactiveSwift
     case moyaWithRxSwift
     
     var reuseIdentifier: String {
@@ -27,8 +27,8 @@ enum ExampleRow: Int {
             return PlainMoyaTableViewController()
         case .moyaWithMapping:
             return MoyaMappingTableViewController()
-        case .moyaWithReactiveCocoa:
-            return ReactiveCocoaMappingTableViewController()
+        case .moyaWithReactiveSwift:
+            return ReactiveSwiftMappingTableViewController()
         case .moyaWithRxSwift:
             return RxSwiftMappingTableViewController()
         }
@@ -41,8 +41,8 @@ enum ExampleRow: Int {
             return "Plain Moya"
         case .moyaWithMapping:
             return "Moya with mapping"
-        case .moyaWithReactiveCocoa:
-            return "Moya with ReactiveCocoa"
+        case .moyaWithReactiveSwift:
+            return "Moya with ReactiveSwift"
         case .moyaWithRxSwift:
             return "Moya with RxSwift"
         }

@@ -4,7 +4,7 @@ platform :ios, "8.0"
 
 def pod_libraries 
   pod 'Moya-Argo', :path => "../"
-  pod 'Moya-Argo/ReactiveCocoa', :path => "../"
+  pod 'Moya-Argo/ReactiveSwift', :path => "../"
   pod 'Moya-Argo/RxSwift', :path => "../"
   pod "Curry"
 end
