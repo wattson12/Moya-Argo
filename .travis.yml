@@ -11,6 +11,7 @@ env:
 before_install:
   - rvm use system
   - sudo gem install cocoapods
+  - pod repo update
 
 cache:
   - bundler

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Cartography
 
 enum ExampleRow: Int {
     
@@ -64,9 +63,12 @@ class ViewController: UIViewController {
         
         self.view.addSubview(self.tableView)
         
-        constrain(self.tableView, self.view) { table, view in
-            table.edges == view.edges
-        }
+        self.tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: self.tableView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: self.tableView, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: self.tableView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: self.tableView, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1.0, constant: 0.0).isActive = true
         
         self.title = "Moya + Argo"
     }

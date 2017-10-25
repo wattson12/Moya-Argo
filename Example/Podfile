@@ -1,3 +1,4 @@
+source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 platform :ios, "8.0"
@@ -10,10 +11,7 @@ def pod_libraries
 end
 
 target 'Moya-Argo_Example' do
- 
   pod_libraries
-
-  pod "Cartography"
 end
 
 target 'Moya-Argo_Tests' do
