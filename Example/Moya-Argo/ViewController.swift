@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import Cartography
 
 enum ExampleRow: Int {
     
     case plainMoya
     case moyaWithMapping
-    case moyaWithReactiveCocoa
+    case moyaWithReactiveSwift
     case moyaWithRxSwift
     
     var reuseIdentifier: String {
@@ -27,8 +26,8 @@ enum ExampleRow: Int {
             return PlainMoyaTableViewController()
         case .moyaWithMapping:
             return MoyaMappingTableViewController()
-        case .moyaWithReactiveCocoa:
-            return ReactiveCocoaMappingTableViewController()
+        case .moyaWithReactiveSwift:
+            return ReactiveSwiftMappingTableViewController()
         case .moyaWithRxSwift:
             return RxSwiftMappingTableViewController()
         }
@@ -41,8 +40,8 @@ enum ExampleRow: Int {
             return "Plain Moya"
         case .moyaWithMapping:
             return "Moya with mapping"
-        case .moyaWithReactiveCocoa:
-            return "Moya with ReactiveCocoa"
+        case .moyaWithReactiveSwift:
+            return "Moya with ReactiveSwift"
         case .moyaWithRxSwift:
             return "Moya with RxSwift"
         }
@@ -64,9 +63,12 @@ class ViewController: UIViewController {
         
         self.view.addSubview(self.tableView)
         
-        constrain(self.tableView, self.view) { table, view in
-            table.edges == view.edges
-        }
+        self.tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: self.tableView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: self.tableView, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: self.tableView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: self.tableView, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1.0, constant: 0.0).isActive = true
         
         self.title = "Moya + Argo"
     }

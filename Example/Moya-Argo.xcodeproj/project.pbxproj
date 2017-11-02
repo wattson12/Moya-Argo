@@ -11,11 +11,11 @@
 		220A72FF1C5805B70038AE9F /* TestModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A72FE1C5805B70038AE9F /* TestModelClass.swift */; };
 		223623F21C59555300444838 /* MappingTestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223623F11C59555300444838 /* MappingTestTarget.swift */; };
 		223623F41C59557700444838 /* RxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223623F31C59557700444838 /* RxSwiftTests.swift */; };
-		223623F61C59580100444838 /* ReactiveCocoaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223623F51C59580100444838 /* ReactiveCocoaTests.swift */; };
+		223623F61C59580100444838 /* ReactiveSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223623F51C59580100444838 /* ReactiveSwiftTests.swift */; };
 		224291191C53FDDE00288E30 /* RxSwiftMappingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224291181C53FDDE00288E30 /* RxSwiftMappingTableViewController.swift */; };
 		2242911B1C5401D500288E30 /* ExampleRxSwiftMappingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2242911A1C5401D500288E30 /* ExampleRxSwiftMappingHelper.swift */; };
-		224291211C54089100288E30 /* ReactiveCocoaMappingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224291201C54089000288E30 /* ReactiveCocoaMappingTableViewController.swift */; };
-		224291231C540BFD00288E30 /* ExampleReactiveCocoaMappingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224291221C540BFD00288E30 /* ExampleReactiveCocoaMappingHelper.swift */; };
+		224291211C54089100288E30 /* ReactiveSwiftMappingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224291201C54089000288E30 /* ReactiveSwiftMappingTableViewController.swift */; };
+		224291231C540BFD00288E30 /* ExampleReactiveSwiftMappingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224291221C540BFD00288E30 /* ExampleReactiveSwiftMappingHelper.swift */; };
 		22856A231C53A9AE00A1B0C9 /* all_users.json in Resources */ = {isa = PBXBuildFile; fileRef = 22856A221C53A9AE00A1B0C9 /* all_users.json */; };
 		22856A251C53A9C000A1B0C9 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 22856A241C53A9C000A1B0C9 /* user.json */; };
 		22856A271C53AB5600A1B0C9 /* DemoBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22856A261C53AB5600A1B0C9 /* DemoBaseTableViewController.swift */; };
@@ -49,11 +49,11 @@
 		220A72FE1C5805B70038AE9F /* TestModelClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModelClass.swift; sourceTree = "<group>"; };
 		223623F11C59555300444838 /* MappingTestTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappingTestTarget.swift; sourceTree = "<group>"; };
 		223623F31C59557700444838 /* RxSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftTests.swift; sourceTree = "<group>"; };
-		223623F51C59580100444838 /* ReactiveCocoaTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaTests.swift; sourceTree = "<group>"; };
+		223623F51C59580100444838 /* ReactiveSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveSwiftTests.swift; sourceTree = "<group>"; };
 		224291181C53FDDE00288E30 /* RxSwiftMappingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftMappingTableViewController.swift; sourceTree = "<group>"; };
 		2242911A1C5401D500288E30 /* ExampleRxSwiftMappingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleRxSwiftMappingHelper.swift; sourceTree = "<group>"; };
-		224291201C54089000288E30 /* ReactiveCocoaMappingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaMappingTableViewController.swift; sourceTree = "<group>"; };
-		224291221C540BFD00288E30 /* ExampleReactiveCocoaMappingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleReactiveCocoaMappingHelper.swift; sourceTree = "<group>"; };
+		224291201C54089000288E30 /* ReactiveSwiftMappingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveSwiftMappingTableViewController.swift; sourceTree = "<group>"; };
+		224291221C540BFD00288E30 /* ExampleReactiveSwiftMappingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleReactiveSwiftMappingHelper.swift; sourceTree = "<group>"; };
 		22856A221C53A9AE00A1B0C9 /* all_users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = all_users.json; sourceTree = "<group>"; };
 		22856A241C53A9C000A1B0C9 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		22856A261C53AB5600A1B0C9 /* DemoBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoBaseTableViewController.swift; sourceTree = "<group>"; };
@@ -121,13 +121,13 @@
 			name = "RxSwift + Argo";
 			sourceTree = "<group>";
 		};
-		2242911F1C54087400288E30 /* ReactiveCocoa + Argo */ = {
+		2242911F1C54087400288E30 /* ReactiveSwift + Argo */ = {
 			isa = PBXGroup;
 			children = (
-				224291201C54089000288E30 /* ReactiveCocoaMappingTableViewController.swift */,
-				224291221C540BFD00288E30 /* ExampleReactiveCocoaMappingHelper.swift */,
+				224291201C54089000288E30 /* ReactiveSwiftMappingTableViewController.swift */,
+				224291221C540BFD00288E30 /* ExampleReactiveSwiftMappingHelper.swift */,
 			);
-			name = "ReactiveCocoa + Argo";
+			name = "ReactiveSwift + Argo";
 			sourceTree = "<group>";
 		};
 		22856A211C53A94E00A1B0C9 /* Demo View Controller */ = {
@@ -195,7 +195,7 @@
 				22856A2A1C53AE9500A1B0C9 /* Plain Moya */,
 				22856A331C53B60000A1B0C9 /* Moya + Mapping */,
 				224291171C53FDBC00288E30 /* RxSwift + Argo */,
-				2242911F1C54087400288E30 /* ReactiveCocoa + Argo */,
+				2242911F1C54087400288E30 /* ReactiveSwift + Argo */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -223,7 +223,7 @@
 				220A72FE1C5805B70038AE9F /* TestModelClass.swift */,
 				223623F11C59555300444838 /* MappingTestTarget.swift */,
 				223623F31C59557700444838 /* RxSwiftTests.swift */,
-				223623F51C59580100444838 /* ReactiveCocoaTests.swift */,
+				223623F51C59580100444838 /* ReactiveSwiftTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -306,7 +306,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -404,7 +404,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Moya-Argo_Example/Pods-Moya-Argo_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Argo/Argo.framework",
-				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
 				"${BUILT_PRODUCTS_DIR}/Curry/Curry.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-Argo/Moya_Argo.framework",
@@ -417,7 +416,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Argo.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Curry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_Argo.framework",
@@ -509,13 +507,13 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				22856A271C53AB5600A1B0C9 /* DemoBaseTableViewController.swift in Sources */,
 				224291191C53FDDE00288E30 /* RxSwiftMappingTableViewController.swift in Sources */,
-				224291211C54089100288E30 /* ReactiveCocoaMappingTableViewController.swift in Sources */,
+				224291211C54089100288E30 /* ReactiveSwiftMappingTableViewController.swift in Sources */,
 				22856A351C53B61B00A1B0C9 /* MoyaMappingTableViewController.swift in Sources */,
 				22856A2C1C53AEB300A1B0C9 /* PlainMoyaTableViewController.swift in Sources */,
 				22856A391C53C07700A1B0C9 /* ExampleMappingHelper.swift in Sources */,
 				22856A291C53ADB300A1B0C9 /* DemoTarget.swift in Sources */,
 				22856A321C53B4E100A1B0C9 /* ArgoUser.swift in Sources */,
-				224291231C540BFD00288E30 /* ExampleReactiveCocoaMappingHelper.swift in Sources */,
+				224291231C540BFD00288E30 /* ExampleReactiveSwiftMappingHelper.swift in Sources */,
 				2242911B1C5401D500288E30 /* ExampleRxSwiftMappingHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,7 +524,7 @@
 			files = (
 				220A72FF1C5805B70038AE9F /* TestModelClass.swift in Sources */,
 				22A39CF21C56AAA7009F8001 /* MoyaMappingTests.swift in Sources */,
-				223623F61C59580100444838 /* ReactiveCocoaTests.swift in Sources */,
+				223623F61C59580100444838 /* ReactiveSwiftTests.swift in Sources */,
 				223623F21C59555300444838 /* MappingTestTarget.swift in Sources */,
 				223623F41C59557700444838 /* RxSwiftTests.swift in Sources */,
 			);
@@ -570,14 +568,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -618,14 +622,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -662,7 +672,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -678,7 +688,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -698,7 +708,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Moya-Argo_Example.app/Moya-Argo_Example";
 			};
@@ -715,7 +725,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Moya-Argo_Example.app/Moya-Argo_Example";
 			};

@@ -1,5 +1,5 @@
 //
-//  ReactiveCocoaMappingTableViewController.swift
+//  ReactiveSwiftMappingTableViewController.swift
 //  Moya-Argo
 //
 //  Created by Sam Watts on 23/01/2016.
@@ -11,20 +11,21 @@ import Moya
 import ReactiveSwift
 import Moya_Argo
 
-class ReactiveCocoaMappingTableViewController: DemoBaseTableViewController {
+class ReactiveSwiftMappingTableViewController: DemoBaseTableViewController {
 
-    let provider:ReactiveSwiftMoyaProvider<DemoTarget> = ReactiveSwiftMoyaProvider(stubClosure: { _ in return .immediate })
+    let provider: MoyaProvider<DemoTarget> = MoyaProvider(stubClosure: { _ in return .immediate })
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "ReactiveCocoa"
+        self.title = "ReactiveSwift"
     }
 
     //MARK: Overrides
     override func fetchUsers() {
         
         provider
+            .reactive
             .request(.allUsers)
 //            .mapArray(ArgoUser.self, rootKey: "users")
             .mapUsers()
@@ -62,6 +63,7 @@ class ReactiveCocoaMappingTableViewController: DemoBaseTableViewController {
     override func fetchUserDetail(_ user: UserType, showAlertClosure: @escaping (UserType) -> ()) {
         
         provider
+            .reactive
             .request(.user(userID: user.id.description))
 //            .mapObject(ArgoUser)
             .mapUser()

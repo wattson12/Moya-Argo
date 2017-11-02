@@ -41,7 +41,7 @@ class RxSwiftMappingTableViewController: DemoBaseTableViewController {
                 
                 self.tableView.reloadData()
             
-            }).addDisposableTo(disposeBag)
+            }).disposed(by: disposeBag)
         
         // example showing map with type inference (type of users in subscribe next closure required)
 //        provider
@@ -68,7 +68,7 @@ class RxSwiftMappingTableViewController: DemoBaseTableViewController {
             .subscribe(onNext: { user in
                 showAlertClosure(user)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
         
     }
 

@@ -34,7 +34,7 @@ class RxSwiftTests: XCTestCase {
         provider.rx.request(.invalidJSON).mapObject(type: TestModelClass.self).subscribe(onError: { error in
             XCTAssertNotNil(error)
             expectation.fulfill()
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         waitForExpectations(timeout: 0.1, handler: nil)
     }
@@ -46,7 +46,7 @@ class RxSwiftTests: XCTestCase {
         provider.rx.request(.validObjectWithRootKey).mapObject(type: TestModelClass.self, rootKey: "root_key").subscribe(onNext: { testModel in
             XCTAssertEqual(testModel.id, "test_id")
             expectation.fulfill()
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         waitForExpectations(timeout: 0.1, handler: nil)
     }
@@ -58,7 +58,7 @@ class RxSwiftTests: XCTestCase {
         provider.rx.request(.missingIDWithRootKey).mapObject(type: TestModelClass.self, rootKey: "root_key").subscribe(onError: { error in
             XCTAssertTrue(error is DecodeError)
             expectation.fulfill()
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         waitForExpectations(timeout: 0.1, handler: nil)
     }
@@ -70,7 +70,7 @@ class RxSwiftTests: XCTestCase {
         provider.rx.request(.validArrayWithRootKey).mapArray(type: TestModelClass.self, rootKey: "root_key").subscribe(onNext: { testModelArray in
             XCTAssertEqual(testModelArray.count, 1)
             expectation.fulfill()
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         waitForExpectations(timeout: 0.1, handler: nil)
     }
@@ -82,7 +82,7 @@ class RxSwiftTests: XCTestCase {
         provider.rx.request(.arrayWithInvalidObjectWithRootKey).mapArray(type: TestModelClass.self, rootKey: "root_key").subscribe(onError: { error in
             XCTAssertTrue(error is DecodeError)
             expectation.fulfill()
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         waitForExpectations(timeout: 0.1, handler: nil)
     }
@@ -94,7 +94,7 @@ class RxSwiftTests: XCTestCase {
         provider.rx.request(.validObjectWithoutRootKey).mapObject(type: TestModelClass.self).subscribe(onNext: { testModel in
             XCTAssertEqual(testModel.id, "test_id")
             expectation.fulfill()
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         waitForExpectations(timeout: 0.1, handler: nil)
     }
@@ -106,7 +106,7 @@ class RxSwiftTests: XCTestCase {
         provider.rx.request(.missingIDWithoutRootKey).mapObject(type: TestModelClass.self).subscribe(onError: { error in
             XCTAssertTrue(error is DecodeError)
             expectation.fulfill()
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         waitForExpectations(timeout: 0.1, handler: nil)
     }
@@ -118,7 +118,7 @@ class RxSwiftTests: XCTestCase {
         provider.rx.request(.validArrayWithoutRootKey).mapArray(type: TestModelClass.self).subscribe(onNext: { modelArray in
             XCTAssertEqual(modelArray.count, 1)
             expectation.fulfill()
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         waitForExpectations(timeout: 0.1, handler: nil)
     }
@@ -130,7 +130,7 @@ class RxSwiftTests: XCTestCase {
         provider.rx.request(.arrayWithInvalidObjectWithoutRootKey).mapArray(type: TestModelClass.self).subscribe(onError: { error in
             XCTAssertTrue(error is DecodeError)
             expectation.fulfill()
-        }).addDisposableTo(disposeBag)
+        }).disposed(by: disposeBag)
         
         waitForExpectations(timeout: 0.1, handler: nil)
     }

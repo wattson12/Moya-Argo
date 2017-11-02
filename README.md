@@ -22,7 +22,7 @@ pod "Moya-Argo"
 
 ### Subspec
 
-There are subspecs available for RxSwift and Reactive cocoa if you are using Moya/RxSwift or Moya/ReactiveCocoa. The pod names are `Moya-Argo/RxSwift` and `Moya-Argo/ReactiveCocoa` respectively
+There are subspecs available for RxSwift and Reactive cocoa if you are using Moya/RxSwift or Moya/ReactiveSwift. The pod names are `Moya-Argo/RxSwift` and `Moya-Argo/ReactiveSwift` respectively
 
 ## Usage
 
@@ -81,10 +81,11 @@ provider
     }.addDisposableTo(disposeBag)
 ```
 
-### ReactiveCocoa
-Or for ReactiveCocoa, there are similar extensions on SignalProducer:
+### ReactiveSwift
+Or for ReactiveSwift, there are similar extensions on SignalProducer:
 ```swift
 provider
+    .reactive
     .request(.AllUsers)
     .mapArray(ArgoUser.self, rootKey: "users")
     .observeOn(UIScheduler())

@@ -1,5 +1,5 @@
 //
-//  ExampleReactiveCocoaMappingHelper.swift
+//  ExampleReactiveSwiftMappingHelper.swift
 //  Moya-Argo
 //
 //  Created by Sam Watts on 23/01/2016.
