@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Moya-Argo"
-  s.version          = "4.0.0"
+  s.version          = "5.0.0"
   s.summary          = "Argo mappings for Moya network requests"
 
   s.description      = <<-DESC
