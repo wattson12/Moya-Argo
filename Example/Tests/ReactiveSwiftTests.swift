@@ -52,9 +52,11 @@ class ReactiveSwiftTests: XCTestCase {
             .request(.validObjectWithRootKey)
             .mapObject(type: TestModelClass.self, rootKey: "root_key")
             .startWithResult { testModelResult in
-                XCTAssertNil(testModelResult.error)
-                if let testModel = testModelResult.value {
-                    XCTAssertEqual(testModel.id, "test_id")
+                switch testModelResult {
+                    case let .success(value):
+                        XCTAssertEqual(value.id, "test_id")
+                    case let .failure(error):
+                        XCTAssertNil(error)
                 }
                 expectation.fulfill()
             }
@@ -88,11 +90,13 @@ class ReactiveSwiftTests: XCTestCase {
             .request(.validArrayWithRootKey)
             .mapArray(type: TestModelClass.self, rootKey: "root_key")
             .startWithResult { testModelArrayResult in
-                XCTAssertNil(testModelArrayResult.error)
-                if let testModelArray = testModelArrayResult.value {
-                    XCTAssertEqual(testModelArray.count, 1)
+                switch testModelArrayResult {
+                    case let .success(value):
+                        XCTAssertEqual(value.count, 1)
+                        expectation.fulfill()
+                    case let .failure(error):
+                        XCTAssertNil(error)
                 }
-                expectation.fulfill()
             }
             .dispose()
         
@@ -124,10 +128,12 @@ class ReactiveSwiftTests: XCTestCase {
             .request(.validObjectWithoutRootKey)
             .mapObject(type: TestModelClass.self)
             .startWithResult { testModelResult in
-                XCTAssertNil(testModelResult.error)
-                if let testModel = testModelResult.value {
-                    XCTAssertEqual(testModel.id, "test_id")
-                    expectation.fulfill()
+                switch testModelResult {
+                    case let .success(value):
+                        XCTAssertEqual(value.id, "test_id")
+                        expectation.fulfill()
+                    case let .failure(error):
+                        XCTAssertNil(error)
                 }
             }
             .dispose()
@@ -160,10 +166,12 @@ class ReactiveSwiftTests: XCTestCase {
             .request(.validArrayWithoutRootKey)
             .mapArray(type: TestModelClass.self)
             .startWithResult { modelArrayResult in
-                XCTAssertNil(modelArrayResult.error)
-                if let modelArray = modelArrayResult.value {
-                    XCTAssertEqual(modelArray.count, 1)
-                    expectation.fulfill()
+                switch modelArrayResult {
+                    case let .success(value):
+                        XCTAssertEqual(value.count, 1)
+                        expectation.fulfill()
+                    case let .failure(error):
+                        XCTAssertNil(error)
                 }
             }
             .dispose()

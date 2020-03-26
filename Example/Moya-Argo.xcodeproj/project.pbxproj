@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E8A69CD9BEFBCC7D625E158 /* Pods_Moya_Argo_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062531D1382364E4FEF6900B /* Pods_Moya_Argo_Example.framework */; };
+		1A312FC168A803DEE74C9B08 /* Pods_Moya_Argo_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A2604DC18EDABF2510CE00C /* Pods_Moya_Argo_Tests.framework */; };
 		220A72FF1C5805B70038AE9F /* TestModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A72FE1C5805B70038AE9F /* TestModelClass.swift */; };
 		223623F21C59555300444838 /* MappingTestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223623F11C59555300444838 /* MappingTestTarget.swift */; };
 		223623F41C59557700444838 /* RxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223623F31C59557700444838 /* RxSwiftTests.swift */; };
@@ -30,7 +30,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		62C8859B2AB125DE6C23AE98 /* Pods_Moya_Argo_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2457C491D5F23ABB3745EA3C /* Pods_Moya_Argo_Tests.framework */; };
+		FD6C9A5427922FD8E1CC5FAD /* Pods_Moya_Argo_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F0F1FDCC3F850E5658D480 /* Pods_Moya_Argo_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		062531D1382364E4FEF6900B /* Pods_Moya_Argo_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_Argo_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06F0F1FDCC3F850E5658D480 /* Pods_Moya_Argo_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_Argo_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		220312BC6462FD9A1D5DAD2D /* Pods-Moya-Argo_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-Argo_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-Argo_Tests/Pods-Moya-Argo_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		220A72FE1C5805B70038AE9F /* TestModelClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModelClass.swift; sourceTree = "<group>"; };
 		223623F11C59555300444838 /* MappingTestTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappingTestTarget.swift; sourceTree = "<group>"; };
@@ -63,9 +63,8 @@
 		22856A341C53B61B00A1B0C9 /* MoyaMappingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaMappingTableViewController.swift; sourceTree = "<group>"; };
 		22856A381C53C07700A1B0C9 /* ExampleMappingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleMappingHelper.swift; sourceTree = "<group>"; };
 		22A39CF11C56AAA7009F8001 /* MoyaMappingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaMappingTests.swift; sourceTree = "<group>"; };
-		2457C491D5F23ABB3745EA3C /* Pods_Moya_Argo_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_Argo_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		322FEC160051B7CA454C0A2E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		429039B9359D011B02AA2833 /* Moya-Argo.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = "Moya-Argo.podspec"; path = "../Moya-Argo.podspec"; sourceTree = "<group>"; };
+		429039B9359D011B02AA2833 /* Moya-Argo.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = "Moya-Argo.podspec"; path = "../Moya-Argo.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4DDDFE817FD661E1B963018C /* Pods-Moya-Argo_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-Argo_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-Argo_Example/Pods-Moya-Argo_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Moya-Argo_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moya-Argo_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +75,7 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Moya-Argo_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moya-Argo_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A2604DC18EDABF2510CE00C /* Pods_Moya_Argo_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moya_Argo_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85832F9A3C4224AD148ECB6 /* Pods-Moya-Argo_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-Argo_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-Argo_Tests/Pods-Moya-Argo_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B26B85AC9524CFBBBBACA740 /* Pods-Moya-Argo_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moya-Argo_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Moya-Argo_Example/Pods-Moya-Argo_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C08434DB914101B2BD984ABB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E8A69CD9BEFBCC7D625E158 /* Pods_Moya_Argo_Example.framework in Frameworks */,
+				FD6C9A5427922FD8E1CC5FAD /* Pods_Moya_Argo_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62C8859B2AB125DE6C23AE98 /* Pods_Moya_Argo_Tests.framework in Frameworks */,
+				1A312FC168A803DEE74C9B08 /* Pods_Moya_Argo_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,8 +249,8 @@
 		E24B2200D826DB0EBEEE13E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				062531D1382364E4FEF6900B /* Pods_Moya_Argo_Example.framework */,
-				2457C491D5F23ABB3745EA3C /* Pods_Moya_Argo_Tests.framework */,
+				06F0F1FDCC3F850E5658D480 /* Pods_Moya_Argo_Example.framework */,
+				6A2604DC18EDABF2510CE00C /* Pods_Moya_Argo_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,8 +266,7 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				6990D46FEB502D44784CEC4D /* [CP] Embed Pods Frameworks */,
-				997F575E9D8EB8D2CFD9877B /* [CP] Copy Pods Resources */,
+				23C9D34CF21C83E5BAD310B8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -286,8 +285,7 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				D3633214A06124D8F0117F74 /* [CP] Embed Pods Frameworks */,
-				2908EDA5B21DA892C75AF56D /* [CP] Copy Pods Resources */,
+				521E937BD0D83570D8821D56 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -306,7 +304,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -322,7 +320,7 @@
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Moya-Argo" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -362,19 +360,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2908EDA5B21DA892C75AF56D /* [CP] Copy Pods Resources */ = {
+		23C9D34CF21C83E5BAD310B8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Moya-Argo_Example/Pods-Moya-Argo_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Argo/Argo.framework",
+				"${BUILT_PRODUCTS_DIR}/Curry/Curry.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya-Argo/Moya_Argo.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Runes/Runes.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Argo.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Curry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_Argo.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Runes.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Moya-Argo_Tests/Pods-Moya-Argo_Tests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Moya-Argo_Example/Pods-Moya-Argo_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		33ECAD85C1D0D4BB66D06E87 /* [CP] Check Pods Manifest.lock */ = {
@@ -395,20 +410,19 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6990D46FEB502D44784CEC4D /* [CP] Embed Pods Frameworks */ = {
+		521E937BD0D83570D8821D56 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Moya-Argo_Example/Pods-Moya-Argo_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Moya-Argo_Tests/Pods-Moya-Argo_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Argo/Argo.framework",
 				"${BUILT_PRODUCTS_DIR}/Curry/Curry.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-Argo/Moya_Argo.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Runes/Runes.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
@@ -420,13 +434,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_Argo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Runes.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Moya-Argo_Example/Pods-Moya-Argo_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Moya-Argo_Tests/Pods-Moya-Argo_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7FB2BA624C74B6ABCB4CD057 /* [CP] Check Pods Manifest.lock */ = {
@@ -445,55 +458,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		997F575E9D8EB8D2CFD9877B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Moya-Argo_Example/Pods-Moya-Argo_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D3633214A06124D8F0117F74 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Moya-Argo_Tests/Pods-Moya-Argo_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Argo/Argo.framework",
-				"${BUILT_PRODUCTS_DIR}/Curry/Curry.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya-Argo/Moya_Argo.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/Runes/Runes.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Argo.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Curry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_Argo.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Runes.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Moya-Argo_Tests/Pods-Moya-Argo_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -572,12 +536,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -605,7 +571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -626,12 +592,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -652,7 +620,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

@@ -1,7 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-platform :ios, "8.0"
+platform :ios, '10'
 
 def pod_libraries 
   pod 'Moya-Argo', :path => "../"
@@ -16,4 +16,12 @@ end
 
 target 'Moya-Argo_Tests' do
   pod_libraries
+end
+
+post_install do |installer|
+    ##https://github.com/CocoaPods/CocoaPods/issues/7251
+    podsTargets = installer.pods_project.targets.find_all { |target| target.name.start_with?('Pods') }
+    podsTargets.each do |target|
+        target.frameworks_build_phase.clear
+    end
 end
