@@ -56,7 +56,7 @@ class PlainMoyaTableViewController: DemoBaseTableViewController {
                 } else {
                     return nil
                 }
-            }.flatMap { $0 }
+            }.compactMap { $0 }
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()

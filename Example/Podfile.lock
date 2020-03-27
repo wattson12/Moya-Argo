@@ -1,35 +1,32 @@
 PODS:
-  - Alamofire (4.6.0)
+  - Alamofire (5.0.5)
   - Argo (4.1.2):
     - Runes (>= 4.0.0)
   - Curry (4.0.0)
-  - Moya (11.0.0):
-    - Moya/Core (= 11.0.0)
-  - Moya-Argo (3.0.0):
-    - Moya-Argo/Core (= 3.0.0)
-  - Moya-Argo/Core (3.0.0):
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya-Argo (5.0.1):
+    - Moya-Argo/Core (= 5.0.1)
+  - Moya-Argo/Core (5.0.1):
     - Argo (~> 4.1.2)
-    - Moya (~> 11.0.0)
-  - Moya-Argo/ReactiveSwift (3.0.0):
+    - Moya (~> 14.0.0)
+  - Moya-Argo/ReactiveSwift (5.0.1):
     - Moya-Argo/Core
     - Moya/ReactiveSwift
-  - Moya-Argo/RxSwift (3.0.0):
+  - Moya-Argo/RxSwift (5.0.1):
     - Moya-Argo/Core
     - Moya/RxSwift
-  - Moya/Core (11.0.0):
-    - Alamofire (~> 4.1)
-    - Result (~> 3.0)
-  - Moya/ReactiveSwift (11.0.0):
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/ReactiveSwift (14.0.0):
     - Moya/Core
-    - ReactiveSwift (~> 3.0)
-  - Moya/RxSwift (11.0.0):
+    - ReactiveSwift (~> 6.0)
+  - Moya/RxSwift (14.0.0):
     - Moya/Core
-    - RxSwift (~> 4.0)
-  - ReactiveSwift (3.1.0):
-    - Result (~> 3.2)
-  - Result (3.2.4)
+    - RxSwift (~> 5.0)
+  - ReactiveSwift (6.2.1)
   - Runes (4.1.0)
-  - RxSwift (4.1.2)
+  - RxSwift (5.1.1)
 
 DEPENDENCIES:
   - Curry
@@ -37,21 +34,30 @@ DEPENDENCIES:
   - Moya-Argo/ReactiveSwift (from `../`)
   - Moya-Argo/RxSwift (from `../`)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Argo
+    - Curry
+    - Moya
+    - ReactiveSwift
+    - Runes
+    - RxSwift
+
 EXTERNAL SOURCES:
   Moya-Argo:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   Argo: 5db06502fc1222d83011f574243089dab25202ff
   Curry: 887c0b9de9a9947820a59557459c7895e76d7b90
-  Moya: be29766339783963a70d1279d69c891ab3a1393c
-  Moya-Argo: 802975e5e7d5f04273ae4f443961632b2fb50a4e
-  ReactiveSwift: 5b26d2e988fe0eed2daf48c4054d1de74db50184
-  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  Moya-Argo: c7b85811efc794efbe7452573c22437c1e7ca2ca
+  ReactiveSwift: 07ddf579f4eb3ee3bd656214f0461aaf2c0fd639
   Runes: 72a67a5bbbe1b5fdae08b5a01b10c60d83fc69aa
-  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 5db4556ac312aca7db2f4c78efe1b85b518e3dda
+PODFILE CHECKSUM: b97baf0d00a9922b17230006bc99b635a057817e
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.9.1
